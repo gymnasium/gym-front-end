@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './GymButton.module.css';
+import classes from './GymButton.module.css';
 
 const GymButton = props => {
   const { children } = props;
 
+  console.dir('classes are', classes);
+
   return (
-    <button className='container' type='button'>
+    <button className={classes.container} type='button'>
       {children}
     </button>
   );
