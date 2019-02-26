@@ -16,16 +16,18 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-scripts": "^2.1.5"
   },
   "devDependencies": {
-    "prettier": "^1.16.4",
-    "@storybook/react": "^4.1.13",
+    "@babel/core": "^7.3.4",
     "@storybook/addon-actions": "^4.1.13",
     "@storybook/addon-links": "^4.1.13",
     "@storybook/addons": "^4.1.13",
-    "@babel/core": "^7.3.4",
-    "babel-loader": "^8.0.5"
+    "@storybook/react": "^4.1.13",
+    "babel-loader": "^8.0.5",
+    "concurrently": "^4.1.0",
+    "prettier": "^1.16.4"
   },
   "keywords": [
     "gatsby"
@@ -38,6 +40,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "storydev": "concurrently \"yarn storybook\" \"yarn develop\"",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
