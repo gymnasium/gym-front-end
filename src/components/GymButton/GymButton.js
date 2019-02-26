@@ -4,12 +4,19 @@ import PropTypes from 'prop-types';
 import classes from './GymButton.module.css';
 
 const GymButton = props => {
-  const { children } = props;
+  const {
+    children,
+    onClick,
+  } = props;
 
-  console.dir('classes are', classes);
+  console.log('onclick', onClick);
 
   return (
-    <button className={classes.container} type='button'>
+    <button
+      className={classes.container}
+      type='button'
+      onClick={onClick}
+    >
       {children}
     </button>
   );
@@ -17,10 +24,12 @@ const GymButton = props => {
 
 GymButton.defaultProps = {
   children: null,
+  onClick: null,
 };
 
 GymButton.propTypes = {
   children: PropTypes.node,
+  onClick: PropTypes.func,
 };
 
 export default GymButton;
