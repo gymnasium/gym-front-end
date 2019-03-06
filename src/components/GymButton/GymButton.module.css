@@ -17,3 +17,7 @@
 .container:hover {
   background-color: #a6a6a6;
 }
+
+.fullWidth {
+  width: 100%;
+}
