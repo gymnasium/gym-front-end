@@ -3,4 +3,17 @@
   background-color: hsl(33, 94%, 55%);
   color: #ffffff;
   border: 0;
+  padding: 1em;  
+  border-radius: 0.125em;
+  box-shadow: none;
+  text-shadow: none;
+  background-image: none;
+  display: inline-block;
+  cursor: pointer;
+  border: 0;
+  text-align: center;
+}
+
+.container:hover {
+  background-color: #a6a6a6;
 }
