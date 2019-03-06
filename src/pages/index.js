@@ -1,10 +1,10 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link } from 'gatsby';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-import { GymButton } from "../components"
+import Layout from '../components/layout';
+import Image from '../components/image';
+import SEO from '../components/seo';
+import { GymButton } from '../components';
 
 const IndexPage = () => (
   <Layout>
@@ -18,6 +18,6 @@ const IndexPage = () => (
     <Link to="/page-2/">Go to page 2</Link>
     <GymButton>Hello</GymButton>
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;

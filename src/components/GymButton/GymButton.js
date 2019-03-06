@@ -10,9 +10,7 @@ const GymButton = props => {
 
   return (
     <button
-      className={
-        `${classes.container} ${fullWidth ? classes.fullWidth : ''}`
-      }
+      className={`${classes.container} ${fullWidth ? classes.fullWidth : ""}`}
       type="button"
       onClick={onClick}
     >
