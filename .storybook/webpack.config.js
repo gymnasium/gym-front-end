@@ -1,4 +1,4 @@
-module.exports = (baseConfig, env, defaultConfig) => {
+module.exports = ({config: defaultConfig, mode}) => {
   // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
   defaultConfig.module.rules[0].exclude = [/node_modules\/(?!(gatsby)\/)/]
 
