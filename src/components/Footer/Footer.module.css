@@ -1,0 +1,109 @@
+footer {
+  width: 100%;
+  color: #fff;
+  font-size: 16px;
+
+  margin: 0;
+  background-color: #222;
+  border-top: 10px solid rgba(248, 151, 32, 0.9);
+  min-height: 170px;
+
+  box-shadow: 0 -1px 5px 0 rgba(0, 0, 0, 0.1);
+  padding: 25px 10px 30px 10px;
+}
+
+h2 {
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.gym-brand {
+  margin-bottom: 1em;
+}
+
+a:focus,
+a:active {
+  border-bottom: 0 none !important;
+}
+
+.gymnasium-logo {
+  width: 12.5em;
+  height: auto;
+  margin-top: 0;
+  margin-left: 0;
+}
+
+.gym-brand p {
+  width: 95%;
+  font-size: 1em;
+  line-height: 1.55;
+  margin-top: 1.2em;
+}
+
+.resources {
+  clear: left;
+}
+
+@media (min-width: 62em) {
+  .resources {
+    clear: none;
+  }
+}
+
+h2 {
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ {
+  padding-top: 0.625em;
+  margin-top: 0;
+  margin-bottom: 1.2em;
+}
+
+ul {
+  list-style: none url();
+  margin-top: 0.95em;
+  padding: 0;
+}
+
+li {
+  height: auto;
+  padding-right: 0;
+  border-right: 0;
+  margin-top: 0.4em;
+}
+
+a {
+  color: #f8971d;
+}
+
+a:hover,
+a:focus,
+.copyright a:hover,
+.copyright a:focus {
+  text-decoration: underline;
+}
+
+#headway-changelog-anchor {
+  height: 1.6em !important;
+}
+
+#HW_badge_cont {
+  margin-left: 0.6em;
+}
+
+.open-edx-logo {
+  width: 8.5em;
+  height: auto;
+}
+
+.copyright {
+  text-align: left;
+}
+
+.copyright small {
+  font-size: 80%;
+}

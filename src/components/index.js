@@ -1,3 +1,3 @@
-/* eslint-disable import/prefer-default-export */
+export { Footer } from './Footer';
 export { GymButton } from './GymButton';
 export { Link } from './Link';
