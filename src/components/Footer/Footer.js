@@ -2,16 +2,18 @@ import React from 'react';
 
 import classes from './Footer.module.css';
 
+console.log('footer classes', classes);
+
 const Footer = props => (
   <footer className="container-fluid" id="contentinfo">
     <div className="container">
       <div className="row">
         <nav aria-label="Footer Navigation">
           <div className="col-xs-12 col-sm-10 col-md-3">
-            <div className={classes['gym-brand']}>
+            <div className={classes.gymBrand}>
               <a href="/" title="Gymnasium Homepage">
                 <img
-                  className={classes['gymnasium-logo']}
+                  className={classes.gymnasiumLogo}
                   alt="Aquent Gymnasium"
                   srcSet="https://staging.gymcms.xyz/img/brand/gymnasium-logo-white.svg"
                   src="https://staging.gymcms.xyz/img/brand/gymnasium-logo-white-4x.png"
@@ -26,8 +28,8 @@ const Footer = props => (
               </p>
             </div>
           </div>
-          <div className={`col-xs-6 col-md-2 ${classes['what-we-do']}`}>
-            <section className={classes['footer-link-list']} id="what-we-do">
+          <div className={`col-xs-6 col-md-2 ${classes.whatWeDo}`}>
+            <section className={classes.footerLinkList} id="what-we-do">
               <h2>What We Do</h2>
               <ul>
                 <li>
@@ -54,8 +56,8 @@ const Footer = props => (
               </ul>
             </section>
           </div>
-          <div className={`col-xs-6 col-md-3 ${classes['our-focus']}`}>
-            <section className={classes['footer-link-list']} id="our-focus">
+          <div className={`col-xs-6 col-md-3 ${classes.ourFocus}`}>
+            <section className={classes.footerLinkList} id="our-focus">
               <h2>Opportunity Awaits</h2>
               <ul>
                 <li>
@@ -70,8 +72,8 @@ const Footer = props => (
               </ul>
             </section>
           </div>
-          <div className={`col-xs-6 col-md-3 ${classes['resources']}`}>
-            <section className={classes['footer-link-list']} id="resources">
+          <div className={`col-xs-6 col-md-3 ${classes.resources}`}>
+            <section className={classes.footerLinkList} id="resources">
               <h2>Resources</h2>
               <ul>
                 <li>
@@ -108,7 +110,7 @@ const Footer = props => (
             </section>
           </div>
           <div className="col-xs-6 col-md-1 social">
-            <section className={classes['footer-link-list']} id="social">
+            <section className={classes.footerLinkList} id="social">
               <h2>Social</h2>
               <ul>
                 <li>
@@ -221,7 +223,7 @@ const Footer = props => (
             rel="noopener noreferrer"
           >
             <img
-              className={classes['open-edx-logo']}
+              className={classes.openEdxLogo}
               alt="Powered by Open edX"
               src="https://files.edx.org/openedx-logos/edx-openedx-logo-tag-light.png"
               width="150"
