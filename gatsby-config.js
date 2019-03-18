@@ -35,6 +35,14 @@ module.exports = {
         policy: [{ userAgent: '*', disallow: '/' }],
       },
     },
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        cssLoaderOptions: {
+          camelCase: true,
+        },
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
