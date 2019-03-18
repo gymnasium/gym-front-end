@@ -35,7 +35,6 @@ module.exports = {
         policy: [{ userAgent: '*', disallow: '/' }],
       },
     },
-    // in gatsby-config.js
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
