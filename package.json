@@ -48,7 +48,7 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
     "storydev": "concurrently \"yarn storybook\" \"yarn develop\"",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./src/styles -p 6006",
     "build-storybook": "build-storybook"
   },
   "repository": {
