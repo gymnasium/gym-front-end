@@ -1,11 +1,13 @@
+@import '../../styles/_theme.css';
+
 footer {
   width: 100%;
   color: #fff;
   font-size: 16px;
 
   margin: 0;
-  background-color: #222;
-  border-top: 10px solid rgba(248, 151, 32, 0.9);
+  background-color: var(--gym-black);
+  border-top: 10px solid var(--gym-orange);
   min-height: 170px;
 
   box-shadow: 0 -1px 5px 0 rgba(0, 0, 0, 0.1);
@@ -77,7 +79,7 @@ li {
 }
 
 a {
-  color: #f8971d;
+  color: var(--gym-orange);
 }
 
 a:hover,

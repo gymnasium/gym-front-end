@@ -1,6 +1,8 @@
+@import '../../styles/_theme.css';
+
 a {
   text-decoration: none;
-  color: #f89820;
+  color: var(--gym-orange);
 }
 
 a:hover {
