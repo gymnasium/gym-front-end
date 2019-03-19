@@ -15,6 +15,7 @@ footer {
 }
 
 h2 {
+  font-family: var(--gym-font-stack);
   font-size: 1em;
   margin-top: 0;
   margin-bottom: 0;
@@ -59,7 +60,7 @@ h2 {
   margin-bottom: 0;
 }
 
- {
+.footer-link-list {
   padding-top: 0.625em;
   margin-top: 0;
   margin-bottom: 1.2em;
@@ -87,6 +88,8 @@ a:focus,
 .copyright a:hover,
 .copyright a:focus {
   text-decoration: underline;
+  color: var(--gym-orange);
+  border-bottom: none;
 }
 
 #headway-changelog-anchor {
