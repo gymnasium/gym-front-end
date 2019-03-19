@@ -1,9 +1,9 @@
 .container {
-  font: bold 1.4em/1 brandon-grotesque, 'Helvetica Neue', Helvetica, sans-serif;
-  background-color: hsl(33, 94%, 55%);
-  color: #ffffff;
+  font: bold 1.4em/1 var(--gym-font-stack);
+  background-color: var(--gym-orange);
+  color: var(--gym-white);
   border: 0;
-  padding: 1em;  
+  padding: 1em;
   border-radius: 0.125em;
   box-shadow: none;
   text-shadow: none;
@@ -15,7 +15,7 @@
 }
 
 .container:hover {
-  background-color: #a6a6a6;
+  background-color: var(--gym-light-gray);
 }
 
 .fullWidth {

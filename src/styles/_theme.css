@@ -1,0 +1,12 @@
+/** This file should only contain css variables for use across gymnasium */
+:root {
+  /** colors **/
+  --gym-orange: #f8971d;
+  --gym-black: #222222;
+  --gym-white: #ffffff;
+  --gym-light-gray: #a6a6a6;
+
+  /** typefaces */
+  --gym-font-stack: brandon-grotesque, 'Helvetica Neue', Helvetica, sans-serif;
+  --gym-font-stack-text: 'Helvetica Neue', Helvetica, sans-serif;
+}

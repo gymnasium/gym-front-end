@@ -14,6 +14,7 @@
     "gatsby-plugin-react-helmet": "^3.0.10",
     "gatsby-plugin-robots-txt": "^1.4.0",
     "gatsby-plugin-sharp": "^2.0.29",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.0.27",
     "gatsby-transformer-sharp": "^2.1.17",
     "jquery": "^3.3.1",
@@ -45,7 +46,7 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
     "storydev": "concurrently \"yarn storybook\" \"yarn develop\"",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./src/styles -p 6006",
     "build-storybook": "build-storybook"
   },
   "repository": {
