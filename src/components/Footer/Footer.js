@@ -30,7 +30,7 @@ const Footer = props => (
           </div>
           <div className={`col-xs-6 col-md-2 ${classes.whatWeDo}`}>
             <section className={classes.footerLinkList} id="what-we-do">
-              <h2>What We Do</h2>
+              <h2 className="all-caps">What We Do</h2>
               <ul>
                 <li>
                   <a href="/courses">Courses</a>
@@ -58,7 +58,7 @@ const Footer = props => (
           </div>
           <div className={`col-xs-6 col-md-3 ${classes.ourFocus}`}>
             <section className={classes.footerLinkList} id="our-focus">
-              <h2>Opportunity Awaits</h2>
+              <h2 className="all-caps">Opportunity Awaits</h2>
               <ul>
                 <li>
                   <a href="/ux-design">UX Design</a>
@@ -74,7 +74,7 @@ const Footer = props => (
           </div>
           <div className={`col-xs-6 col-md-3 ${classes.resources}`}>
             <section className={classes.footerLinkList} id="resources">
-              <h2>Resources</h2>
+              <h2 className="all-caps">Resources</h2>
               <ul>
                 <li>
                   <a href="/faq">FAQ</a>
@@ -111,7 +111,7 @@ const Footer = props => (
           </div>
           <div className="col-xs-6 col-md-1 social">
             <section className={classes.footerLinkList} id="social">
-              <h2>Social</h2>
+              <h2 className="all-caps">Social</h2>
               <ul>
                 <li>
                   <a
