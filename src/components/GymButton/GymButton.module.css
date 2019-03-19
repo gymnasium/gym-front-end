@@ -1,7 +1,7 @@
 @import '../../styles/_theme.css';
 
 .container {
-  font: bold 1.4em/1 var(--gym-font-stack-text);
+  font: bold 1.4em/1 var(--gym-font-stack);
   background-color: var(--gym-orange);
   color: var(--gym-white);
   border: 0;
