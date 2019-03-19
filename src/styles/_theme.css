@@ -6,6 +6,6 @@
   --gym-light-gray: #a6a6a6;
 
   /** typefaces */
-  --gym-font-stack-text: brandon-grotesque, 'Helvetica Neue', Helvetica,
-    sans-serif;
+  --gym-font-stack: brandon-grotesque, 'Helvetica Neue', Helvetica, sans-serif;
+  --gym-font-stack-text: 'Helvetica Neue', Helvetica, sans-serif;
 }
