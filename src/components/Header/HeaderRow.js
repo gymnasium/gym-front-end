@@ -17,7 +17,7 @@ const HeaderRow = ({ backgroundColor, classes: inputClasses, children }) => {
 
   return (
     <div
-      className={`container-fluid ${classes.headerRowContainer}`}
+      className={`container-fluid ${classes['header-row-container']}`}
       style={styles.headerRowContainer}
     >
       <div className="container" id="primary-nav-bottom">
