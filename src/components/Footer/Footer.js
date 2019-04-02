@@ -2,8 +2,6 @@ import React from 'react';
 
 import classes from './Footer.module.css';
 
-console.log('footer classes', classes);
-
 const Footer = props => (
   <footer className="container-fluid" id="contentinfo">
     <div className="container">
