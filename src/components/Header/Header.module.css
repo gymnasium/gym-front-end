@@ -1,0 +1,13 @@
+.header-row-container {
+  height: 5rem;
+}
+
+.primary-nav-top-container {
+  background-color: #000;
+  height: 5rem;
+}
+
+.primary-nav-bottom-container {
+  background: #222;
+  height: 5rem;
+}
