@@ -8,7 +8,14 @@ const CourseAboutPage = ({ data }) => {
   const { course } = data.takeshape;
   return (
     <Layout>
-      <h1>{course.title}</h1>
+      <div className="container">
+        <div className="row">
+          <div className="col-xs-12">
+            <h1>{course.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: course.descriptionHtml }} />
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 };
