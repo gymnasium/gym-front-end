@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "bootstrap": "3.4.1",
+    "bootstrap": "4.3.1",
     "dotenv": "^7.0.0",
     "gatsby": "^2.3.23",
     "gatsby-image": "^2.0.39",
@@ -22,6 +22,7 @@
     "jquery": "^3.4.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
     "react-scripts": "^2.1.8"
