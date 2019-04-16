@@ -7,8 +7,8 @@ console.log('footer classes', classes);
 const Footer = props => (
   <footer className="container-fluid" id="contentinfo">
     <div className="container">
-      <div className="row">
-        <nav aria-label="Footer Navigation">
+      <nav aria-label="Footer Navigation">
+        <div className="row">
           <div className="col-xs-12 col-sm-10 col-md-3">
             <div className={classes.gymBrand}>
               <a href="/" title="Gymnasium Homepage">
@@ -212,8 +212,8 @@ const Footer = props => (
               </ul>
             </section>
           </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
       <div className="row">
         <div className="col-xs-12">
           <a
