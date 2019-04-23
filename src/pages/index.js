@@ -1,18 +1,23 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Col, Container, Row } from 'react-bootstrap';
 
 import { GymButton, Image, Layout, SEO } from '../components';
 
+import classes from './HomePage.module.css';
+
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Gymnasium</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <GymButton>Hello</GymButton>
+    <SEO title="Home" />
+    <Container fluid>
+      <Container className={classes.container}>
+        <Row>
+          <Col>
+            <GymButton>Hello</GymButton>
+            <h1>test</h1>
+          </Col>
+        </Row>
+      </Container>
+    </Container>
   </Layout>
 );
 
