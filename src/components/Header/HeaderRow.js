@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Col, Container, Row } from 'react-bootstrap';
+
 import baseClasses from './Header.module.css';
 
 const HeaderRow = ({ backgroundColor, classes: inputClasses, children }) => {
@@ -16,16 +18,17 @@ const HeaderRow = ({ backgroundColor, classes: inputClasses, children }) => {
   };
 
   return (
-    <div
-      className={`container-fluid ${classes['header-row-container']}`}
+    <Container
+      fluid
+      className={classes['header-row-container']}
       style={styles.headerRowContainer}
     >
-      <div className="container" id="primary-nav-bottom">
-        <div className="row">
-          <div className="col-xs-12">{children}</div>
-        </div>
-      </div>
-    </div>
+      <Container id="primary-nav-bottom">
+        <Row>
+          <Col>{children}</Col>
+        </Row>
+      </Container>
+    </Container>
   );
 };
 

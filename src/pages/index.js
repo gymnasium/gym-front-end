@@ -1,23 +1,66 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { graphql } from 'gatsby';
+import { Col, Container, Row } from 'react-bootstrap';
 
-import Layout from '../components/layout';
-import Image from '../components/image';
-import SEO from '../components/seo';
-import { GymButton } from '../components';
+import { FeaturedCourse, GymButton, Layout, SEO } from '../components';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Gymnasium</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-    <GymButton>Hello</GymButton>
-  </Layout>
-);
+import classes from './HomePage.module.css';
+
+const IndexPage = ({ data }) => {
+  const { courses } = data.takeshape;
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <Container fluid>
+        <Container className={classes.container}>
+          <Row>
+            <Col>
+              <GymButton>Hello</GymButton>
+              <h1>test</h1>
+            </Col>
+          </Row>
+
+          <section id="featured-courses" className={classes.featuredCourses}>
+            <ul>
+              {courses.items.map(course => (
+                <FeaturedCourse key={course._id} course={course} />
+              ))}
+            </ul>
+          </section>
+        </Container>
+      </Container>
+    </Layout>
+  );
+};
+
+export const query = graphql`
+  {
+    takeshape {
+      courses: getFullCourseList {
+        items {
+          author {
+            displayName
+            workplace
+            photo {
+              path
+            }
+          }
+          title
+          descriptionHtml
+          courseNumber
+          courseType {
+            displayName
+            color {
+              hex
+            }
+          }
+          coverImage {
+            path
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default IndexPage;
