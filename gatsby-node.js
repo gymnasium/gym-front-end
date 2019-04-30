@@ -8,6 +8,7 @@
 
 const path = require('path');
 const { getUrlFromTitle } = require('./src/utils/urlUtils');
+const CONSTANTS = require('./src/utils/constants');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -50,7 +51,7 @@ exports.createPages = ({ actions, graphql }) => {
     courses.items.forEach((course, idx) => {
       console.log(`🔥 found course ${course.title} with id ${course._id}`);
       createPage({
-        path: `courses/${course.courseNumber}`,
+        path: `${CONSTANTS.URLS.COURSES.LIST}${course.courseNumber}`,
         component: courseAboutTemplate,
         context: {
           id: course._id,
@@ -64,7 +65,7 @@ exports.createPages = ({ actions, graphql }) => {
       console.log(`🔥 found blog post ${post.title} with id ${post._id}`);
       const sanitizedTitle = getUrlFromTitle(post.title);
       createPage({
-        path: `blog/post/${sanitizedTitle}`,
+        path: `${CONSTANTS.URLS.BLOG.SINGLE_POST}${sanitizedTitle}`,
         component: blogPostTemplate,
         context: {
           id: post._id,
