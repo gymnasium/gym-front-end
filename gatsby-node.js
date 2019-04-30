@@ -7,6 +7,7 @@
 // You can delete this file if you're not using it
 
 const path = require('path');
+const { getUrlFromTitle } = require('./src/utils/urlUtils');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -14,6 +15,9 @@ exports.createPages = ({ actions, graphql }) => {
   // import each of the page types to be rendered on the site
   const courseAboutTemplate = path.resolve(
     './src/templates/Course/CourseAboutPage.js'
+  );
+  const blogPostTemplate = path.resolve(
+    `./src//templates/Blog/BlogPostPage.js`
   );
 
   return graphql(`
@@ -23,18 +27,21 @@ exports.createPages = ({ actions, graphql }) => {
           items {
             _id
             title
-            syllabus
             courseNumber
-            descriptionHtml
-            shortDescription
             courseUrlSuffix
+          }
+        }
+        blogPosts: getBlogPostList {
+          items {
+            _id
+            title
           }
         }
       }
     }
   `).then(result => {
     const { takeshape } = result.data;
-    const { courses } = takeshape;
+    const { courses, blogPosts } = takeshape;
 
     if (result.errors) {
       return Promise.reject(result.errors);
@@ -47,11 +54,28 @@ exports.createPages = ({ actions, graphql }) => {
         component: courseAboutTemplate,
         context: {
           id: course._id,
+          courseUrlSuffix: course.courseUrlSuffix,
           type: 'courseAbout',
         },
       });
     });
 
-    return courses.items;
+    blogPosts.items.forEach((post, idx) => {
+      console.log(`🔥 found blog post ${post.title} with id ${post._id}`);
+      const sanitizedTitle = getUrlFromTitle(post.title);
+      createPage({
+        path: `blog/post/${sanitizedTitle}`,
+        component: blogPostTemplate,
+        context: {
+          id: post._id,
+          type: 'blogPost',
+        },
+      });
+    });
+
+    return {
+      courses: courses.items,
+      blogPosts: blogPosts.items,
+    };
   });
 };
