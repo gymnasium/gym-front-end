@@ -1,8 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { Container, Col, Row } from 'react-bootstrap';
-import { map } from 'lodash';
+import { Container } from 'react-bootstrap';
 
 import { CourseList, Layout } from '../../components';
 
