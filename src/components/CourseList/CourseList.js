@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { map } from 'lodash';
 
-import { Container, Col, Row } from 'react-bootstrap';
-
 import classes from './CourseList.module.css';
 import CourseSummaryListItem from './CourseSummaryListItem';
 
