@@ -1,0 +1,16 @@
+.courseList {
+  list-style: none;
+}
+
+.courseContainer figcaption {
+  background-color: var(--gym-dark-gray);
+  padding: 1rem;
+}
+
+.courseContainer figcaption a {
+  color: var(--gym-white);
+}
+
+.courseContainer figcaption a:hover {
+  text-decoration: none;
+}

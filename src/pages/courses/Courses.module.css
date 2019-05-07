@@ -1,0 +1,17 @@
+.pageContainer {
+  background-color: var(--gym-light-page-background);
+}
+
+.courseListContainer {
+  background-color: var(--gym-white);
+  padding: 1rem 1.5rem;
+}
+
+.courseListContainer h1,
+.courseListContainer h2 {
+  font-family: var(--gym-font-stack);
+  font-weight: 900;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
