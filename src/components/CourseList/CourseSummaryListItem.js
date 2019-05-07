@@ -30,7 +30,7 @@ const CourseSummaryListItem = ({ course }) => {
               <img
                 className="img-fluid"
                 src={getImageUrl(coverImage.path)}
-                alt={`${courseNumber} ${title} cover image`}
+                alt={`Course ${courseNumber} - ${title}`}
               />
             </Link>
             <figcaption>
