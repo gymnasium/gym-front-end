@@ -50,8 +50,14 @@ exports.createPages = ({ actions, graphql }) => {
 
     courses.items.forEach((course, idx) => {
       console.log(`🔥 found course ${course.title} with id ${course._id}`);
+
+      // generate URL of format courses/100/coding-for-designers
+      const url = `${CONSTANTS.URLS.COURSES.LIST}${
+        course.courseNumber
+      }/${getUrlFromTitle(course.title)}`;
+
       createPage({
-        path: `${CONSTANTS.URLS.COURSES.LIST}${course.courseNumber}`,
+        path: url,
         component: courseAboutTemplate,
         context: {
           id: course._id,
