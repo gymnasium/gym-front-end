@@ -1,3 +1,5 @@
+export { CourseList } from './CourseList';
+
 export { FeaturedCourse } from './FeaturedCourse';
 export { Footer } from './Footer';
 export { GymButton } from './GymButton';
