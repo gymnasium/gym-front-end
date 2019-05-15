@@ -26,13 +26,15 @@ const CourseSummaryListItem = ({ course }) => {
       <Row>
         <Col md={4}>
           <figure>
-            <Link to={courseAboutUrl}>
-              <img
-                className="img-fluid"
-                src={getImageUrl(coverImage.path)}
-                alt={`Course ${courseNumber} - ${title}`}
-              />
-            </Link>
+            {coverImage && (
+              <Link to={courseAboutUrl}>
+                <img
+                  className="img-fluid"
+                  src={getImageUrl(coverImage.path)}
+                  alt={`Course ${courseNumber} - ${title}`}
+                />
+              </Link>
+            )}
             <figcaption>
               <GymButton fullWidth>
                 <Link to={courseAboutUrl} className="gym-button">
