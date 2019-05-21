@@ -58,8 +58,8 @@ const CourseSummaryListItem = ({ course }) => {
               <Col>
                 <dl>
                   <dt>Skills Covered</dt>
-                  {map(skillsCovered, ({ skill }) => (
-                    <dd>
+                  {map(skillsCovered, ({ skill }, idx) => (
+                    <dd key={`skill-covered-${idx}`}>
                       <span>{skill}</span>
                     </dd>
                   ))}
@@ -69,8 +69,8 @@ const CourseSummaryListItem = ({ course }) => {
               <Col>
                 <dl>
                   <dt>This course is for </dt>
-                  {map(thisCourseIsFor, ({ attribute }) => (
-                    <dd>
+                  {map(thisCourseIsFor, ({ attribute }, idx) => (
+                    <dd key={`this-course-is-for-${idx}`}>
                       <span>{attribute}</span>
                     </dd>
                   ))}
