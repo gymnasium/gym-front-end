@@ -17,7 +17,6 @@ const CourseSummaryListItem = ({ course }) => {
     skillsCovered,
     thisCourseIsFor,
   } = course;
-  console.dir('course is', course);
 
   const courseAboutUrl = `${CONSTANTS.URLS.COURSES.LIST}${courseNumber}/about`;
 

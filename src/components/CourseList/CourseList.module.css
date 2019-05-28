@@ -1,5 +1,7 @@
 .courseList {
   list-style: none;
+  padding-top: 1rem;
+  border-top: 1px solid var(--gym-gray);
 }
 
 .courseContainer figcaption {

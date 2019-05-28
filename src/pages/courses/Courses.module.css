@@ -2,16 +2,58 @@
   background-color: var(--gym-light-page-background);
 }
 
-.courseListContainer {
+.pageContentContainer {
   background-color: var(--gym-white);
-  padding: 1rem 1.5rem;
+  padding: 0 2rem;
 }
 
-.courseListContainer h1,
-.courseListContainer h2 {
+.pageContentContainer h1,
+.pageContentContainer h2,
+.pageContentContainer h3 {
   font-family: var(--gym-font-stack);
   font-weight: 900;
-  font-size: 30px;
   text-transform: uppercase;
   margin-bottom: 1rem;
+}
+
+.pageContentContainer h2 {
+  font-size: 20px;
+}
+
+.pageContentContainer h3 {
+  font-size: 15px;
+}
+
+.courseListColumn,
+.rightHandColumn {
+  padding-top: 1rem;
+}
+
+.courseListColumn {
+  border-right: 1px dashed var(--gym-gray);
+}
+
+nav.subnav {
+  padding: 1rem 0;
+}
+
+nav.subnav a {
+  margin-right: 1rem;
+  text-transform: uppercase;
+  color: var(--gym-black);
+  font-weight: bold;
+  font-family: var(--gym-font-stack);
+  font-size: 1.1rem;
+}
+
+nav.subnav a:hover {
+  color: var(--gym-orange);
+  text-decoration: none;
+  border-bottom: 1px solid;
+}
+
+.courseTypeDescription {
+  font-family: var(--gym-font-stack);
+  font-weight: 300;
+  font-size: 22px;
 }
