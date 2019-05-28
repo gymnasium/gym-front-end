@@ -2,7 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Col, Container, Row } from 'react-bootstrap';
 
-import { FeaturedCourse, GymButton, Layout, SEO } from '../components';
+import {
+  FeaturedCourse,
+  GymButton,
+  Layout,
+  Microcopy,
+  SEO,
+} from '../components';
 
 import classes from './HomePage.module.css';
 
@@ -27,6 +33,13 @@ const IndexPage = ({ data }) => {
               ))}
             </ul>
           </section>
+
+          <Row>
+            <Col>
+              <Microcopy title="home-page-view-courses-prompt" />
+              <GymButton>View all Courses</GymButton>
+            </Col>
+          </Row>
         </Container>
       </Container>
     </Layout>

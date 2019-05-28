@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Container, Col, Row } from 'react-bootstrap';
 
+import { Microcopy } from '..';
 import classes from './Footer.module.css';
 
 const Footer = props => (
@@ -22,10 +23,7 @@ const Footer = props => (
                   role="heading"
                 />
               </a>
-              <p>
-                Bridging the gap between education and opportunity with free
-                online courses.
-              </p>
+              <Microcopy title="footer-slogan" />
             </div>
           </Col>
           <Col xs={6} md={2}>

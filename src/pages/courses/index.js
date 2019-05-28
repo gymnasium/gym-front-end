@@ -2,12 +2,12 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import { Container, Col, Row } from 'react-bootstrap';
-import { CourseList, Layout } from '../../components';
+import { CourseList, Layout, Microcopy } from '../../components';
 
 import classes from './Courses.module.css';
 
 const CoursesPage = ({ data }) => {
-  const courses = data.takeshape.courses;
+  const { fullCourses } = data.takeshape;
 
   return (
     <Layout>
@@ -25,14 +25,17 @@ const CoursesPage = ({ data }) => {
               <div className={classes.courseListContainer}>
                 <section>
                   <h1 id="full-courses">Full Courses</h1>
-                  <CourseList courses={courses.items} />
+                  <Microcopy title="full-courses-description" />
+                  <CourseList courses={fullCourses.items} />
                 </section>
                 <section>
                   <h1 id="gym-shorts">Gym Shorts</h1>
+                  <Microcopy title="full-courses-description" />
                   <CourseList />
                 </section>
                 <section>
                   <h1 id="take-5">Take 5</h1>
+                  <Microcopy title="take-five-description" />
                   <CourseList />
                 </section>
               </div>
@@ -47,8 +50,9 @@ const CoursesPage = ({ data }) => {
 export const query = graphql`
   {
     takeshape {
-      courses: getFullCourseList {
+      fullCourses: getFullCourseList {
         items {
+          _id
           courseNumber
           courseUrlSuffix
           coverImage {

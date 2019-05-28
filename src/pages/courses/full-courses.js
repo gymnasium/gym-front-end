@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 
 import { Container } from 'react-bootstrap';
 
-import { CourseList, Layout } from '../../components';
+import { CourseList, Layout, Microcopy } from '../../components';
 
 const FullCourses = ({ data }) => {
   const { courses } = data.takeshape;
@@ -11,6 +11,7 @@ const FullCourses = ({ data }) => {
     <Layout>
       <Container>
         <h1>Full courses</h1>
+        <Microcopy title="full-courses-description" />
         <CourseList courses={courses.items} />
       </Container>
     </Layout>
