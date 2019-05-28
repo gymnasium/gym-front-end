@@ -21,7 +21,7 @@ export const getMicrocopy = (title, microcopyDictionary) => {
   return foundCopy.bodyHtml;
 };
 
-const Microcopy = ({ component: Component = 'div', title, data }) => {
+const Microcopy = ({ component: Component = 'div', title, data, ...rest }) => {
   return (
     <StaticQuery
       query={graphql`
@@ -39,7 +39,12 @@ const Microcopy = ({ component: Component = 'div', title, data }) => {
       render={data => {
         const { microcopyDictionary } = data.takeshape;
         const microcopy = getMicrocopy(title, microcopyDictionary.items);
-        return <Component dangerouslySetInnerHTML={{ __html: microcopy }} />;
+        return (
+          <Component
+            dangerouslySetInnerHTML={{ __html: microcopy }}
+            {...rest}
+          />
+        );
       }}
     />
   );

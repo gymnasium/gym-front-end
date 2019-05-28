@@ -1,0 +1,8 @@
+h2.listTitle {
+  font-size: 1.5rem;
+}
+
+.upcomingCourseContainer {
+  border-top: 1px solid var(--gym-gray);
+  padding-top: 1rem;
+}
