@@ -44,7 +44,7 @@ const CourseSummaryListItem = ({ course }) => {
           </figure>
         </Col>
         <Col md={8}>
-          <div className="course-description">
+          <div className={classes.courseDescription}>
             <header>
               <h1>{title}</h1>
             </header>
