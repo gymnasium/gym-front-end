@@ -2,6 +2,7 @@
   list-style: none;
   padding-top: 1rem;
   border-top: 1px solid var(--gym-gray);
+  margin-bottom: 4rem;
 }
 
 .courseContainer figcaption {
@@ -15,4 +16,38 @@
 
 .courseContainer figcaption a:hover {
   text-decoration: none;
+}
+
+.courseContainer dt {
+  font-family: var(--gym-font-stack);
+  font-weight: 900;
+  color: var(--gym-black);
+  letter-spacing: 0.06em;
+  word-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.6em;
+}
+
+.courseContainer dl {
+  color: var(--gym-black);
+  letter-spacing: 0.06em;
+  word-spacing: 0.05em;
+  margin-left: 1.2em;
+  margin-top: 0;
+}
+
+.courseContainer dd {
+  display: list-item;
+  list-style: disc;
+  color: var(--gym-orange);
+  margin-top: 0.3rem;
+  margin-bottom: 0;
+}
+
+.courseContainer dd span {
+  color: var(--gym-black);
+}
+
+.courseDescription h1 {
+  margin-bottom: 0;
 }

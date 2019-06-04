@@ -8,9 +8,11 @@ import CourseSummaryListItem from './CourseSummaryListItem';
 const CourseList = ({ courses }) => {
   return (
     <ul className={classes.courseList}>
-      {map(courses, course => (
-        <CourseSummaryListItem key={course._id} course={course} />
-      ))}
+      {map(courses, course => {
+        console.log('course list');
+        console.log(courses);
+        return <CourseSummaryListItem key={course._id} course={course} />;
+      })}
     </ul>
   );
 };

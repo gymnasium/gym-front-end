@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { size } from 'lodash';
 
 import { Container, Col, Row } from 'react-bootstrap';
 import {
@@ -12,7 +13,10 @@ import {
 import classes from './Courses.module.css';
 
 const CoursesPage = ({ data }) => {
-  const { fullCourses } = data.takeshape;
+  const { fullCourses, gymShorts, takeFives } = data.takeshape;
+
+  const hasTakeFives =
+    takeFives && takeFives.items && size(takeFives.items) > 0;
 
   return (
     <Layout>
@@ -21,7 +25,7 @@ const CoursesPage = ({ data }) => {
           <nav className={classes.subnav}>
             <a href="#full-courses">Full Courses</a>
             <a href="#gym-shorts">Gym Shorts</a>
-            <a href="#take-5">Take 5</a>
+            {hasTakeFives && <a href="#take-5">Take 5</a>}
           </nav>
         </Container>
         <Container>
@@ -42,16 +46,19 @@ const CoursesPage = ({ data }) => {
                     title="full-courses-description"
                     className={classes.courseTypeDescription}
                   />
-                  <CourseList />
+                  <CourseList courses={gymShorts.items} />
                 </section>
-                <section>
-                  <h1 id="take-5">Take 5</h1>
-                  <Microcopy
-                    title="take-five-description"
-                    className={classes.courseTypeDescription}
-                  />
-                  <CourseList />
-                </section>
+
+                {hasTakeFives && (
+                  <section>
+                    <h1 id="take-5">Take 5</h1>
+                    <Microcopy
+                      title="take-five-description"
+                      className={classes.courseTypeDescription}
+                    />
+                    <CourseList />
+                  </section>
+                )}
               </Col>
               <Col md={3} className={classes.rightHandColumn}>
                 <UpcomingCoursesList />
@@ -68,6 +75,26 @@ export const query = graphql`
   {
     takeshape {
       fullCourses: getFullCourseList {
+        items {
+          _id
+          courseNumber
+          courseUrlSuffix
+          coverImage {
+            path
+          }
+          descriptionHtml
+          shortDescription
+          skillsCovered {
+            skill
+          }
+          syllabus
+          thisCourseIsFor {
+            attribute
+          }
+          title
+        }
+      }
+      gymShorts: getGymShortList {
         items {
           _id
           courseNumber
