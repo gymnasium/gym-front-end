@@ -1,12 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 import {
-  FeaturedCourse,
-  GymButton,
+  AsSeenIn,
+  FeaturedCourseSection,
+  FindWork,
+  HowItWorks,
   Layout,
-  Microcopy,
   SEO,
 } from '../components';
 
@@ -19,27 +20,10 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <Container fluid>
         <Container className={classes.container}>
-          <Row>
-            <Col>
-              <GymButton>Hello</GymButton>
-              <h1>test</h1>
-            </Col>
-          </Row>
-
-          <section id="featured-courses" className={classes.featuredCourses}>
-            <ul>
-              {courses.items.map(course => (
-                <FeaturedCourse key={course._id} course={course} />
-              ))}
-            </ul>
-          </section>
-
-          <Row>
-            <Col>
-              <Microcopy title="home-page-view-courses-prompt" />
-              <GymButton>View all Courses</GymButton>
-            </Col>
-          </Row>
+          <HowItWorks />
+          <FeaturedCourseSection courses={courses} />
+          <FindWork />
+          <AsSeenIn />
         </Container>
       </Container>
     </Layout>
