@@ -1436,18 +1436,19 @@
     react-inspector "^2.3.0"
     uuid "^3.3.2"
 
-"@storybook/addon-links@^5.0.11":
-  version "5.0.11"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-5.0.11.tgz#59a9ce8acc8d5dd7e5622ff875cafc8fe4d6e865"
-  integrity sha512-ZZibz+ROCGz0I8V20jyj8sUjErnbXlFhp5P5xH3reDbfQQwY7ut7BEm0FHM9ksyUA0MvExWmiKuvNDU5dQPqgA==
+"@storybook/addon-links@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-5.1.1.tgz#a6474959b2bdc132d647efd326380a134d92a483"
+  integrity sha512-APtGDOQP+MbCtSrbFfsUuaYmyGDUPaeAVxBF5sR21swsf2dVXWCEdKN2v3GgQjV55yedCNA643XOZ4Uywi8heA==
   dependencies:
-    "@storybook/addons" "5.0.11"
-    "@storybook/core-events" "5.0.11"
+    "@storybook/addons" "5.1.1"
+    "@storybook/core-events" "5.1.1"
+    "@storybook/router" "5.1.1"
     common-tags "^1.8.0"
-    core-js "^2.6.5"
+    core-js "^3.0.1"
     global "^4.3.2"
-    prop-types "^15.6.2"
-    qs "^6.5.2"
+    prop-types "^15.7.2"
+    qs "^6.6.0"
 
 "@storybook/addons@5.0.11":
   version "5.0.11"
@@ -1460,7 +1461,7 @@
     global "^4.3.2"
     util-deprecate "^1.0.2"
 
-"@storybook/addons@^5.1.1":
+"@storybook/addons@5.1.1", "@storybook/addons@^5.1.1":
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.1.1.tgz#6457c4f60ae0cc49ad4919c45272b1cc181b217c"
   integrity sha512-k7EhHudEkVkv43ytaK3dh+51qWT3Mww3Ezz/uYffLDYIu3ya7KpleWnbdAJ7Zrd4Htc2Jl5RDmm8tz+JFSYtcw==
