@@ -1,5 +1,7 @@
 import React from 'react';
 
-const AsSeenIn = () => <h1>As Seen In</h1>;
+import { Title } from '../';
+
+const AsSeenIn = () => <Title>As Seen In</Title>;
 
 export default AsSeenIn;

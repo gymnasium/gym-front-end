@@ -1,0 +1,37 @@
+.featuredCourseListItem {
+  max-width: 25%;
+  border: 1px solid var(--gym-gray);
+}
+
+.featuredCourseListItem header {
+  color: var(--gym-white);
+  padding: 1rem;
+}
+
+.featuredCourseListItem footer {
+  padding: 1rem;
+}
+
+.featuredCourseListItem a {
+  color: var(--gym-white);
+}
+
+.courseTitle {
+  color: var(--gym-white);
+}
+
+.courseType {
+  font-family: var(--gym-font-stack);
+  letter-spacing: 0.075em;
+  word-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+.shortDescription {
+  font-family: var(--gym-font-stack);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin: 0.5em 0 0;
+}
