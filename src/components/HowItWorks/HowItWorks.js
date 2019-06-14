@@ -1,13 +1,13 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 
-import { Microcopy } from '..';
+import { Microcopy, Title } from '..';
 
 import classes from './HowItWorks.module.css';
 
 const HowItWorks = () => (
   <header id="how-gymnasium-works" className={classes.headerTab}>
-    <h1 className="text-center">How Gymnasium Works</h1>
+    <Title className="text-center">How Gymnasium Works</Title>
     <section className={classes.howItWorks}>
       <Row>
         <Col>

@@ -2,25 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { getImageUrl } from 'takeshape-routing';
 
+import { GymButton, Title } from '../';
+
+import classes from './FeaturedCourse.module.css';
+
 const FeaturedCourse = ({ course }) => {
   const {
     courseType,
     title,
     coverImage,
-    subtitle,
+    shortDescription,
     author,
     courseNumber,
   } = course;
 
   const courseUrl = `/courses/${courseNumber}`;
 
+  const headerBackgroundStyle = {
+    backgroundColor: courseType.color.hex,
+  };
+
   return (
-    <li>
-      <div className="card featured-course user-experience">
-        <div className="card-main equal-h">
-          <header>
-            <b className="course-type">{courseType.displayName}</b>
-            <div className="mask">
+    <li className={classes.featuredCourseListItem}>
+      <div>
+        <div>
+          <header style={headerBackgroundStyle}>
+            <b className={classes.courseType}>{courseType.displayName}</b>
+            <div>
               <a href={courseUrl} title="Learn More">
                 <img
                   alt={title}
@@ -30,28 +38,26 @@ const FeaturedCourse = ({ course }) => {
               </a>
             </div>
             <h2>
-              <a href={courseUrl} title="Learn More">
-                {title}
-              </a>
+              <Title className={classes.courseTitle}>{title}</Title>
             </h2>
-            <p>{subtitle}</p>
+            <p className={classes.shortDescription}>{shortDescription}</p>
           </header>
         </div>
-        <div className="card-footer">
-          <div className="card-info">
-            <dl className="instructor">
-              <dt className="byline">
+        <footer>
+          <div>
+            <dl className={classes.instructor}>
+              <dt className={classes.byline}>
                 <b>with {author.displayName}</b>
               </dt>
               <dd>{author.workplace}</dd>
             </dl>
           </div>
-          <div className="card-cta">
-            <a className="gym-button" href={courseUrl}>
-              <b>Learn More</b>
+          <div className={classes.cardCta}>
+            <a href={courseUrl}>
+              <GymButton>Learn More</GymButton>
             </a>
           </div>
-        </div>
+        </footer>
       </div>
     </li>
   );

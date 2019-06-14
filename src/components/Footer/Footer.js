@@ -6,7 +6,7 @@ import { Microcopy } from '..';
 import classes from './Footer.module.css';
 
 const Footer = props => (
-  <footer className="container-fluid" id="contentinfo">
+  <footer className={`${classes.siteFooter} container-fluid`} id="contentinfo">
     <Container>
       <nav aria-label="Footer Navigation">
         <Row>

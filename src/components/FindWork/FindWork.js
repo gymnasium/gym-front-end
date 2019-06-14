@@ -1,5 +1,7 @@
 import React from 'react';
 
-const FindWork = () => <h1>Find Work</h1>;
+import { Title } from '../';
+
+const FindWork = () => <Title>Find Work</Title>;
 
 export default FindWork;

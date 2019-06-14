@@ -35,6 +35,7 @@ export const query = graphql`
     takeshape {
       courses: getFullCourseList {
         items {
+          _id
           author {
             displayName
             workplace
@@ -54,6 +55,7 @@ export const query = graphql`
           coverImage {
             path
           }
+          shortDescription
         }
       }
     }
