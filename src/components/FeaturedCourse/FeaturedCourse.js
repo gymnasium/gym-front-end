@@ -1,26 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { getImageUrl } from 'takeshape-routing';
+import { Link } from 'gatsby';
 
 import { GymButton, Title } from '../';
 
+import * as CourseUtils from '../../utils/courses';
 import classes from './FeaturedCourse.module.css';
 
 const FeaturedCourse = ({ course }) => {
-  const {
-    courseType,
-    title,
-    coverImage,
-    shortDescription,
-    author,
-    courseNumber,
-  } = course;
-
-  const courseUrl = `/courses/${courseNumber}`;
+  const { courseType, title, coverImage, shortDescription, author } = course;
 
   const headerBackgroundStyle = {
     backgroundColor: courseType.color.hex,
   };
+
+  const courseUrl = CourseUtils.getAboutPageUrl(course);
 
   return (
     <li className={classes.featuredCourseListItem}>
@@ -29,13 +24,13 @@ const FeaturedCourse = ({ course }) => {
           <header style={headerBackgroundStyle}>
             <b className={classes.courseType}>{courseType.displayName}</b>
             <div>
-              <a href={courseUrl} title="Learn More">
+              <Link to={courseUrl} title="Learn More">
                 <img
                   alt={title}
                   src={getImageUrl(coverImage.path)}
                   width="256"
                 />
-              </a>
+              </Link>
             </div>
             <h2>
               <Title className={classes.courseTitle}>{title}</Title>
@@ -53,9 +48,9 @@ const FeaturedCourse = ({ course }) => {
             </dl>
           </div>
           <div className={classes.cardCta}>
-            <a href={courseUrl}>
+            <Link to={courseUrl}>
               <GymButton>Learn More</GymButton>
-            </a>
+            </Link>
           </div>
         </footer>
       </div>
