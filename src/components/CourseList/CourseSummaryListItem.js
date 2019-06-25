@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import { Col, Row } from 'react-bootstrap';
 import { map } from 'lodash';
 
-import CONSTANTS from '../../utils/constants';
+import * as CourseUtils from '../../utils/courses';
 import { GymButton } from '../';
 
 import classes from './CourseList.module.css';
@@ -18,7 +18,7 @@ const CourseSummaryListItem = ({ course }) => {
     thisCourseIsFor,
   } = course;
 
-  const courseAboutUrl = `${CONSTANTS.URLS.COURSES.LIST}${courseNumber}/about`;
+  const courseAboutUrl = CourseUtils.getAboutPageUrl(course);
 
   return (
     <li className={classes.courseContainer} data-course-id={courseNumber}>

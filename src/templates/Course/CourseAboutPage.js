@@ -1,12 +1,11 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 
 import { Col, Container, Row } from 'react-bootstrap';
 
 import { Layout } from '../../components';
 
-const CourseAboutPage = ({ data }) => {
-  const { course } = data.takeshape;
+const CourseAboutPage = ({ pageContext }) => {
+  const { course } = pageContext;
   return (
     <Layout>
       <Container>
@@ -20,20 +19,5 @@ const CourseAboutPage = ({ data }) => {
     </Layout>
   );
 };
-
-export const query = graphql`
-  query($id: ID!) {
-    takeshape {
-      course: getFullCourse(_id: $id) {
-        title
-        syllabus
-        courseNumber
-        descriptionHtml
-        shortDescription
-        courseUrlSuffix
-      }
-    }
-  }
-`;
 
 export default CourseAboutPage;
