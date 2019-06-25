@@ -37,9 +37,9 @@ const FeaturedCourse = ({ course }) => {
                 />
               </a>
             </div>
-            <h2>
-              <Title className={classes.courseTitle}>{title}</Title>
-            </h2>
+            <Title component="h2" className={classes.courseTitle}>
+              {title}
+            </Title>
             <p className={classes.shortDescription}>{shortDescription}</p>
           </header>
         </div>
