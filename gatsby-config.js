@@ -8,14 +8,27 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-684147-51',
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: false,
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true,
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        cookieDomain: 'thegymnasium.com',
+      },
+    },
+    {
       resolve: 'gatsby-source-graphql',
       options: {
         typeName: 'TS',
         fieldName: 'takeshape',
         // Url to query from
-        url: `https://api.takeshape.io/project/${
-          process.env.TAKESHAPE_PROJECT
-        }/graphql`,
+        url: `https://api.takeshape.io/project/${process.env.TAKESHAPE_PROJECT}/graphql`,
         // HTTP headers
         headers: {
           'Content-Type': 'application/json',

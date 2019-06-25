@@ -14,7 +14,7 @@ import {
 import classes from './HomePage.module.css';
 
 const IndexPage = ({ data }) => {
-  const { courses } = data.takeshape;
+  const { asSeenIn, courses } = data.takeshape;
   return (
     <Layout>
       <SEO title="Home" />
@@ -23,7 +23,7 @@ const IndexPage = ({ data }) => {
           <HowItWorks />
           <FeaturedCourseSection courses={courses} />
           <FindWork />
-          <AsSeenIn />
+          <AsSeenIn items={asSeenIn.items} />
         </Container>
       </Container>
     </Layout>
@@ -33,6 +33,16 @@ const IndexPage = ({ data }) => {
 export const query = graphql`
   {
     takeshape {
+      asSeenIn: getAsSeenInList {
+        items {
+          _id
+          url
+          publicationLogo {
+            title
+            path
+          }
+        }
+      }
       courses: getFullCourseList {
         items {
           _id
