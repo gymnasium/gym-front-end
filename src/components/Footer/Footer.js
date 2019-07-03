@@ -91,24 +91,6 @@ const Footer = props => (
                   <li>
                     <a href="/csr-policy">Corporate Social Responsibility</a>
                   </li>
-                  <li id="headway-changelog-anchor">
-                    <a
-                      href="https://headwayapp.co/the-gymnasium-changelog"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Changelog
-                    </a>
-                    <span id="HW_badge_cont" className={classes.HW_visible}>
-                      <span
-                        id="HW_badge"
-                        data-count-unseen="3"
-                        className={classes.HW_visible}
-                      >
-                        3
-                      </span>
-                    </span>
-                  </li>
                 </ul>
               </section>
             </div>
