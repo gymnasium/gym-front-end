@@ -26,6 +26,7 @@ const FeaturedCourse = ({ course }) => {
             <div>
               <Link to={courseUrl} title="Learn More">
                 <img
+                  className="img-fluid"
                   alt={title}
                   src={getImageUrl(coverImage.path)}
                   width="256"
@@ -63,7 +64,7 @@ FeaturedCourse.propTypes = {
     courseType: PropTypes.shape({}),
     title: PropTypes.string,
     subtitle: PropTypes.string,
-    courseNumber: PropTypes.number,
+    courseNumber: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     coverImage: PropTypes.shape({}),
     author: PropTypes.shape({}),
   }).isRequired,
