@@ -16,11 +16,15 @@ const FeaturedCourseSection = ({ courses }) => {
         <Title>Featured Courses</Title>
       </header>
       <section id="featured-courses" className={classes.featuredCourses}>
-        <ul>
+        <Row>
           {courses.items.map(course => (
-            <FeaturedCourse key={course._id} course={course} />
+            <React.Fragment>
+              <Col xs={6} md={4} lg={3} key={`featured-course-${course._id}`}>
+                <FeaturedCourse course={course} />
+              </Col>
+            </React.Fragment>
           ))}
-        </ul>
+        </Row>
         <Row>
           <Col>
             <Microcopy title="home-page-view-courses-prompt" />

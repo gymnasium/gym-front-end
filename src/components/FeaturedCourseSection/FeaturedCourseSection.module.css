@@ -1,9 +1,3 @@
-.featuredCourses ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
-  grid-gap: 1.2em;
-}
-
 .featuredCoursesTitleContainer {
   text-align: center;
   margin: 4rem 0 1rem 0;
