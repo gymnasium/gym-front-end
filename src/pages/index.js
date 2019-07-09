@@ -16,15 +16,13 @@ import classes from './HomePage.module.css';
 const IndexPage = ({ data }) => {
   const { asSeenIn, courses } = data.takeshape;
   return (
-    <Layout>
+    <Layout isFullWidthLayout>
       <SEO title="Home" />
-      <Container fluid>
-        <Container className={classes.container}>
-          <HowItWorks />
-          <FeaturedCourseSection courses={courses} />
-          <FindWork />
-          <AsSeenIn items={asSeenIn.items} />
-        </Container>
+      <Container className={classes.container}>
+        <HowItWorks />
+        <FeaturedCourseSection courses={courses} />
+        <FindWork />
+        <AsSeenIn items={asSeenIn.items} />
       </Container>
     </Layout>
   );
