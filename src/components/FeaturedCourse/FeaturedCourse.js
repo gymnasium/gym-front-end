@@ -26,6 +26,7 @@ const FeaturedCourse = ({ course }) => {
             <div>
               <Link to={courseUrl} title="Learn More">
                 <img
+                  className="img-fluid"
                   alt={title}
                   src={getImageUrl(coverImage.path)}
                   width="256"
