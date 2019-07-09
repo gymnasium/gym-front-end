@@ -16,7 +16,7 @@ import classes from './HomePage.module.css';
 const IndexPage = ({ data }) => {
   const { asSeenIn, courses } = data.takeshape;
   return (
-    <Layout>
+    <Layout isFullWidthLayout>
       <SEO title="Home" />
       <Container className={classes.container}>
         <HowItWorks />

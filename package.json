@@ -29,6 +29,7 @@
     "react-bootstrap": "^1.0.0-beta.9",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-responsive": "^8.0.0-beta.1",
     "react-scripts": "^3.0.1",
     "slugify": "^1.3.4",
     "takeshape-routing": "^4.86.0"
