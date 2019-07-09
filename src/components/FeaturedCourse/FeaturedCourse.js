@@ -64,7 +64,7 @@ FeaturedCourse.propTypes = {
     courseType: PropTypes.shape({}),
     title: PropTypes.string,
     subtitle: PropTypes.string,
-    courseNumber: PropTypes.number,
+    courseNumber: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     coverImage: PropTypes.shape({}),
     author: PropTypes.shape({}),
   }).isRequired,
