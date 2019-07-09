@@ -60,7 +60,7 @@ const CoursesPage = ({ data }) => {
                   </section>
                 )}
               </Col>
-              <Col md={3} className={classes.rightHandColumn}>
+              <Col xs={12} md={3} className={classes.rightHandColumn}>
                 <UpcomingCoursesList />
               </Col>
             </Row>

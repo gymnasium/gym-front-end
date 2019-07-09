@@ -18,11 +18,9 @@ const FeaturedCourseSection = ({ courses }) => {
       <section id="featured-courses" className={classes.featuredCourses}>
         <Row>
           {courses.items.map(course => (
-            <React.Fragment>
-              <Col xs={6} md={4} lg={3} key={`featured-course-${course._id}`}>
-                <FeaturedCourse course={course} />
-              </Col>
-            </React.Fragment>
+            <Col xs={6} md={4} lg={3} key={`featured-course-${course._id}`}>
+              <FeaturedCourse course={course} />
+            </Col>
           ))}
         </Row>
         <Row>

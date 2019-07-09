@@ -18,13 +18,11 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Container fluid>
-        <Container className={classes.container}>
-          <HowItWorks />
-          <FeaturedCourseSection courses={courses} />
-          <FindWork />
-          <AsSeenIn items={asSeenIn.items} />
-        </Container>
+      <Container className={classes.container}>
+        <HowItWorks />
+        <FeaturedCourseSection courses={courses} />
+        <FindWork />
+        <AsSeenIn items={asSeenIn.items} />
       </Container>
     </Layout>
   );
