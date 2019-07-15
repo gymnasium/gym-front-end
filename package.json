@@ -21,7 +21,7 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.1.4",
     "gatsby-source-graphql": "^2.1.2",
-    "gatsby-transformer-sharp": "^2.2.1",
+    "gatsby-transformer-sharp": "^2.2.3",
     "jquery": "^3.4.1",
     "pluralize": "^8.0.0",
     "prop-types": "^15.7.2",
