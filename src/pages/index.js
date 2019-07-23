@@ -63,7 +63,7 @@ export const query = graphql`
           coverImage {
             path
           }
-          shortDescription
+          shortDescriptionHtml
         }
       }
     }
