@@ -18,7 +18,13 @@ const FeaturedCourseSection = ({ courses }) => {
       <section id="featured-courses" className={classes.featuredCourses}>
         <Row>
           {courses.items.map(course => (
-            <Col xs={6} md={4} lg={3} key={`featured-course-${course._id}`}>
+            <Col
+              className="p-0"
+              xs={6}
+              md={4}
+              lg={3}
+              key={`featured-course-${course._id}`}
+            >
               <FeaturedCourse course={course} />
             </Col>
           ))}

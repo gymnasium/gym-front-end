@@ -7,6 +7,7 @@ export { FindWork } from './FindWork';
 export { Footer } from './Footer';
 export { GymButton } from './GymButton';
 export { Header } from './Header';
+export { Hero } from './Hero';
 export { HowItWorks } from './HowItWorks';
 export { Image } from './Image';
 export { Link } from './Link';
