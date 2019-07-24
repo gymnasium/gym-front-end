@@ -10,10 +10,13 @@ import classes from './CourseAboutPage.module.css';
 
 const CourseAboutPage = ({ pageContext }) => {
   const { course } = pageContext;
+  if (!course) return;
+
+  const { courseType } = course;
 
   const styles = {
     pageHeaderContainer: {
-      backgroundColor: course.courseType.color.hex,
+      backgroundColor: courseType && courseType.color && courseType.color.hex,
     },
   };
 
@@ -75,11 +78,13 @@ const CourseAboutPage = ({ pageContext }) => {
           </ul>
 
           <h2>Meet the instructor</h2>
-          <img
-            className="img-fluid"
-            alt={course.author.displayName}
-            src={getImageUrl(course.author.photo.path)}
-          />
+          {course.author && course.author.photo && (
+            <img
+              className="img-fluid"
+              alt={course.author.displayName}
+              src={getImageUrl(course.author.photo.path)}
+            />
+          )}
           <h3 className={classes.authorName}>{course.author.displayName}</h3>
           <div
             className={classes.authorBio}
