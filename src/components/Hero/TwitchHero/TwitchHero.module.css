@@ -1,0 +1,115 @@
+.home {
+  background: none;
+}
+
+.liveCoding {
+  border-bottom: 4em solid #764c9f;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.liveCoding header {
+  color: #fff;
+  background: #764c9f;
+  padding: 1.6em 0;
+}
+
+.liveCoding header h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.liveCoding .byline {
+  border: 1px dashed transparent;
+  margin-top: 0.8em;
+  margin-bottom: 0;
+}
+
+.liveCoding .byline dd {
+  margin-top: 0.8em;
+  margin-left: 0;
+}
+
+@media (min-width: 36em) {
+  .liveCoding header h2,
+  .liveCoding .byline,
+  .liveCoding .byline dt {
+    display: inline;
+  }
+
+  .liveCoding header {
+    padding: 1.6em 0 0.4em;
+  }
+
+  .liveCoding header h2 {
+    line-height: 1;
+    vertical-align: baseline;
+  }
+
+  .liveCoding .byline {
+    margin-left: 1.2em;
+  }
+
+  .liveCoding .byline dd {
+    width: 52%;
+  }
+}
+
+/* --- Twitch (Embed) ---*/
+
+.twitchEmbed {
+  position: relative;
+}
+
+.twitchStream,
+.twitchChat {
+  position: relative;
+  width: 100%;
+}
+
+.twitchStream {
+  margin-bottom: -1px;
+}
+
+.twitchChat {
+  display: none;
+}
+
+.twitchStream:before,
+.twitchChat:before {
+  content: '';
+  display: block;
+  padding-top: 56.25%; /* 16:9 */
+}
+
+.twitchStream iframe,
+.twitchChat iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  overflow: hidden;
+}
+
+@media (min-width: 24em) {
+  .twitchChat {
+    display: block;
+  }
+}
+
+@media (min-width: 60em) {
+  .twitchStream {
+    position: relative;
+    width: 75%;
+  }
+
+  .twitchChat {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+  }
+}

@@ -9,7 +9,13 @@ import * as CourseUtils from '../../utils/courses';
 import classes from './FeaturedCourse.module.css';
 
 const FeaturedCourse = ({ course }) => {
-  const { courseType, title, coverImage, shortDescription, author } = course;
+  const {
+    courseType,
+    title,
+    coverImage,
+    shortDescriptionHtml,
+    author,
+  } = course;
 
   const headerBackgroundStyle = {
     backgroundColor: courseType.color.hex,
@@ -35,7 +41,10 @@ const FeaturedCourse = ({ course }) => {
           <Title component="h2" className={classes.courseTitle}>
             {title}
           </Title>
-          <p className={classes.shortDescription}>{shortDescription}</p>
+          <p
+            dangerouslySetInnerHTML={{ __html: shortDescriptionHtml }}
+            className={classes.shortDescription}
+          />
         </header>
       </div>
       <footer>
