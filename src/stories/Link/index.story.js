@@ -1,7 +1,6 @@
 import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { Link } from '../../components';
 
 storiesOf('Link', module).add('Standard link', () => (
