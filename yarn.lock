@@ -7152,15 +7152,15 @@ gatsby-source-filesystem@^2.1.14:
     valid-url "^1.0.9"
     xstate "^3.3.3"
 
-gatsby-source-graphql@^2.1.7:
-  version "2.1.7"
-  resolved "https://registry.yarnpkg.com/gatsby-source-graphql/-/gatsby-source-graphql-2.1.7.tgz#75bafd6dfad01771e3ad028195e63747a20bb275"
-  integrity sha512-3lcOBYGlhvkEeolyprzpzHixDiKZR0xxDvHfdmcb9buM+BbcMkscUYSL7emXB8Mc/JF0Hx+8PNPnsKyA5LPGhQ==
+gatsby-source-graphql@^2.1.9:
+  version "2.1.9"
+  resolved "https://registry.yarnpkg.com/gatsby-source-graphql/-/gatsby-source-graphql-2.1.9.tgz#07ee289d2ebfb65c615b384ffe52c98a11af50e1"
+  integrity sha512-9tYmropRp4oxqn8rbrGKbWT3OV7TxBeH2AtmFy8Y8AxGmtadG6X/9w0Mo0VT3iRZvrF02rOk0IcqXyfpccR+dA==
   dependencies:
-    "@babel/runtime" "^7.0.0"
+    "@babel/runtime" "^7.5.5"
     apollo-link "1.2.12"
     apollo-link-http "^1.5.15"
-    graphql "^14.4.2"
+    graphql "^14.5.0"
     graphql-tools "^3.1.1"
     invariant "^2.2.4"
     node-fetch "^1.7.3"
@@ -7704,7 +7704,7 @@ graphql-type-json@^0.2.4:
   resolved "https://registry.yarnpkg.com/graphql-type-json/-/graphql-type-json-0.2.4.tgz#545af27903e40c061edd30840a272ea0a49992f9"
   integrity sha512-/tq02ayMQjrG4oDFDRLLrPk0KvJXue0nVXoItBe7uAdbNXjQUu+HYCBdAmPLQoseVzUKKMzrhq2P/sfI76ON6w==
 
-graphql@^14.4.2:
+graphql@^14.4.2, graphql@^14.5.0:
   version "14.5.0"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-14.5.0.tgz#4801e6460942c9c591944617f6dd224a9e531520"
   integrity sha512-wnGcTD181L2xPnIwHHjx/moV4ulxA2Kms9zcUY+B/SIrK+2N+iOC6WNgnR2zVTmg1Z8P+CZq5KXibTnatg3WUw==
