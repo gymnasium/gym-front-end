@@ -7236,14 +7236,14 @@ gatsby-telemetry@^1.1.17:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
-gatsby-transformer-sharp@^2.2.11:
-  version "2.2.11"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.2.11.tgz#0d6f7048ce15e8d4f071fd2966165b33deed5e64"
-  integrity sha512-1adi3HGG3vNAjBY9gfVxPXeD/dMo2NZ+pgeosD+5BvnUT9+UKGoAFz1cU67RghO4Z35jFicueR/4a3CjHckNYQ==
+gatsby-transformer-sharp@^2.2.12:
+  version "2.2.12"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.2.12.tgz#f72efff24b511b2c209645c1373dbced5538b98d"
+  integrity sha512-Q2wE7xV1VliQzs1Ve0UNAOnlomFoX2JqN/Eu6EerFpW6Nx93APWDQG9fm1B23U3HVMvlOV7i1FN/MIjhKpvWUA==
   dependencies:
     "@babel/runtime" "^7.5.5"
     bluebird "^3.5.5"
-    fs-extra "^7.0.1"
+    fs-extra "^8.1.0"
     potrace "^2.1.2"
     probe-image-size "^4.1.1"
     semver "^5.7.1"
