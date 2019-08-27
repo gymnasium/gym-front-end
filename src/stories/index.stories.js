@@ -1,4 +1,4 @@
-import './Header/index.story';
-import './Footer/index.story';
-import './GymButton/index.story';
-import './Link/index.story';
+import './Header/index.stories';
+import './Footer/index.stories';
+import './GymButton/index.stories';
+import './Link/index.stories';
