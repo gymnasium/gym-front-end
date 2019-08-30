@@ -13422,10 +13422,10 @@ react-resize-detector@^4.0.5:
     raf-schd "^4.0.0"
     resize-observer-polyfill "^1.5.1"
 
-react-responsive@^8.0.0-beta.1:
-  version "8.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/react-responsive/-/react-responsive-8.0.0-beta.1.tgz#3d07fce7a8e1ef638645ca7f057a2c01b56d3956"
-  integrity sha512-tkTn6Jtpuw2uETCK6LSF5+QTpcrUqlxI0yKOTnWXi6VdifxX07sWYuE0CzQItVcttZiMLi6SKeHcWysvCv7U5w==
+react-responsive@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/react-responsive/-/react-responsive-8.0.0.tgz#d54bccc52b450c75dcd946eaa365ea9f279ffbb9"
+  integrity sha512-l8FRTEoifVnhoFsnaWeyCHQ8O088ug9IIihUupG/8Ah3x1OITLourRDAisvKF5P+5ST4HRC08bSBYQkNfknAYA==
   dependencies:
     hyphenate-style-name "^1.0.0"
     matchmediaquery "^0.3.0"
