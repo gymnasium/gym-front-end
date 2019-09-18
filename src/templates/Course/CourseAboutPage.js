@@ -10,7 +10,7 @@ import classes from './CourseAboutPage.module.css';
 
 const CourseAboutPage = ({ pageContext }) => {
   const { course } = pageContext;
-  if (!course) return;
+  if (!course) return null;
 
   const { courseType } = course;
 
@@ -47,10 +47,12 @@ const CourseAboutPage = ({ pageContext }) => {
       </Row>
       <Row className={classes.mainContentContainer}>
         <Col xs={12} md={9}>
+          {/* eslint-disable react/no-danger */}
           <div
             className={classes.shortDescription}
             dangerouslySetInnerHTML={{ __html: course.shortDescriptionHtml }}
           />
+          {/* eslint-enable react/no-danger */}
           <hr />
           <h2>
             <strong>Course Preview</strong>
@@ -64,7 +66,9 @@ const CourseAboutPage = ({ pageContext }) => {
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
+          {/* eslint-disable react/no-danger */}
           <div dangerouslySetInnerHTML={{ __html: course.descriptionHtml }} />
+          {/* eslint-enable react/no-danger */}
         </Col>
         <Col>
           <h2>
@@ -87,10 +91,12 @@ const CourseAboutPage = ({ pageContext }) => {
             />
           )}
           <h3 className={classes.authorName}>{course.author.displayName}</h3>
+          {/* eslint-disable react/no-danger */}
           <div
             className={classes.authorBio}
             dangerouslySetInnerHTML={{ __html: course.author.bioHtml }}
           />
+          {/* eslint-enable react/no-danger */}
         </Col>
       </Row>
     </Layout>
@@ -107,7 +113,7 @@ CourseAboutPage.propTypes = {
       }),
       title: PropTypes.string,
     }),
-  }),
+  }).isRequired,
 };
 
 export default CourseAboutPage;

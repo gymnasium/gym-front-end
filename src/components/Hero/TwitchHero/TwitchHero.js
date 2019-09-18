@@ -26,7 +26,7 @@ const TwitchHero = () => (
           id="stream_embed"
           src="https://player.twitch.tv/?channel=irreverentmike"
           title="Twitch Stream"
-        ></iframe>
+        />
       </div>
       <div className={classes.twitchChat}>
         <iframe
@@ -34,7 +34,7 @@ const TwitchHero = () => (
           src="https://www.twitch.tv/embed/irreverentmike/chat"
           title="Twitch Chat"
           frameBorder="0"
-        ></iframe>
+        />
       </div>
     </div>
   </div>

@@ -11,6 +11,7 @@ export const getMicrocopy = (title, microcopyDictionary) => {
 
   if (!foundCopy) {
     if (process.env.NODE_ENV === 'development') {
+      // eslint-disable-next-line no-console
       console.warn(
         `No dictionary entry found for id '${title}'.  Falling back to using just the title.  Double check takeshape to make sure there is a microcopy entry with this title!`
       );
@@ -36,8 +37,8 @@ const Microcopy = ({ component: Component = 'div', title, data, ...rest }) => {
           }
         }
       `}
-      render={data => {
-        const { microcopyDictionary } = data.takeshape;
+      render={subdata => {
+        const { microcopyDictionary } = subdata.takeshape;
         const microcopy = getMicrocopy(title, microcopyDictionary.items);
         return (
           <Component

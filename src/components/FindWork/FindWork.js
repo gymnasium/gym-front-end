@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Title } from '../';
+import { Title } from '..';
 
 const FindWork = () => <Title>Find Work</Title>;
 

@@ -17,7 +17,9 @@ const BlogPostPage = ({ data, pageContext }) => {
       </Row>
       <Row>
         <Col>
+          {/* eslint-disable react/no-danger */}
           <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+          {/* eslint-enable react/no-danger */}
         </Col>
       </Row>
     </Layout>

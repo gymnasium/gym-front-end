@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { getImageUrl } from 'takeshape-routing';
 import { Link } from 'gatsby';
 
-import { GymButton, Title } from '../';
+import { GymButton, Title } from '..';
 
 import * as CourseUtils from '../../utils/courses';
 import classes from './FeaturedCourse.module.css';
@@ -41,17 +41,22 @@ const FeaturedCourse = ({ course }) => {
           <Title component="h2" className={classes.courseTitle}>
             {title}
           </Title>
+          {/* eslint-disable react/no-danger */}
           <p
             dangerouslySetInnerHTML={{ __html: shortDescriptionHtml }}
             className={classes.shortDescription}
           />
+          {/* eslint-enable react/no-danger */}
         </header>
       </div>
       <footer>
         <div>
           <dl className={classes.instructor}>
             <dt className={classes.byline}>
-              <b>with {author.displayName}</b>
+              <b>
+                with
+                {author.displayName}
+              </b>
             </dt>
             <dd>{author.workplace}</dd>
           </dl>
