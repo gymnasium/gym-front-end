@@ -220,7 +220,7 @@ const Footer = props => (
           </a>
           <div className={classes.copyright}>
             <small>
-              {'@ 2019 '}
+              {'© 2019 '}
               <a href="https://thegymnasium.com">Aquent Gymnasium</a>
             </small>
           </div>
