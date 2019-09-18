@@ -28,22 +28,8 @@
 
 3. **Run the app!**
 
-   Running just **gatsby**:
-
    ```sh
    yarn develop
-   ```
-
-   Running just **storybook**
-
-   ```sh
-   yarn storybook
-   ```
-
-   Run **both at once**!
-
-   ```sh
-   yarn storydev
    ```
 
 ## 🎓 Learning Gatsby

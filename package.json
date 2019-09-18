@@ -35,10 +35,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
-    "@storybook/addon-actions": "^5.0.11",
-    "@storybook/addon-links": "^5.0.11",
-    "@storybook/addons": "^5.1.9",
-    "@storybook/react": "5.0.11",
     "babel-loader": "^8.0.6",
     "concurrently": "^4.1.1",
     "prettier": "^1.18.2"
@@ -53,10 +49,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "storydev": "concurrently \"yarn storybook\" \"yarn develop\"",
-    "storybook": "start-storybook -s ./src/styles -p 6006",
-    "build-storybook": "build-storybook"
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "repository": {
     "type": "git",
