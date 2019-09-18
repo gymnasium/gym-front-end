@@ -6,6 +6,7 @@ import {
   AsSeenIn,
   FeaturedCourseSection,
   FindWork,
+  Hero,
   HowItWorks,
   Layout,
   SEO,
@@ -14,17 +15,21 @@ import {
 import classes from './HomePage.module.css';
 
 const IndexPage = ({ data }) => {
-  const { asSeenIn, courses } = data.takeshape;
+  const {
+    asSeenIn,
+    courses,
+    siteSettings: { isTwitchChannelActive },
+  } = data.takeshape;
+
   return (
-    <Layout>
+    <Layout isFullWidthLayout>
       <SEO title="Home" />
-      <Container fluid>
-        <Container className={classes.container}>
-          <HowItWorks />
-          <FeaturedCourseSection courses={courses} />
-          <FindWork />
-          <AsSeenIn items={asSeenIn.items} />
-        </Container>
+      <Hero isTwitchChannelActive={isTwitchChannelActive} />
+      <Container className={classes.container}>
+        <HowItWorks />
+        <FeaturedCourseSection courses={courses} />
+        <FindWork />
+        <AsSeenIn items={asSeenIn.items} />
       </Container>
     </Layout>
   );
@@ -33,6 +38,9 @@ const IndexPage = ({ data }) => {
 export const query = graphql`
   {
     takeshape {
+      siteSettings: getSiteSettings {
+        isTwitchChannelActive
+      }
       asSeenIn: getAsSeenInList {
         items {
           _id
@@ -65,7 +73,7 @@ export const query = graphql`
           coverImage {
             path
           }
-          shortDescription
+          shortDescriptionHtml
         }
       }
     }

@@ -9,7 +9,13 @@ import * as CourseUtils from '../../utils/courses';
 import classes from './FeaturedCourse.module.css';
 
 const FeaturedCourse = ({ course }) => {
-  const { courseType, title, coverImage, shortDescription, author } = course;
+  const {
+    courseType,
+    title,
+    coverImage,
+    shortDescriptionHtml,
+    author,
+  } = course;
 
   const headerBackgroundStyle = {
     backgroundColor: courseType.color.hex,
@@ -18,43 +24,45 @@ const FeaturedCourse = ({ course }) => {
   const courseUrl = CourseUtils.getAboutPageUrl(course);
 
   return (
-    <li className={classes.featuredCourseListItem}>
+    <div className={classes.featuredCourseListItem}>
       <div>
-        <div>
-          <header style={headerBackgroundStyle}>
-            <b className={classes.courseType}>{courseType.displayName}</b>
-            <div>
-              <Link to={courseUrl} title="Learn More">
-                <img
-                  alt={title}
-                  src={getImageUrl(coverImage.path)}
-                  width="256"
-                />
-              </Link>
-            </div>
-            <Title component="h2" className={classes.courseTitle}>
-              {title}
-            </Title>
-            <p className={classes.shortDescription}>{shortDescription}</p>
-          </header>
-        </div>
-        <footer>
+        <header style={headerBackgroundStyle}>
+          <b className={classes.courseType}>{courseType.displayName}</b>
           <div>
-            <dl className={classes.instructor}>
-              <dt className={classes.byline}>
-                <b>with {author.displayName}</b>
-              </dt>
-              <dd>{author.workplace}</dd>
-            </dl>
-          </div>
-          <div className={classes.cardCta}>
-            <Link to={courseUrl}>
-              <GymButton>Learn More</GymButton>
+            <Link to={courseUrl} title="Learn More">
+              <img
+                className="img-fluid"
+                alt={title}
+                src={getImageUrl(coverImage.path)}
+                width="256"
+              />
             </Link>
           </div>
-        </footer>
+          <Title component="h2" className={classes.courseTitle}>
+            {title}
+          </Title>
+          <p
+            dangerouslySetInnerHTML={{ __html: shortDescriptionHtml }}
+            className={classes.shortDescription}
+          />
+        </header>
       </div>
-    </li>
+      <footer>
+        <div>
+          <dl className={classes.instructor}>
+            <dt className={classes.byline}>
+              <b>with {author.displayName}</b>
+            </dt>
+            <dd>{author.workplace}</dd>
+          </dl>
+        </div>
+        <div className={classes.cardCta}>
+          <Link to={courseUrl}>
+            <GymButton>Learn More</GymButton>
+          </Link>
+        </div>
+      </footer>
+    </div>
   );
 };
 
@@ -63,7 +71,7 @@ FeaturedCourse.propTypes = {
     courseType: PropTypes.shape({}),
     title: PropTypes.string,
     subtitle: PropTypes.string,
-    courseNumber: PropTypes.number,
+    courseNumber: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     coverImage: PropTypes.shape({}),
     author: PropTypes.shape({}),
   }).isRequired,

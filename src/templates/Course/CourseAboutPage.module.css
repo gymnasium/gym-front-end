@@ -1,0 +1,61 @@
+.contentWrapper {
+  background-color: var(--gym-light-page-background);
+}
+.mainContentContainer {
+  border-left: 1px solid var(--gym-light-gray);
+  border-right: 1px solid var(--gym-light-gray);
+  background-color: var(--gym-white);
+}
+
+.contentWrapper h2 strong {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: var(--gym-font-stack);
+}
+
+.pageHeaderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 325px;
+}
+
+.pageHeaderContainer img {
+  flex-grow: 1;
+  max-height: 325px;
+}
+
+.pageHeaderContainer h1 {
+  color: white;
+  font-family: var(--gym-font-stack);
+  text-transform: uppercase;
+  font-weight: 900;
+  padding: 1rem;
+}
+
+.getStartedBarContainer {
+  padding: 2rem;
+  background-color: var(--gym-dark-gray);
+}
+
+.courseTypeLabel {
+  color: #ccc;
+  font-size: 1.25rem;
+}
+
+.shortDescription {
+  font-size: 1.5rem;
+  font-family: var(--gym-font-stack);
+  padding-top: 1rem;
+}
+
+.authorName {
+  font-family: var(--gym-font-stack);
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.authorBio {
+  font-size: 0.85rem;
+}

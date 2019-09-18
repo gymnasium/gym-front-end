@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Container, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
 import { Layout } from '../../components';
 
@@ -9,19 +9,17 @@ const BlogPostPage = ({ data, pageContext }) => {
   const { bodyHtml, subtitle, title } = post;
   return (
     <Layout>
-      <Container>
-        <Row>
-          <Col>
-            <h1>{title}</h1>
-            <h2>{subtitle}</h2>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
-          </Col>
-        </Row>
-      </Container>
+      <Row>
+        <Col>
+          <h1>{title}</h1>
+          <h2>{subtitle}</h2>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+        </Col>
+      </Row>
     </Layout>
   );
 };

@@ -52,22 +52,60 @@ exports.createPages = ({ actions, graphql }) => {
           items {
             _id
             title
+            author {
+              bioHtml
+              displayName
+              workplace
+              photo {
+                path
+              }
+            }
             courseNumber
             courseUrlSuffix
+            courseType {
+              color {
+                hex
+              }
+            }
+            coverImage {
+              path
+            }
             descriptionHtml
             shortDescription
             syllabus
+            thisCourseIsFor {
+              attribute
+            }
           }
         }
         courses: getFullCourseList {
           items {
             _id
             title
+            author {
+              bioHtml
+              displayName
+              workplace
+              photo {
+                path
+              }
+            }
             courseNumber
             courseUrlSuffix
+            courseType {
+              color {
+                hex
+              }
+            }
+            coverImage {
+              path
+            }
             descriptionHtml
-            shortDescription
+            shortDescriptionHtml
             syllabus
+            thisCourseIsFor {
+              attribute
+            }
           }
         }
         blogPosts: getBlogPostList {

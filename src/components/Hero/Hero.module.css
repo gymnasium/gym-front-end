@@ -1,0 +1,24 @@
+.background {
+  background-color: #d73158;
+  margin-left: -15px; /* make this full-bleed */
+  margin-right: -15px; /* make this full-bleed */
+  min-height: 325px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: var(--gym-white);
+}
+
+h1,
+h2 {
+  font-family: var(--gym-font-stack);
+  font-weight: bold;
+}
+
+.background subtitle {
+  font-family: var(--gym-font-stack);
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
+}

@@ -1,6 +1,6 @@
 .featuredCourseListItem {
-  max-width: 25%;
   border: 1px solid var(--gym-gray);
+  margin-bottom: 3rem;
 }
 
 .featuredCourseListItem header {
@@ -34,4 +34,8 @@
   font-weight: 500;
   letter-spacing: 0.05em;
   margin: 0.5em 0 0;
+}
+
+.instructor {
+  border-bottom: 1px dashed #777;
 }
