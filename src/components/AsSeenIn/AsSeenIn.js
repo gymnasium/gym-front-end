@@ -5,7 +5,7 @@ import { Col, Row } from 'react-bootstrap';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import classes from './AsSeenIn.module.css';
-import { Title } from '../';
+import { Title } from '..';
 
 const AsSeenIn = ({ items }) => (
   <div>

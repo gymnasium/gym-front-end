@@ -11,7 +11,7 @@ const FeaturedCourseSection = ({ courses }) => {
   if (!courses) return null;
 
   return (
-    <React.Fragment>
+    <>
       <header className={classes.featuredCoursesTitleContainer}>
         <Title>Featured Courses</Title>
       </header>
@@ -39,7 +39,7 @@ const FeaturedCourseSection = ({ courses }) => {
           </Col>
         </Row>
       </section>
-    </React.Fragment>
+    </>
   );
 };
 

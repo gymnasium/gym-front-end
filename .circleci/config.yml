@@ -1,0 +1,60 @@
+version: 2
+
+jobs:
+  build:
+    working_directory: /tmp/gym-ui
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore core dependencies cache
+          keys:
+            - core-dependencies-v3-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install dependencies
+          command: yarn install
+      - save_cache:
+          name: Cache core dependencies
+          key: core-dependencies-v3-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+      - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules
+
+  prettier:
+    working_directory: /tmp/gym-ui
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Prettier checks
+          command: yarn prettier
+  lint:
+    working_directory: /tmp/gym-ui
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Lint checks
+          command: yarn lint
+
+workflows:
+  version: 2
+  build_prettier_lint:
+    jobs:
+      - build
+      - prettier:
+          requires:
+            - build
+      - lint:
+          requires:
+            - build

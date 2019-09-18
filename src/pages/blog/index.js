@@ -15,12 +15,13 @@ const BlogPage = ({ data }) => {
       <Row>
         <Col>
           <h1>
+            {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
             {total} {pluralize('Posts', total)}
           </h1>
         </Col>
       </Row>
       {posts.items.map(post => (
-        <Row>
+        <Row key={post._id}>
           <Col>
             <Link
               to={`/${CONSTANTS.URLS.BLOG.SINGLE_POST}${getUrlFromTitle(
