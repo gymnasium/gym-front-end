@@ -1,41 +1,60 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
 version: 2
+
 jobs:
   build:
+    working_directory: /tmp/gym-ui
     docker:
-      # specify the version you desire here
-      - image: circleci/node:8.15.1
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
-    working_directory: ~/gym-ui
-
+      - image: circleci/node:8
     steps:
       - checkout
-
-      # Download and cache dependencies
       - restore_cache:
+          name: Restore core dependencies cache
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
-      - run: yarn
-
+            - core-dependencies-v3-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install dependencies
+          command: yarn install
       - save_cache:
+          name: Cache core dependencies
+          key: core-dependencies-v3-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+      - persist_to_workspace:
+          root: .
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run: yarn prettier
-      - run: yarn lint
-      - run: yarn clean
+  prettier:
+    working_directory: /tmp/gym-ui
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Prettier checks
+          command: yarn prettier
+  lint:
+    working_directory: /tmp/gym-ui
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Lint checks
+          command: yarn lint
 
-      - store_artifacts:
-          path: ~/gym-ui/artifacts
+workflows:
+  version: 2
+  build_prettier_lint:
+    jobs:
+      - build
+      - prettier:
+          requires:
+            - build
+      - lint:
+          requires:
+            - build
