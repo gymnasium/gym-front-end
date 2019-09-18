@@ -23,6 +23,7 @@
     "gatsby-source-graphql": "^2.1.14",
     "gatsby-transformer-sharp": "^2.2.14",
     "jquery": "^3.4.1",
+    "lodash": "^4.17.15",
     "pluralize": "^8.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
@@ -36,13 +37,16 @@
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
-    "@storybook/addon-actions": "^5.1.11",
-    "@storybook/addon-links": "^5.2.0",
-    "@storybook/addons": "^5.1.9",
-    "@storybook/react": "5.2.0",
     "babel-loader": "^8.0.6",
     "concurrently": "^4.1.2",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.3.0",
     "eslint-config-react-app": "^5.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
     "prettier": "^1.18.2"
   },
   "keywords": [
@@ -53,12 +57,11 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
+    "lint": "eslint src --ext .jsx,.js,.tsx,.ts",
+    "prettier": "prettier --check src/**/*.{js,jsx,ts,tsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "storydev": "concurrently \"yarn storybook\" \"yarn develop\"",
-    "storybook": "start-storybook -s ./src/styles -p 6006",
-    "build-storybook": "build-storybook"
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "repository": {
     "type": "git",

@@ -5,7 +5,7 @@ import { Col, Row } from 'react-bootstrap';
 import { map } from 'lodash';
 
 import * as CourseUtils from '../../utils/courses';
-import { GymButton } from '../';
+import { GymButton } from '..';
 
 import classes from './CourseList.module.css';
 

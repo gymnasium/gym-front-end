@@ -2,18 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
-import { UpcomingCourse } from '.';
+import UpcomingCourse from './UpcomingCourse';
 
 const UpcomingCoursesList = props => {
-  const { courses } = props.data.takeshape;
+  const { data } = props;
+  const { courses } = data.takeshape;
 
   return (
-    <React.Fragment>
+    <>
       <h2>Upcoming Courses</h2>
       {courses.items.map(course => (
         <UpcomingCourse course={course} key={course._id} />
       ))}
-    </React.Fragment>
+    </>
   );
 };
 
@@ -46,9 +47,11 @@ export const query = graphql`
   }
 `;
 
-export default props => (
+const UpcomingCoursesStaticPage = props => (
   <StaticQuery
     query={query}
     render={data => <UpcomingCoursesList data={data} {...props} />}
   />
 );
+
+export default UpcomingCoursesStaticPage;

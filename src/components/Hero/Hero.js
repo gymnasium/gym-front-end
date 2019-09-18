@@ -2,10 +2,10 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 
 import classes from './Hero.module.css';
-import { TwitchHero } from '.';
+import { TwitchHero } from './TwitchHero';
 
 const Hero = ({ isTwitchChannelActive }) => {
-  if (!!isTwitchChannelActive) return <TwitchHero />;
+  if (isTwitchChannelActive) return <TwitchHero />;
 
   return (
     <div className={classes.background}>
