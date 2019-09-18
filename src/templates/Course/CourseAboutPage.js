@@ -56,13 +56,14 @@ const CourseAboutPage = ({ pageContext }) => {
             <strong>Course Preview</strong>
           </h2>
           <iframe
+            title="About Gymnasium video"
             width="100%"
             height="425"
             src="https://www.youtube.com/embed/1x1rw5MlI3k?controls=0"
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-          ></iframe>
+          />
           <div dangerouslySetInnerHTML={{ __html: course.descriptionHtml }} />
         </Col>
         <Col>
