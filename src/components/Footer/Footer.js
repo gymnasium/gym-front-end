@@ -218,6 +218,12 @@ const Footer = props => (
               height="50"
             />
           </a>
+          <a href="https://www.netlify.com">
+            <img
+              alt="Deploys by Netlify"
+              src="https://www.netlify.com/img/global/badges/netlify-dark.svg"
+            />
+          </a>
           <div className={classes.copyright}>
             <small>
               {'© 2019 '}
