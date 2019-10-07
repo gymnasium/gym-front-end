@@ -204,26 +204,30 @@ const Footer = props => (
       </nav>
       <Row>
         <Col>
-          <a
-            title="Open edX"
-            href="http://openedx.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              className={classes.openEdxLogo}
-              alt="Powered by Open edX"
-              src="https://files.edx.org/openedx-logos/edx-openedx-logo-tag-light.png"
-              width="150"
-              height="50"
-            />
-          </a>
-          <a href="https://www.netlify.com">
-            <img
-              alt="Deploys by Netlify"
-              src="https://www.netlify.com/img/global/badges/netlify-dark.svg"
-            />
-          </a>
+          <div>
+            <a
+              title="Open edX"
+              href="http://openedx.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className={classes.openEdxLogo}
+                alt="Powered by Open edX"
+                src="https://files.edx.org/openedx-logos/edx-openedx-logo-tag-light.png"
+                width="150"
+                height="50"
+              />
+            </a>
+          </div>
+          <div>
+            <a href="https://www.netlify.com">
+              <img
+                alt="Deploys by Netlify"
+                src="https://www.netlify.com/img/global/badges/netlify-dark.svg"
+              />
+            </a>
+          </div>
           <div className={classes.copyright}>
             <small>
               {'© 2019 '}
