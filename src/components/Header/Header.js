@@ -1,19 +1,18 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Link } from 'gatsby';
 
-import HeaderRow from './HeaderRow';
-import { UserHeader } from './UserHeader';
-import CONSTANTS from '../../utils/constants';
+import {
+  color,
+  PrimaryNavigation,
+  SecondaryNavigation,
+  CourseNavigation,
+} from '@gymnasium/gym-ui';
 
 const Header = ({ siteTitle }) => {
   return (
     <header>
-      <UserHeader />
-      <HeaderRow backgroundColor="#222222">
-        <Link to="/">{siteTitle}</Link>
-        <Link to={`/${CONSTANTS.URLS.BLOG.LIST}`}>Blog</Link>
-      </HeaderRow>
+      <PrimaryNavigation isLoggedIn logoutUrl="/logout" userId="Mike Bifulco" />
+      <SecondaryNavigation isLoggedIn />
     </header>
   );
 };
