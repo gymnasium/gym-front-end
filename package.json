@@ -6,7 +6,7 @@
   "author": "Mike Bifulco <mbifulco@aquent.com>",
   "dependencies": {
     "bootstrap": "4.3.1",
-    "dotenv": "^8.1.0",
+    "dotenv": "^8.2.0",
     "gatsby": "^2.16.1",
     "gatsby-image": "^2.2.29",
     "gatsby-plugin-client-side-redirect": "^0.0.2",
