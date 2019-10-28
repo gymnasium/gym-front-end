@@ -1173,10 +1173,10 @@
     signedsource "^1.0.0"
     yargs "^9.0.0"
 
-"@gymnasium/gym-ui@^0.0.13":
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/@gymnasium/gym-ui/-/gym-ui-0.0.13.tgz#85ab21d91c0694defb4a923fc98baeaa88fd8c46"
-  integrity sha512-dsIyblcBUSg4vWlynY+7kAHTyjmJXWK4lMnWeQvbTJzOoKtezcV+aVToyIwHRFR65O4N4QRNwhcQDJ6Z2x3NjQ==
+"@gymnasium/gym-ui@0.0.17":
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/@gymnasium/gym-ui/-/gym-ui-0.0.17.tgz#a39d4958e16c9589bde514853261d406d3536f2e"
+  integrity sha512-eMU14fi4++U/HTq7YspCXr9YWPHtM4esy4A3iMyPivPeEx+SYnLZXDapJQTqRSAt/tGGtvtZVte+sJ/mqwkeZw==
   dependencies:
     "@emotion/core" "^10.0.21"
     react "^16.10.2"
