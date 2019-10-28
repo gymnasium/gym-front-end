@@ -43,6 +43,7 @@ const Microcopy = ({ component: Component = 'div', title, data, ...rest }) => {
         return (
           <Component
             dangerouslySetInnerHTML={{ __html: microcopy }}
+            // eslint-disable-next-line react/jsx-props-no-spreading
             {...rest}
           />
         );
