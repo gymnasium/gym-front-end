@@ -6943,12 +6943,12 @@ gatsby-plugin-client-side-redirect@^0.0.2:
   dependencies:
     fs-extra "^7.0.0"
 
-gatsby-plugin-google-analytics@^2.1.23:
-  version "2.1.23"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.1.23.tgz#7bad5dc36787a5b2317f3c8043ff2febe7c0932e"
-  integrity sha512-pVGGYRnx6zIDvKPmhWaK7U2coec1F1ZIGe8326hV5E/2EtgVaVsRXAiCnGrLfHs/lEVs03t6DaemomtktM57gg==
+gatsby-plugin-google-analytics@^2.1.25:
+  version "2.1.25"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.1.25.tgz#6c38721391de26efe76be9455b67e71f092efdf9"
+  integrity sha512-LEX18pAL39M/Ba3xgRCLl6Coj5qae5vTxC3lcO40UWtQcfhRGAKMWgkCNA/7LfpTnOgvIDttvReLztdUkYx6PA==
   dependencies:
-    "@babel/runtime" "^7.6.3"
+    "@babel/runtime" "^7.7.2"
 
 gatsby-plugin-google-tagmanager@^2.1.16:
   version "2.1.16"
