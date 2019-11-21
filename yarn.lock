@@ -6887,10 +6887,10 @@ gatsby-plugin-google-analytics@^2.1.25:
   dependencies:
     "@babel/runtime" "^7.7.2"
 
-gatsby-plugin-google-tagmanager@^2.1.16:
-  version "2.1.16"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-tagmanager/-/gatsby-plugin-google-tagmanager-2.1.16.tgz#f0e5281ecd3533faf0085903aae90c5310d2eac9"
-  integrity sha512-RSJyBgtpqez14tydqmhxmDSD0uCSs4GVdjAaX81p1tzjSYcYmOQsXZPO2pKm15pL9H7D2ZABsWeoT/3nJu9swQ==
+gatsby-plugin-google-tagmanager@^2.1.17:
+  version "2.1.17"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-tagmanager/-/gatsby-plugin-google-tagmanager-2.1.17.tgz#abd67a4325b98157bdf7e93b61b7b2334bd74643"
+  integrity sha512-u7MkEZqTvXf5T44Qa02wgr8Wqvh6f0A3iaQIuajckxWgkJQRjj0aQdcC/AFYV8g+rFvpfSEbkrJFfVgN8b4+kw==
   dependencies:
     "@babel/runtime" "^7.7.2"
 
