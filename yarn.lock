@@ -1304,7 +1304,7 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.1", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.1", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.4":
   version "7.7.4"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.7.4.tgz#b23a856751e4bf099262f867767889c0e3fe175b"
   integrity sha512-r24eVUUr0QqNZa+qrImUk8fn5SPhHq+IfYvIoIMg0do3GdK9sMdiLKP3GYVVaxpPKORgm8KRKaNTEhAjgIpLMw==
@@ -7008,12 +7008,12 @@ gatsby-source-filesystem@^2.1.38:
     valid-url "^1.0.9"
     xstate "^4.6.7"
 
-gatsby-source-graphql@^2.1.24:
-  version "2.1.24"
-  resolved "https://registry.yarnpkg.com/gatsby-source-graphql/-/gatsby-source-graphql-2.1.24.tgz#8a089abdf664bed1f4dc85c9fab1f2343ed14270"
-  integrity sha512-duQI9ReFiWX+11snlxBU+2QYtYVZ7wswGOY0SRNUi2UclapU5RWvg6YZEtivpt/mch01bnNyKUdt/KT1M9JeXQ==
+gatsby-source-graphql@^2.1.25:
+  version "2.1.25"
+  resolved "https://registry.yarnpkg.com/gatsby-source-graphql/-/gatsby-source-graphql-2.1.25.tgz#3ee66dc08fa74866bd3b29798839a8cd73eae491"
+  integrity sha512-6GHIliDHxtmwy/YZpi8nwf3EWBL2kvD9IDRMxHs6Bq1eNGPo1sh2y2TjjHqrkZ1VbnCuf/DAoL2pXGgkcaC9NQ==
   dependencies:
-    "@babel/runtime" "^7.7.2"
+    "@babel/runtime" "^7.7.4"
     apollo-link "1.2.13"
     apollo-link-http "^1.5.16"
     graphql-tools "^3.1.1"
