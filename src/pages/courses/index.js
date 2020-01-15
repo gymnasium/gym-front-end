@@ -79,7 +79,7 @@ export const query = graphql`
             path
           }
           descriptionHtml
-          shortDescription
+          shortDescriptionHtml
           skillsCovered {
             skill
           }
@@ -99,7 +99,7 @@ export const query = graphql`
             path
           }
           descriptionHtml
-          shortDescription
+          shortDescriptionHtml
           skillsCovered {
             skill
           }
