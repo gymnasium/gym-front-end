@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Mike Bifulco <mbifulco@aquent.com>",
   "dependencies": {
+    "@gymnasium/gym-ui": "0.0.17",
     "bootstrap": "4.4.1",
     "dotenv": "^8.2.0",
     "gatsby": "^2.18.22",

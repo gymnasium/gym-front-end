@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { Col, Row } from 'react-bootstrap';
+import { Button } from '@gymnasium/gym-ui';
 
-import { FeaturedCourse, GymButton, Microcopy, Title } from '..';
+import { FeaturedCourse, Microcopy, Title } from '..';
 
 import classes from './FeaturedCourseSection.module.css';
 
@@ -34,7 +35,7 @@ const FeaturedCourseSection = ({ courses }) => {
             <Microcopy title="home-page-view-courses-prompt" />
 
             <Link to="/courses">
-              <GymButton>View all Courses</GymButton>
+              <Button>View all courses</Button>
             </Link>
           </Col>
         </Row>
