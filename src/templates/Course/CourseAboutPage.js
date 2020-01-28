@@ -12,7 +12,6 @@ const CourseAboutPage = ({ pageContext }) => {
   const { course } = pageContext;
   if (!course) return null;
 
-  debugger;
   const { courseType } = course;
 
   const styles = {

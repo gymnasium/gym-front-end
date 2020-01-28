@@ -49,9 +49,11 @@ const CourseSummaryListItem = ({ course }) => {
             <header>
               <h1>{title}</h1>
             </header>
+            {/* eslint-disable react/no-danger */}
             {shortDescriptionHtml && (
               <p dangerouslySetInnerHTML={{ __html: shortDescriptionHtml }} />
             )}
+            {/* eslint-enable react/no-danger */}
             <Row>
               <Col>
                 <dl>
