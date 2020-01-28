@@ -1,12 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import {
-  color,
-  PrimaryNavigation,
-  SecondaryNavigation,
-  CourseNavigation,
-} from '@gymnasium/gym-ui';
+import { PrimaryNavigation, SecondaryNavigation } from '@gymnasium/gym-ui';
 
 const Header = ({ siteTitle }) => {
   return (

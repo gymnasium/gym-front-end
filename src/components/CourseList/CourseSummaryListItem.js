@@ -14,6 +14,7 @@ const CourseSummaryListItem = ({ course }) => {
     coverImage,
     title,
     courseNumber,
+    shortDescriptionHtml,
     skillsCovered,
     thisCourseIsFor,
   } = course;
