@@ -4,7 +4,7 @@ import { Col, Row } from 'react-bootstrap';
 import { getImageUrl } from 'takeshape-routing';
 import { map } from 'lodash';
 
-import { GymButton, Layout } from '../../components';
+import { GymButton, Layout, SEO } from '../../components';
 
 import classes from './CourseAboutPage.module.css';
 
@@ -12,6 +12,7 @@ const CourseAboutPage = ({ pageContext }) => {
   const { course } = pageContext;
   if (!course) return null;
 
+  debugger;
   const { courseType } = course;
 
   const styles = {
@@ -20,8 +21,18 @@ const CourseAboutPage = ({ pageContext }) => {
     },
   };
 
+  let courseTypeDisplay;
+  if (course.courseNumber >= 0 && course.courseNumber < 100) {
+    courseTypeDisplay = 'Gym Short';
+  } else if (course.courseNumber >= 100 && course.courseNumber <= 5000) {
+    courseTypeDisplay = 'Full Course';
+  } else {
+    courseTypeDisplay = 'Take 5';
+  }
+
   return (
     <Layout classes={{ contentWrapper: classes.contentWrapper }}>
+      <SEO title={`About ${course.title}`} />
       <Row>
         <Col
           className={classes.pageHeaderContainer}
@@ -38,7 +49,7 @@ const CourseAboutPage = ({ pageContext }) => {
       </Row>
       <Row className={classes.getStartedBarContainer}>
         <Col className="my-auto">
-          <span className={classes.courseTypeLabel}>Full Course</span>
+          <span className={classes.courseTypeLabel}>{courseTypeDisplay}</span>
         </Col>
         <Col className="text-center">
           <GymButton>Get Started</GymButton>
@@ -54,18 +65,23 @@ const CourseAboutPage = ({ pageContext }) => {
           />
           {/* eslint-enable react/no-danger */}
           <hr />
-          <h2>
-            <strong>Course Preview</strong>
-          </h2>
-          <iframe
-            title="About Gymnasium video"
-            width="100%"
-            height="425"
-            src="https://www.youtube.com/embed/1x1rw5MlI3k?controls=0"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+          {course.coursePreviewVideoUrl && (
+            <>
+              <h2>
+                <strong>Course Preview</strong>
+              </h2>
+              <iframe
+                title={`About ${course.title} video`}
+                width="100%"
+                height="425"
+                src={course.coursePreviewVideoUrl}
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </>
+          )}
+
           {/* eslint-disable react/no-danger */}
           <div dangerouslySetInnerHTML={{ __html: course.descriptionHtml }} />
           {/* eslint-enable react/no-danger */}
