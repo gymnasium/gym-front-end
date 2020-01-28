@@ -48,11 +48,11 @@ const CourseSummaryListItem = ({ course }) => {
             <header>
               <h1>{title}</h1>
             </header>
-            <p>
-              Learn HTML and CSS and become the Web Designer that Developers
-              love. Professional design experience is a prerequisite, but no
-              prior web or coding experience is necessary.
-            </p>
+            {/* eslint-disable react/no-danger */}
+            {shortDescriptionHtml && (
+              <p dangerouslySetInnerHTML={{ __html: shortDescriptionHtml }} />
+            )}
+            {/* eslint-enable react/no-danger */}
             <Row>
               <Col>
                 <dl>
