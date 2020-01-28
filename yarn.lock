@@ -5011,7 +5011,7 @@ cors@^2.8.5:
     object-assign "^4"
     vary "^1"
 
-cosmiconfig@^5.0.0, cosmiconfig@^5.2.1:
+cosmiconfig@^5.0.0, cosmiconfig@^5.2.0, cosmiconfig@^5.2.1:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-5.2.1.tgz#040f726809c591e77a17c0a3626ca45b4f168b1a"
   integrity sha512-H65gsXo1SKjf8zmrJ67eJk8aIRKV5ff2D4uKZIBZShbhGSpEmsQOPW/SKMKYhSTrqR7ufy6RP69rPogdaPh/kA==
@@ -13620,10 +13620,10 @@ react-reconciler@^0.24.0:
     prop-types "^15.6.2"
     scheduler "^0.18.0"
 
-react-responsive@^8.0.1:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/react-responsive/-/react-responsive-8.0.1.tgz#38022665dfb759227880f4221c475438a06a1771"
-  integrity sha512-caseFCvFFV4QW+JOl7inzDme+avoX4r7GPpQJ+04NCzIgbroV3BU0noPgHGxVCEFKm9IsgcKOBAf+6MqIUeQIg==
+react-responsive@^8.0.3:
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/react-responsive/-/react-responsive-8.0.3.tgz#ceb84205359b6032d306650e51490dc1f63d907b"
+  integrity sha512-F9VXyLao7O8XHXbLjQbIr4+mC6Zr0RDTwNjd7ixTmYEAyKyNanBkLkFchNaMZgszoSK6PgSs/3m/QDWw33/gpg==
   dependencies:
     hyphenate-style-name "^1.0.0"
     matchmediaquery "^0.3.0"
