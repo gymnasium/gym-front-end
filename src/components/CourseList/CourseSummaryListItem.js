@@ -14,6 +14,7 @@ const CourseSummaryListItem = ({ course }) => {
     coverImage,
     title,
     courseNumber,
+    shortDescriptionHtml,
     skillsCovered,
     thisCourseIsFor,
   } = course;
@@ -48,11 +49,9 @@ const CourseSummaryListItem = ({ course }) => {
             <header>
               <h1>{title}</h1>
             </header>
-            <p>
-              Learn HTML and CSS and become the Web Designer that Developers
-              love. Professional design experience is a prerequisite, but no
-              prior web or coding experience is necessary.
-            </p>
+            {shortDescriptionHtml && (
+              <p dangerouslySetInnerHTML={{ __html: shortDescriptionHtml }} />
+            )}
             <Row>
               <Col>
                 <dl>
