@@ -71,7 +71,7 @@ exports.createPages = ({ actions, graphql }) => {
               path
             }
             descriptionHtml
-            shortDescription
+            shortDescriptionHtml
             syllabus
             thisCourseIsFor {
               attribute

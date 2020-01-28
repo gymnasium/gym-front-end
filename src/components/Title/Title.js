@@ -10,6 +10,7 @@ const Title = ({
   ...rest
 }) => {
   return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
     <Component className={`${className || ''} ${classes.title}`} {...rest}>
       {children}
     </Component>

@@ -50,6 +50,7 @@ export const query = graphql`
 const UpcomingCoursesStaticPage = props => (
   <StaticQuery
     query={query}
+    // eslint-disable-next-line react/jsx-props-no-spreading
     render={data => <UpcomingCoursesList data={data} {...props} />}
   />
 );
