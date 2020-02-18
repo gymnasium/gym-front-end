@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { useDispatch, useSelector } from 'react-redux';
 import { Container } from 'react-bootstrap';
 
@@ -13,24 +13,9 @@ import {
   SEO,
 } from '../components';
 
-import * as actions from '../store/counter';
-
 import classes from './HomePage.module.css';
 
 const IndexPage = ({ data }) => {
-  const counter = useSelector(state => state.counter);
-  const dispatch = useDispatch();
-
-  const increment = () => {
-    dispatch(actions.increment());
-  };
-  const decrement = () => {
-    dispatch(actions.decrement());
-  };
-  const reset = () => {
-    dispatch(actions.reset());
-  };
-
   const {
     asSeenIn,
     courses,
@@ -42,16 +27,7 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <Hero isTwitchChannelActive={isTwitchChannelActive} />
       <Container className={classes.container}>
-        <h1>{counter}</h1>
-        <button type="button" onClick={decrement}>
-          Decrement
-        </button>
-        <button type="button" onClick={increment}>
-          Increment
-        </button>
-        <button type="button" onClick={reset}>
-          Reset
-        </button>
+        <Link to="/logout">Log out via Gatsby Link Component</Link>
         <HowItWorks />
         <FeaturedCourseSection courses={courses} />
         <FindWork />
