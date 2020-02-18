@@ -22,7 +22,7 @@
     "gatsby-plugin-sharp": "^2.4.3",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.1.46",
-    "gatsby-source-graphql": "^2.1.32",
+    "gatsby-source-graphql": "^2.1.33",
     "gatsby-transformer-sharp": "^2.3.13",
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
