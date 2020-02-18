@@ -30,7 +30,7 @@ const generateCoursePages = ({ courses, actions }) => {
       path: url,
       component: courseAboutTemplate,
       context: {
-        course: course,
+        course,
         id: course._id,
         courseUrlSuffix: course.courseUrlSuffix,
         type: 'courseAbout',
@@ -60,6 +60,7 @@ exports.createPages = ({ actions, graphql }) => {
                 path
               }
             }
+            coursePreviewVideoUrl
             courseNumber
             courseUrlSuffix
             courseType {
@@ -71,7 +72,7 @@ exports.createPages = ({ actions, graphql }) => {
               path
             }
             descriptionHtml
-            shortDescription
+            shortDescriptionHtml
             syllabus
             thisCourseIsFor {
               attribute
@@ -91,6 +92,7 @@ exports.createPages = ({ actions, graphql }) => {
               }
             }
             courseNumber
+            coursePreviewVideoUrl
             courseUrlSuffix
             courseType {
               color {

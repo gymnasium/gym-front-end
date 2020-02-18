@@ -40,7 +40,7 @@ const CoursesPage = ({ data }) => {
               <section>
                 <h1 id="gym-shorts">Gym Shorts</h1>
                 <Microcopy
-                  title="full-courses-description"
+                  title="gym-shorts-description"
                   className={classes.courseTypeDescription}
                 />
                 <CourseList courses={gymShorts.items} />
@@ -79,7 +79,7 @@ export const query = graphql`
             path
           }
           descriptionHtml
-          shortDescription
+          shortDescriptionHtml
           skillsCovered {
             skill
           }
@@ -99,7 +99,7 @@ export const query = graphql`
             path
           }
           descriptionHtml
-          shortDescription
+          shortDescriptionHtml
           skillsCovered {
             skill
           }
