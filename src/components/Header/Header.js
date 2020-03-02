@@ -1,32 +1,21 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 
 import { useSelector } from 'react-redux';
 
-import { PrimaryNavigation, SecondaryNavigation } from '@gymnasium/gym-ui';
+import { SecondaryNavigation } from '@gymnasium/gym-ui';
 
-const Header = ({ siteTitle }) => {
+import { UserBar } from './UserBar';
+
+const Header = () => {
   const authState = useSelector(state => state.auth);
-  const { isLoggedIn, user } = authState;
+  const { isLoggedIn } = authState;
 
   return (
     <header>
-      <PrimaryNavigation
-        isLoggedIn={isLoggedIn}
-        logoutUrl="/logout"
-        userId={user.displayName}
-      />
+      <UserBar />
       <SecondaryNavigation isLoggedIn={isLoggedIn} />
     </header>
   );
-};
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: ``,
 };
 
 export default Header;

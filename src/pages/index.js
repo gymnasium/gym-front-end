@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import { useDispatch, useSelector } from 'react-redux';
 import { Container } from 'react-bootstrap';
 
 import {
