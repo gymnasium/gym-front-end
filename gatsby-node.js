@@ -44,10 +44,27 @@ exports.createPages = ({ actions, graphql }) => {
   const blogPostTemplate = path.resolve(
     `./src//templates/Blog/BlogPostPage.js`
   );
+  const take5Template = path.resolve('./src/templates/Take5/Take5Page.js');
 
   return graphql(`
     {
       takeshape {
+        take5s: getTake5List {
+          items {
+            _id
+            title
+            courseNumber
+            author {
+              bioHtml
+              displayName
+              workplace
+              photo {
+                path
+              }
+            }
+            subtitle
+          }
+        }
         gymShorts: getGymShortList {
           items {
             _id
@@ -120,7 +137,7 @@ exports.createPages = ({ actions, graphql }) => {
     }
   `).then(result => {
     const { takeshape } = result.data;
-    const { courses, blogPosts, gymShorts } = takeshape;
+    const { courses, blogPosts, gymShorts, take5s } = takeshape;
 
     if (result.errors) {
       return Promise.reject(result.errors);
@@ -138,6 +155,19 @@ exports.createPages = ({ actions, graphql }) => {
         context: {
           id: post._id,
           type: 'blogPost',
+        },
+      });
+    });
+
+    take5s.items.forEach((take5, idx) => {
+      console.log(`5️⃣ found take5 ${take5.title} with id ${take5._id}`);
+      const sanitizedTitle = getUrlFromTitle(take5.title);
+      createPage({
+        path: `${CONSTANTS.URLS.COURSES.TAKE_FIVE}${sanitizedTitle}`,
+        component: take5Template,
+        context: {
+          id: take5._id,
+          type: 'take5',
         },
       });
     });
