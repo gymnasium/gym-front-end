@@ -164,7 +164,6 @@ exports.createPages = ({ actions, graphql }) => {
           id: take5._id,
           type: 'take5',
           markdown: take5.transcript,
-          path, // required to look up children of this page from context to render markdown from transcript
         },
       });
     });
