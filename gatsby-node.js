@@ -7,6 +7,8 @@
 // You can delete this file if you're not using it
 
 const path = require('path');
+const createMDXNode = require('gatsby-plugin-mdx/utils/create-mdx-node');
+
 const { getUrlFromTitle } = require('./src/utils/urlUtils');
 const CONSTANTS = require('./src/utils/constants');
 
@@ -53,16 +55,7 @@ exports.createPages = ({ actions, graphql }) => {
           items {
             _id
             title
-            courseNumber
-            author {
-              bioHtml
-              displayName
-              workplace
-              photo {
-                path
-              }
-            }
-            subtitle
+            transcript
           }
         }
         gymShorts: getGymShortList {
@@ -162,12 +155,16 @@ exports.createPages = ({ actions, graphql }) => {
     take5s.items.forEach((take5, idx) => {
       console.log(`5️⃣ found take5 ${take5.title} with id ${take5._id}`);
       const sanitizedTitle = getUrlFromTitle(take5.title);
+
+      const path = `${CONSTANTS.URLS.COURSES.TAKE_FIVE}${sanitizedTitle}`;
       createPage({
-        path: `${CONSTANTS.URLS.COURSES.TAKE_FIVE}${sanitizedTitle}`,
+        path, // requied to tell gatsby where to render this page
         component: take5Template,
         context: {
           id: take5._id,
           type: 'take5',
+          markdown: take5.transcript,
+          path, // required to look up children of this page from context to render markdown from transcript
         },
       });
     });
@@ -178,4 +175,29 @@ exports.createPages = ({ actions, graphql }) => {
       blogPosts: blogPosts.items,
     };
   });
+};
+
+exports.onCreateNode = async ({
+  node,
+  actions,
+  createNodeId,
+  loadNodeContent,
+}) => {
+  const { createNode, createParentChildLink } = actions;
+  if (node.internal.type === 'SitePage') {
+    if (
+      node.context &&
+      node.context.type === 'take5' &&
+      node.context.markdown
+    ) {
+      const mdxNode = await createMDXNode({
+        id: createNodeId(`${node.id} >>> Mdx`),
+        node,
+        content: node.context.markdown,
+      });
+      createNode(mdxNode);
+      createParentChildLink({ parent: node, child: mdxNode });
+    }
+  }
+  // do any checks for which content you want to transform here
 };

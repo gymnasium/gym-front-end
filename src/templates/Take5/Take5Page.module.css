@@ -1,0 +1,11 @@
+.videoContainer {
+  width: 100vw;
+  height: calc(100vh - 125px);
+  display: relative;
+  border-bottom: 1px solid var(--gym-gray);
+  margin-bottom: 2rem;
+}
+
+.title {
+  text-transform: uppercase;
+}
