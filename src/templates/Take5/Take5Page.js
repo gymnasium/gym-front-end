@@ -5,10 +5,8 @@ import { graphql } from 'gatsby';
 import { Col, Container, Row } from 'react-bootstrap';
 
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { getImageUrl } from 'takeshape-routing';
-import { map } from 'lodash';
 
-import { GymButton, Layout, SEO } from '../../components';
+import { Layout, SEO } from '../../components';
 
 import classes from './Take5Page.module.css';
 
