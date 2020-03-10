@@ -23,6 +23,8 @@ const Take5Page = ({ data }) => {
     },
   };
 
+  const transcriptMarkdown = page && page.childMdx && page.childMdx.body;
+
   return (
     <Layout
       isFullWidthLayout
@@ -60,15 +62,44 @@ const Take5Page = ({ data }) => {
 
             <details className={classes.transcriptContainer}>
               <summary aria-expanded="false" tabIndex="0" role="button">
-                <b>Transcript</b>
+                <b className={classes.transcriptHeader}>Transcript</b>
               </summary>
               <article>
-                <MDXRenderer>{page.childMdx.body}</MDXRenderer>
+                <MDXRenderer>{transcriptMarkdown}</MDXRenderer>
               </article>
             </details>
           </Col>
           <Col md={4}>
-            <h2 className={classes.title}>Resources</h2>
+            <h2 className={classes.resourcesHeader}>Resources</h2>
+            {take5.resources.map(resource => {
+              return (
+                <div key={resource.title} className={classes.resourcesList}>
+                  <h3>{resource.title}</h3>
+                  {/* eslint-disable react/no-danger */}
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: resource.descriptionHtml,
+                    }}
+                    div
+                  />
+                  {/* eslint-enable react/no-danger */}
+
+                  <ul>
+                    {resource.links.map(link => (
+                      <li key={link.url}>
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
           </Col>
         </Row>
       </Container>
@@ -103,6 +134,14 @@ export const query = graphql`
             _id
           }
           displayName
+        }
+        resources {
+          title
+          descriptionHtml
+          links {
+            title
+            url
+          }
         }
       }
     }
