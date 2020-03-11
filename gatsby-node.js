@@ -156,9 +156,9 @@ exports.createPages = ({ actions, graphql }) => {
       console.log(`5️⃣ found take5 ${take5.title} with id ${take5._id}`);
       const sanitizedTitle = getUrlFromTitle(take5.title);
 
-      const path = `${CONSTANTS.URLS.COURSES.TAKE_FIVE}${sanitizedTitle}`;
+      const take5Path = `${CONSTANTS.URLS.COURSES.TAKE_FIVE}${sanitizedTitle}`;
       createPage({
-        path, // requied to tell gatsby where to render this page
+        path: take5Path, // requied to tell gatsby where to render this page
         component: take5Template,
         context: {
           id: take5._id,
