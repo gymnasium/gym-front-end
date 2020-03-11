@@ -7,8 +7,14 @@ import { useMediaQuery } from 'react-responsive';
 
 import { Footer, Header } from '..';
 
+import layoutClasses from './layout.module.css';
+
 const Layout = ({ children, classes, isFullWidthLayout = false }) => {
   const isSmallViewport = useMediaQuery({ query: '(max-width: 992px)' });
+
+  const containerClass = isFullWidthLayout
+    ? layoutClasses.fullWidthContainer
+    : undefined;
 
   return (
     <StaticQuery
@@ -25,7 +31,10 @@ const Layout = ({ children, classes, isFullWidthLayout = false }) => {
         <>
           <Header siteTitle={data.site.siteMetadata.title} />
           <main className={classes && classes.contentWrapper}>
-            <Container fluid={isFullWidthLayout || isSmallViewport}>
+            <Container
+              className={containerClass}
+              fluid={isFullWidthLayout || isSmallViewport}
+            >
               {children}
             </Container>
           </main>

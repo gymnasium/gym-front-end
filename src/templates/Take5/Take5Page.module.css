@@ -1,0 +1,47 @@
+.videoContainer {
+  width: 100vw;
+  height: calc(100vh - 125px);
+  display: relative;
+  border-bottom: 1px solid var(--gym-gray);
+  margin-bottom: 2rem;
+}
+
+.title {
+  text-transform: uppercase;
+}
+
+.transcriptHeader {
+  color: var(--gym-orange);
+  text-decoration: none;
+}
+
+.transcriptContainer:hover .transcriptHeader {
+  text-decoration: underline;
+}
+
+.resourcesHeader {
+  font-size: 1.55em;
+  line-height: 1.08;
+  letter-spacing: 0.035rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.resourcesList {
+  padding-top: 1.2em;
+  border-top: 1px dashed #ccc;
+  margin-top: 1.4em;
+}
+
+.resourcesList h3 {
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 1.4rem;
+  line-height: 1.15;
+  font-weight: bold;
+}
+
+.resourcesList ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+}
