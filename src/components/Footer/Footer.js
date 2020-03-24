@@ -16,8 +16,8 @@ const Footer = props => (
                 <img
                   className={classes.gymnasiumLogo}
                   alt="Aquent Gymnasium"
-                  srcSet="https://staging.gymcms.xyz/img/brand/gymnasium-logo-white.svg"
-                  src="https://staging.gymcms.xyz/img/brand/gymnasium-logo-white-4x.png"
+                  srcSet="https://staging.thegymcms.com/img/brand/gymnasium-logo-white.svg"
+                  src="https://staging.thegymcms.com/img/brand/gymnasium-logo-white-4x.png"
                   width="200"
                   height="23"
                   role="heading"
@@ -109,8 +109,8 @@ const Footer = props => (
                     >
                       <img
                         alt="Twitter"
-                        srcSet="https://staging.gymcms.xyz/img/social/icons/icon-twitter.svg"
-                        src="https://staging.gymcms.xyz/img/social/icons/icon-twitter-4x.png"
+                        srcSet="https://staging.thegymcms.com/img/social/icons/icon-twitter.svg"
+                        src="https://staging.thegymcms.com/img/social/icons/icon-twitter-4x.png"
                         width="24"
                         height="24"
                       />
@@ -125,8 +125,8 @@ const Footer = props => (
                     >
                       <img
                         alt="Instagram"
-                        srcSet="https://staging.gymcms.xyz/img/social/icons/icon-instagram.svg"
-                        src="https://staging.gymcms.xyz/img/social/icons/icon-instagram-4x.png"
+                        srcSet="https://staging.thegymcms.com/img/social/icons/icon-instagram.svg"
+                        src="https://staging.thegymcms.com/img/social/icons/icon-instagram-4x.png"
                         width="24"
                         height="24"
                       />
@@ -141,8 +141,8 @@ const Footer = props => (
                     >
                       <img
                         alt="YouTube"
-                        srcSet="https://staging.gymcms.xyz/img/social/icons/icon-youtube.svg"
-                        src="https://staging.gymcms.xyz/img/social/icons/icon-youtube-4x.png"
+                        srcSet="https://staging.thegymcms.com/img/social/icons/icon-youtube.svg"
+                        src="https://staging.thegymcms.com/img/social/icons/icon-youtube-4x.png"
                         width="24"
                         height="24"
                       />
@@ -157,8 +157,8 @@ const Footer = props => (
                     >
                       <img
                         alt="LinkedIn"
-                        srcSet="https://staging.gymcms.xyz/img/social/icons/icon-linkedin.svg"
-                        src="https://staging.gymcms.xyz/img/social/icons/icon-linkedin-4x.png"
+                        srcSet="https://staging.thegymcms.com/img/social/icons/icon-linkedin.svg"
+                        src="https://staging.thegymcms.com/img/social/icons/icon-linkedin-4x.png"
                         width="24"
                         height="24"
                       />
@@ -173,8 +173,8 @@ const Footer = props => (
                     >
                       <img
                         alt="Medium"
-                        srcSet="https://staging.gymcms.xyz/img/social/icons/icon-medium.svg"
-                        src="https://staging.gymcms.xyz/img/social/icons/icon-medium-4x.png"
+                        srcSet="https://staging.thegymcms.com/img/social/icons/icon-medium.svg"
+                        src="https://staging.thegymcms.com/img/social/icons/icon-medium-4x.png"
                         width="24"
                         height="24"
                       />
@@ -189,8 +189,8 @@ const Footer = props => (
                     >
                       <img
                         alt="GitHub"
-                        srcSet="https://staging.gymcms.xyz/img/social/icons/icon-github.svg"
-                        src="https://staging.gymcms.xyz/img/social/icons/icon-github-4x.png"
+                        srcSet="https://staging.thegymcms.com/img/social/icons/icon-github.svg"
+                        src="https://staging.thegymcms.com/img/social/icons/icon-github-4x.png"
                         width="24"
                         height="24"
                       />

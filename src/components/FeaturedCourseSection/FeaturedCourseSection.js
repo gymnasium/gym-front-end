@@ -29,12 +29,17 @@ const FeaturedCourseSection = ({ courses }) => {
           </Col>
         </Row>
         <Row>
-          <Col>
-            <Microcopy title="home-page-view-courses-prompt" />
-
-            <Link to="/courses">
-              <Button>View all courses</Button>
-            </Link>
+          <Col xs={12} md={{ span: 10, offset: 1 }}>
+            <Microcopy
+              component="p"
+              class={classes.viewCoursesPrompt}
+              title="home-page-view-courses-prompt"
+            />
+            <div className="text-center">
+              <Link to="/courses">
+                <Button>View all courses</Button>
+              </Link>
+            </div>
           </Col>
         </Row>
       </section>

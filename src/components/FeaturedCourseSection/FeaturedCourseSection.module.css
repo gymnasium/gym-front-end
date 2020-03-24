@@ -26,3 +26,9 @@
   padding-left: 0;
   padding-right: 0;
 }
+
+.viewCoursesPrompt {
+  font-family: var(--gym-font-stack);
+  font-weight: bold;
+  font-size: 1.7rem;
+}

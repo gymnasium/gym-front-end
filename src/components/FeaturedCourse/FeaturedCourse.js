@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { getImageUrl } from 'takeshape-routing';
 import { Link } from 'gatsby';
 
-import { GymButton, Title } from '..';
+import { Button } from '@gymnasium/gym-ui';
+import { Title } from '..';
 
 import * as CourseUtils from '../../utils/courses';
 import classes from './FeaturedCourse.module.css';
@@ -60,9 +61,7 @@ const FeaturedCourse = ({ course }) => {
           </dl>
         </div>
         <div className={classes.cardCta}>
-          <Link to={courseUrl}>
-            <GymButton>Learn More</GymButton>
-          </Link>
+          <Button to={courseUrl}>Learn More</Button>
         </div>
       </footer>
     </div>
