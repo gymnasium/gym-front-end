@@ -18,17 +18,15 @@ const FeaturedCourseSection = ({ courses }) => {
       </header>
       <section id="featured-courses" className={classes.featuredCourses}>
         <Row>
-          {courses.items.map(course => (
-            <Col
-              className="p-0"
-              xs={6}
-              md={4}
-              lg={3}
-              key={`featured-course-${course._id}`}
-            >
-              <FeaturedCourse course={course} />
-            </Col>
-          ))}
+          <Col>
+            <ul>
+              {courses.items.map(course => (
+                <li key={`featured-course-${course._id}`}>
+                  <FeaturedCourse course={course} />
+                </li>
+              ))}
+            </ul>
+          </Col>
         </Row>
         <Row>
           <Col>

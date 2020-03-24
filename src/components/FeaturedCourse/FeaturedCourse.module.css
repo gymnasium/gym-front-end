@@ -39,3 +39,15 @@
 .instructor {
   border-bottom: 1px dashed #777;
 }
+
+.byline b {
+  font-weight: bold;
+}
+
+.featuredCourseHeaderContainer {
+  height: 32rem;
+}
+
+.cardCta {
+  text-align: center;
+}

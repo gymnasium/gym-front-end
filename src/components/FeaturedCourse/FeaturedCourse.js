@@ -25,38 +25,36 @@ const FeaturedCourse = ({ course }) => {
 
   return (
     <div className={classes.featuredCourseListItem}>
-      <div>
-        <header style={headerBackgroundStyle}>
-          <b className={classes.courseType}>{courseType.displayName}</b>
-          <div>
-            <Link to={courseUrl} title="Learn More">
-              <img
-                className="img-fluid"
-                alt={title}
-                src={getImageUrl(coverImage.path)}
-                width="256"
-              />
-            </Link>
-          </div>
-          <Title component="h2" className={classes.courseTitle}>
-            {title}
-          </Title>
-          {/* eslint-disable react/no-danger */}
-          <p
-            dangerouslySetInnerHTML={{ __html: shortDescriptionHtml }}
-            className={classes.shortDescription}
-          />
-          {/* eslint-enable react/no-danger */}
-        </header>
-      </div>
+      <header
+        style={headerBackgroundStyle}
+        className={classes.featuredCourseHeaderContainer}
+      >
+        <b className={classes.courseType}>{courseType.displayName}</b>
+        <div>
+          <Link to={courseUrl} title="Learn More">
+            <img
+              className="img-fluid"
+              alt={title}
+              src={getImageUrl(coverImage.path)}
+              width="256"
+            />
+          </Link>
+        </div>
+        <Title component="h2" className={classes.courseTitle}>
+          {title}
+        </Title>
+        {/* eslint-disable react/no-danger */}
+        <p
+          dangerouslySetInnerHTML={{ __html: shortDescriptionHtml }}
+          className={classes.shortDescription}
+        />
+        {/* eslint-enable react/no-danger */}
+      </header>
       <footer>
         <div>
           <dl className={classes.instructor}>
             <dt className={classes.byline}>
-              <b>
-                with
-                {author.displayName}
-              </b>
+              <b>{`with ${author.displayName}`}</b>
             </dt>
             <dd>{author.workplace}</dd>
           </dl>
