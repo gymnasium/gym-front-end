@@ -26,7 +26,6 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <Hero isTwitchChannelActive={isTwitchChannelActive} />
       <Container className={classes.container}>
-        <Link to="/logout">Log out via Gatsby Link Component</Link>
         <HowItWorks />
         <FeaturedCourseSection courses={courses} />
         <FindWork />
