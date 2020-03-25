@@ -4,9 +4,9 @@ import { Link } from 'gatsby';
 import { Col, Row } from 'react-bootstrap';
 import { map } from 'lodash';
 
-import * as CourseUtils from '../../utils/courses';
 import { Button } from '@gymnasium/gym-ui';
 
+import * as CourseUtils from '../../utils/courses';
 import classes from './CourseList.module.css';
 
 const CourseSummaryListItem = ({ course }) => {
