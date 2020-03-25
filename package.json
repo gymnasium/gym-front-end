@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Mike Bifulco <mbifulco@aquent.com>",
   "dependencies": {
-    "@gymnasium/gym-ui": "0.0.17",
+    "@gymnasium/gym-ui": "0.0.19",
     "@mdx-js/mdx": "^1.5.7",
     "@mdx-js/react": "^1.5.7",
     "@reach/router": "^1.3.3",
