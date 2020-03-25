@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { Container } from 'react-bootstrap';
 
 import {
@@ -26,7 +26,6 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <Hero isTwitchChannelActive={isTwitchChannelActive} />
       <Container className={classes.container}>
-        <Link to="/logout">Log out via Gatsby Link Component</Link>
         <HowItWorks />
         <FeaturedCourseSection courses={courses} />
         <FindWork />
