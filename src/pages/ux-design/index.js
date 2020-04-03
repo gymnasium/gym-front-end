@@ -1,16 +1,8 @@
 import React from 'react';
 
 import { Col, Row } from 'react-bootstrap';
-import {
-  Button,
-  Container,
-  H1,
-  H2,
-  H4,
-  FeaturedContent,
-  Link,
-} from '@gymnasium/gym-ui';
-import { Image, Layout, SEO } from '../../components';
+import { Button, H1, H2, H4, FeaturedContent, Link } from '@gymnasium/gym-ui';
+import { Container, Image, Layout, SEO } from '../../components';
 
 import classes from './ux-design.module.css';
 

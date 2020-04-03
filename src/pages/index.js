@@ -45,6 +45,7 @@ export const query = graphql`
         items {
           _id
           url
+          order
           publicationLogo {
             title
             path
