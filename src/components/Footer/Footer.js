@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import { Link } from 'gatsby';
+
 import { Col, Row } from 'react-bootstrap';
 
 import { Container, Microcopy } from '..';
@@ -12,7 +15,7 @@ const Footer = props => (
         <Row>
           <Col xs={12} sm={10} md={3}>
             <div className={classes.gymBrand}>
-              <a href="/" title="Gymnasium Homepage">
+              <Link to="/" title="Gymnasium Homepage">
                 <img
                   className={classes.gymnasiumLogo}
                   alt="Aquent Gymnasium"
@@ -22,7 +25,7 @@ const Footer = props => (
                   height="23"
                   role="heading"
                 />
-              </a>
+              </Link>
               <Microcopy title="footer-slogan" />
             </div>
           </Col>
@@ -32,25 +35,25 @@ const Footer = props => (
                 <h2 className="all-caps">What We Do</h2>
                 <ul>
                   <li>
-                    <a href="/courses">Courses</a>
+                    <Link to="/courses">Courses</Link>
                   </li>
                   <li>
-                    <a href="/jobs">Jobs</a>
+                    <Link to="/jobs">Jobs</Link>
                   </li>
                   <li>
-                    <a href="/webinars">Webinars</a>
+                    <Link to="/webinars">Webinars</Link>
                   </li>
                   <li>
-                    <a
+                    <OutboundLink
                       href="https://medium.com/gymnasium"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       Articles
-                    </a>
+                    </OutboundLink>
                   </li>
                   <li>
-                    <a href="/about">About</a>
+                    <Link to="/about">About</Link>
                   </li>
                 </ul>
               </section>
@@ -62,13 +65,15 @@ const Footer = props => (
                 <h2 className="all-caps">Opportunity Awaits</h2>
                 <ul>
                   <li>
-                    <a href="/ux-design">UX Design</a>
+                    <Link to="/ux-design">UX Design</Link>
                   </li>
                   <li>
-                    <a href="/prototyping">Prototyping</a>
+                    <Link to="/prototyping">Prototyping</Link>
                   </li>
                   <li>
-                    <a href="/front-end-development">Front-End Development</a>
+                    <Link to="/front-end-development">
+                      Front-End Development
+                    </Link>
                   </li>
                 </ul>
               </section>
@@ -80,16 +85,18 @@ const Footer = props => (
                 <h2 className="all-caps">Resources</h2>
                 <ul>
                   <li>
-                    <a href="/faq">FAQ</a>
+                    <Link to="/faq">FAQ</Link>
                   </li>
                   <li>
-                    <a href="/support">Support</a>
+                    <Link to="/support">Support</Link>
                   </li>
                   <li>
-                    <a href="/privacy">Privacy Policy</a>
+                    <Link to="/privacy">Privacy Policy</Link>
                   </li>
                   <li>
-                    <a href="/csr-policy">Corporate Social Responsibility</a>
+                    <Link to="/csr-policy">
+                      Corporate Social Responsibility
+                    </Link>
                   </li>
                 </ul>
               </section>
@@ -101,7 +108,7 @@ const Footer = props => (
                 <h2 className="all-caps">Social</h2>
                 <ul>
                   <li>
-                    <a
+                    <OutboundLink
                       title="Twitter"
                       href="https://twitter.com/AquentGymnasium"
                       target="_blank"
@@ -114,10 +121,10 @@ const Footer = props => (
                         width="24"
                         height="24"
                       />
-                    </a>
+                    </OutboundLink>
                   </li>
                   <li>
-                    <a
+                    <OutboundLink
                       title="Instagram"
                       href="https://www.instagram.com/aquent_gymnasium/"
                       rel="noopener noreferrer"
@@ -130,10 +137,10 @@ const Footer = props => (
                         width="24"
                         height="24"
                       />
-                    </a>
+                    </OutboundLink>
                   </li>
                   <li>
-                    <a
+                    <OutboundLink
                       title="YouTube"
                       href="https://www.youtube.com/channel/UCsAAa0dL-ZJpq4gN1zEcXYw"
                       target="_blank"
@@ -146,10 +153,10 @@ const Footer = props => (
                         width="24"
                         height="24"
                       />
-                    </a>
+                    </OutboundLink>
                   </li>
                   <li>
-                    <a
+                    <OutboundLink
                       title="LinkedIn"
                       href="https://www.linkedin.com/school/gymnasium/"
                       target="_blank"
@@ -162,10 +169,10 @@ const Footer = props => (
                         width="24"
                         height="24"
                       />
-                    </a>
+                    </OutboundLink>
                   </li>
                   <li>
-                    <a
+                    <OutboundLink
                       title="Medium"
                       href="https://medium.com/gymnasium"
                       target="_blank"
@@ -178,10 +185,10 @@ const Footer = props => (
                         width="24"
                         height="24"
                       />
-                    </a>
+                    </OutboundLink>
                   </li>
                   <li>
-                    <a
+                    <OutboundLink
                       title="GitHub"
                       href="https://github.com/gymnasium"
                       target="_blank"
@@ -194,7 +201,7 @@ const Footer = props => (
                         width="24"
                         height="24"
                       />
-                    </a>
+                    </OutboundLink>
                   </li>
                 </ul>
               </section>
@@ -205,7 +212,7 @@ const Footer = props => (
       <Row>
         <Col>
           <div>
-            <a
+            <OutboundLink
               title="Open edX"
               href="http://openedx.org"
               target="_blank"
@@ -218,20 +225,20 @@ const Footer = props => (
                 width="150"
                 height="50"
               />
-            </a>
+            </OutboundLink>
           </div>
           <div>
-            <a href="https://www.netlify.com">
+            <OutboundLink href="https://www.netlify.com">
               <img
                 alt="Deploys by Netlify"
                 src="https://www.netlify.com/img/global/badges/netlify-dark.svg"
               />
-            </a>
+            </OutboundLink>
           </div>
           <div className={classes.copyright}>
             <small>
               © 2019 &nbsp;
-              <a href="https://thegymnasium.com">Aquent Gymnasium</a>
+              <Link to="/">Aquent Gymnasium</Link>
             </small>
           </div>
         </Col>
