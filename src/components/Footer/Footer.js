@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Container, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
-import { Microcopy } from '..';
+import { Container, Microcopy } from '..';
 import classes from './Footer.module.css';
 
 const Footer = props => (

@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Container } from 'react-bootstrap';
 
 import {
   AsSeenIn,
+  Container,
   FeaturedCourseSection,
   FindWork,
   Hero,
