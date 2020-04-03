@@ -1,6 +1,6 @@
-export { CourseList } from './CourseList';
-
 export { AsSeenIn } from './AsSeenIn';
+export { Container } from './Container';
+export { CourseList } from './CourseList';
 export { FeaturedCourse } from './FeaturedCourse';
 export { FeaturedCourseSection } from './FeaturedCourseSection';
 export { FindWork } from './FindWork';
