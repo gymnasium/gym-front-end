@@ -32,7 +32,7 @@ const FeaturedCourseSection = ({ courses }) => {
           <Col xs={12} md={{ span: 10, offset: 1 }}>
             <Microcopy
               component="p"
-              class={classes.viewCoursesPrompt}
+              className={classes.viewCoursesPrompt}
               title="home-page-view-courses-prompt"
             />
             <div className="text-center">

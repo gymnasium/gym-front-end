@@ -12,7 +12,7 @@ const Hero = ({ isTwitchChannelActive }) => {
     <div className={classes.background}>
       <Container>
         <Row>
-          <Col xsHidden mdHidden lg={1} />
+          <Col className="d-none d-sm-none d-md-none" lg={1} />
           <Col lg={4}>
             <h1>Hero!</h1>
           </Col>
