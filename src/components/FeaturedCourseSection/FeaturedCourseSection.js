@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { Col, Row } from 'react-bootstrap';
-import { Button } from '@gymnasium/gym-ui';
 
-import { FeaturedCourse, Microcopy, Title } from '..';
+import { H2, Button } from '@gymnasium/gym-ui';
+import { FeaturedCourse, Microcopy } from '..';
 
 import classes from './FeaturedCourseSection.module.css';
 
@@ -14,7 +14,7 @@ const FeaturedCourseSection = ({ courses }) => {
   return (
     <>
       <header className={classes.featuredCoursesTitleContainer}>
-        <Title>Featured Courses</Title>
+        <H2>Featured Courses</H2>
       </header>
       <section id="featured-courses" className={classes.featuredCourses}>
         <Row>
