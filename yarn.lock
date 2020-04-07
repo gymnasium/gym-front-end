@@ -1078,10 +1078,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
-"@gymnasium/gym-ui@0.0.23":
-  version "0.0.23"
-  resolved "https://registry.yarnpkg.com/@gymnasium/gym-ui/-/gym-ui-0.0.23.tgz#4c0064d4f098e6e6f87b848311a93ebdb7514e54"
-  integrity sha512-HAPd58hEacY0G5imyQ6SjKBfxqRXToPPJEArNlJsTidYAhLL5ZU4V1WUhGiz9+SyMF0/5MhQ0oCzJTcxS/pf4A==
+"@gymnasium/gym-ui@0.0.24":
+  version "0.0.24"
+  resolved "https://registry.yarnpkg.com/@gymnasium/gym-ui/-/gym-ui-0.0.24.tgz#cfa1f6dd4fd50ba71eab87da81b56d5e0edf9b81"
+  integrity sha512-yTkC0cswQDZv9AMeWlcD7mv8xaw3wFG5a9uJ4AePQI978Ln38oO3jd1HxeOg57Bok84uWGhGZuYcETQ4sQwxfw==
   dependencies:
     "@emotion/core" "^10.0.28"
     react "^16.13.1"

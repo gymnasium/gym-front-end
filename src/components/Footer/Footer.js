@@ -8,6 +8,13 @@ import { Col, Row } from 'react-bootstrap';
 import { Container, Microcopy } from '..';
 import classes from './Footer.module.css';
 
+const FooterLink = ({ children, rest, to }) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  <Link className={classes.footerLink} {...rest} to={to}>
+    {children}
+  </Link>
+);
+
 const Footer = props => (
   <footer className={`${classes.siteFooter} container-fluid`} id="contentinfo">
     <Container>
@@ -15,7 +22,7 @@ const Footer = props => (
         <Row>
           <Col xs={12} sm={10} md={3}>
             <div className={classes.gymBrand}>
-              <Link to="/" title="Gymnasium Homepage">
+              <FooterLink to="/" title="Gymnasium Homepage">
                 <img
                   className={classes.gymnasiumLogo}
                   alt="Aquent Gymnasium"
@@ -25,7 +32,7 @@ const Footer = props => (
                   height="23"
                   role="heading"
                 />
-              </Link>
+              </FooterLink>
               <Microcopy title="footer-slogan" />
             </div>
           </Col>
@@ -35,25 +42,26 @@ const Footer = props => (
                 <h2 className="all-caps">What We Do</h2>
                 <ul>
                   <li>
-                    <Link to="/courses">Courses</Link>
+                    <FooterLink to="/courses">Courses</FooterLink>
                   </li>
                   <li>
-                    <Link to="/jobs">Jobs</Link>
+                    <FooterLink to="/jobs">Jobs</FooterLink>
                   </li>
                   <li>
-                    <Link to="/webinars">Webinars</Link>
+                    <FooterLink to="/webinars">Webinars</FooterLink>
                   </li>
                   <li>
                     <OutboundLink
                       href="https://medium.com/gymnasium"
                       target="_blank"
                       rel="noopener noreferrer"
+                      className={classes.footerLink}
                     >
                       Articles
                     </OutboundLink>
                   </li>
                   <li>
-                    <Link to="/about">About</Link>
+                    <FooterLink to="/about">About</FooterLink>
                   </li>
                 </ul>
               </section>
@@ -65,15 +73,15 @@ const Footer = props => (
                 <h2 className="all-caps">Opportunity Awaits</h2>
                 <ul>
                   <li>
-                    <Link to="/ux-design">UX Design</Link>
+                    <FooterLink to="/ux-design">UX Design</FooterLink>
                   </li>
                   <li>
-                    <Link to="/prototyping">Prototyping</Link>
+                    <FooterLink to="/prototyping">Prototyping</FooterLink>
                   </li>
                   <li>
-                    <Link to="/front-end-development">
+                    <FooterLink to="/front-end-development">
                       Front-End Development
-                    </Link>
+                    </FooterLink>
                   </li>
                 </ul>
               </section>
@@ -85,18 +93,18 @@ const Footer = props => (
                 <h2 className="all-caps">Resources</h2>
                 <ul>
                   <li>
-                    <Link to="/faq">FAQ</Link>
+                    <FooterLink to="/faq">FAQ</FooterLink>
                   </li>
                   <li>
-                    <Link to="/support">Support</Link>
+                    <FooterLink to="/support">Support</FooterLink>
                   </li>
                   <li>
-                    <Link to="/privacy">Privacy Policy</Link>
+                    <FooterLink to="/privacy">Privacy Policy</FooterLink>
                   </li>
                   <li>
-                    <Link to="/csr-policy">
+                    <FooterLink to="/csr-policy">
                       Corporate Social Responsibility
-                    </Link>
+                    </FooterLink>
                   </li>
                 </ul>
               </section>
@@ -238,7 +246,7 @@ const Footer = props => (
           <div className={classes.copyright}>
             <small>
               © 2019 &nbsp;
-              <Link to="/">Aquent Gymnasium</Link>
+              <FooterLink to="/">Aquent Gymnasium</FooterLink>
             </small>
           </div>
         </Col>

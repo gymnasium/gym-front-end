@@ -19,10 +19,10 @@ const Hero = ({ isTwitchChannelActive }) => {
           <Col>
             <h1>RESPONSIVE WEB DESIGN FUNDAMENTALS</h1>
             <h2>with Jason Pamental</h2>
-            <subtitle>
+            <p>
               A code-intensive course on how to build responsive websites that
               look great across devices.
-            </subtitle>
+            </p>
           </Col>
         </Row>
       </Container>

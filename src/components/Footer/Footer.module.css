@@ -76,3 +76,14 @@ a:active {
 .copyright small {
   font-size: 80%;
 }
+
+.footerLink,
+a.footerLink {
+  color: var(--gym-orange);
+}
+
+.footerLink:hover,
+a.footerLink:hover {
+  color: var(--gym-orange);
+  text-decoration: underline;
+}
