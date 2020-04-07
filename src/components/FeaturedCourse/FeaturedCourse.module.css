@@ -16,10 +16,6 @@
   color: var(--gym-white);
 }
 
-.courseTitle {
-  color: var(--gym-white);
-}
-
 .courseType {
   font-family: var(--gym-font-stack);
   letter-spacing: 0.075em;
