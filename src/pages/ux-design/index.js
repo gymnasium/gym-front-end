@@ -45,7 +45,7 @@ const UxDesignPage = props => {
         </div>
       }
       extra={
-        <Link isDark to="#courses">
+        <Link isDark to="#tutorials">
           <b>View More Tutorials</b>
         </Link>
       }
@@ -73,7 +73,7 @@ const UxDesignPage = props => {
         </div>
       }
       extra={
-        <Link isDark to="#courses">
+        <Link isDark to="#webinars">
           <b>View More Webinars</b>
         </Link>
       }
