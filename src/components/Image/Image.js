@@ -24,6 +24,7 @@ export const Image = ({ src, alt, ...rest }) => {
   if (!image) {
     return null;
   }
+  // eslint-disable-next-line react/jsx-props-no-spreading
   return <Img fluid={image.node.fluid} alt={alt} {...rest} />;
 };
 

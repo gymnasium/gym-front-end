@@ -50,14 +50,14 @@
     "babel-loader": "^8.0.6",
     "concurrently": "^5.1.0",
     "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-prettier": "^6.10.1",
     "eslint-config-react-app": "^5.2.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
-    "prettier": "^1.19.1"
+    "prettier": "^2.0.4"
   },
   "keywords": [
     "gatsby"
@@ -68,7 +68,8 @@
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "lint": "eslint src --ext .jsx,.js,.tsx,.ts",
-    "prettier": "prettier --check src/**/*.{js,jsx,ts,tsx}",
+    "prettier": "prettier --check \"./src/**/*.{js,jsx,ts,tsx}\"",
+    "prettier-fix": "prettier --write \"./src/**/*.{js,jsx,ts,tsx}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""

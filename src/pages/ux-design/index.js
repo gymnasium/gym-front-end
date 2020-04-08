@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Col, Row } from 'react-bootstrap';
-import { Button, H1, H2, H4, FeaturedContent, Link } from '@gymnasium/gym-ui';
+import { Button, H1, H2, FeaturedContent, Link } from '@gymnasium/gym-ui';
 import { Container, Image, Layout, SEO } from '../../components';
 
 import classes from './ux-design.module.css';
@@ -110,7 +110,7 @@ const UxDesignPage = props => {
                 Gymnasium offers free online UX <a href="#courses">courses</a>,{' '}
                 <a href="#tutorials">tutorials</a>,{' '}
                 <a href="#webinars">webinars</a>,{' '}
-                <a href="#articles">articles</a>, and <a href="#jobs">jobs</a>{' '}
+                <a href="#articles">articles</a>, and<a href="#jobs">jobs</a>{' '}
                 through Aquent.
               </p>
             </Col>
