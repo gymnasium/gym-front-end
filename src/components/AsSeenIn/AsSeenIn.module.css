@@ -1,4 +1,14 @@
 .title {
   text-align: center;
   text-transform: capitalize;
+  margin: 2rem 0 1rem 0;
+}
+
+.container {
+  margin: 2rem 0;
+}
+
+.featuredImage {
+  margin: 1.5rem 0;
+  display: inline-block;
 }

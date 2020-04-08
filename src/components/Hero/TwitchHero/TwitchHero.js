@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container } from '../..';
 
 import classes from './TwitchHero.module.css';
 

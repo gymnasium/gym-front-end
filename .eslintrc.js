@@ -18,5 +18,10 @@ module.exports = {
       1,
       { html: 'ignore', exceptions: ['StaticQuery'] },
     ],
+    'react/jsx-wrap-multilines': [
+      'error',
+      { declaration: false, assignment: false },
+    ],
+    'react/jsx-one-expression-per-line': 'off',
   },
 };

@@ -13,7 +13,7 @@ h6 {
 }
 
 a {
-  color: var(--gym-orange);
+  color: var(--gym-blue);
 }
 
 a:hover,
@@ -21,7 +21,7 @@ a:focus,
 .copyright a:hover,
 .copyright a:focus {
   text-decoration: underline;
-  color: var(--gym-orange);
+  color: var(--gym-blue);
   border-bottom: none;
 }
 

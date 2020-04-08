@@ -1,6 +1,7 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
+import { Container } from '..';
 import classes from './Hero.module.css';
 import { TwitchHero } from './TwitchHero';
 
@@ -11,17 +12,17 @@ const Hero = ({ isTwitchChannelActive }) => {
     <div className={classes.background}>
       <Container>
         <Row>
-          <Col xsHidden mdHidden lg={1} />
+          <Col className="d-none d-sm-none d-md-none" lg={1} />
           <Col lg={4}>
             <h1>Hero!</h1>
           </Col>
           <Col>
             <h1>RESPONSIVE WEB DESIGN FUNDAMENTALS</h1>
             <h2>with Jason Pamental</h2>
-            <subtitle>
+            <p>
               A code-intensive course on how to build responsive websites that
               look great across devices.
-            </subtitle>
+            </p>
           </Col>
         </Row>
       </Container>

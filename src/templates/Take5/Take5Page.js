@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import { Layout, SEO } from '../../components';
+import { Container, Layout, SEO } from '../../components';
 
 import classes from './Take5Page.module.css';
 
