@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Mike Bifulco <mbifulco@aquent.com>",
   "dependencies": {
+    "@edx/frontend-platform": "^1.3.1",
     "@gymnasium/gym-ui": "0.0.17",
     "@reach/router": "^1.3.3",
     "@reduxjs/toolkit": "^1.1.0",
@@ -62,7 +63,9 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "clean": "gatsby clean",
     "develop": "gatsby develop",
+    "devstack": "gatsby develop --host=0.0.0.0",
     "format": "prettier --write src/**/*.{js,jsx}",
     "lint": "eslint src --ext .jsx,.js,.tsx,.ts",
     "prettier": "prettier --check src/**/*.{js,jsx,ts,tsx}",
