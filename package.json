@@ -28,7 +28,7 @@
     "gatsby-source-filesystem": "^2.1.53",
     "gatsby-source-graphql": "^2.3.2",
     "gatsby-transformer-sharp": "^2.4.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "lodash": "^4.17.15",
     "pluralize": "^8.0.0",
     "prop-types": "^15.7.2",
