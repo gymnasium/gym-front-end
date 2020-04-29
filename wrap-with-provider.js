@@ -7,6 +7,8 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 import { PersistGate } from 'redux-persist/integration/react';
 
+import { ReactQueryDevtools } from 'react-query-devtools';
+
 import rootReducer from './src/store/reducers';
 
 // eslint-disable-next-line react/display-name,react/prop-types
@@ -30,10 +32,13 @@ export default ({ element }) => {
   const persistor = persistStore(store);
 
   return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        {element}
-      </PersistGate>
-    </Provider>
+    <>
+      <ReactQueryDevtools />
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          {element}
+        </PersistGate>
+      </Provider>
+    </>
   );
 };
