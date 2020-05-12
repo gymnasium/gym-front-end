@@ -1,5 +1,6 @@
+import { useEffect } from 'react';
 import axios from 'axios';
-import { useQuery } from 'react-query';
+import { queryCache, usePaginatedQuery } from 'react-query';
 
 export const fetchJobs = async (
   key,
@@ -40,10 +41,28 @@ export const fetchJobs = async (
   const apiUrl = `${urlBase}${marketQuery}${minorSegmentQuery}${urlPageLimitSuffix}`;
 
   const response = await axios.get(apiUrl);
+  
   return response.data.contentlets;
 };
 
 export const useJobs = options => {
-  const { status, data, error } = useQuery(['jobs', options], fetchJobs);
-  return { status, jobs: data, error };
+  const { status,
+    resolvedData,
+    latestData,
+    error,
+    isFetching } = usePaginatedQuery(['jobs', options], fetchJobs, {});
+
+  const { page } = options;
+
+  useEffect(() => {
+    queryCache.prefetchQuery(
+      [
+        "jobs",
+        { ...options, page: page + 1 }
+      ],
+      fetchJobs
+    );
+  }, [fetchJobs, page]);
+  
+  return { status, latestData, resolvedData, isFetching, error };
 };
