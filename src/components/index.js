@@ -9,6 +9,7 @@ export { Header } from './Header';
 export { Hero } from './Hero';
 export { HowItWorks } from './HowItWorks';
 export { Image } from './Image';
+export { JobList } from './Jobs';
 export { Layout } from './Layout';
 export { Microcopy } from './Microcopy';
 export { SEO } from './Seo';

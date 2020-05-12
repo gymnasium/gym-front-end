@@ -1,42 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Layout } from '../../components';
-import { useJobs } from '../../utils/jobs';
+import { Layout, JobList } from '../../components';
 
 const JobsPage = () => {
-  const { status, jobs, error } = useJobs({
-    limit: 100,
-  });
+  const [showRemoteJobs, setShowRemoteJobs] = useState(false);
 
-  if (status === 'loading') {
-    return (
-      <Layout>
-        <span>Loading...</span>
-      </Layout>
-    );
-  }
-
-  if (status === 'error') {
-    return (
-      <Layout>
-        <span>Error: {error.message}</span>
-      </Layout>
-    );
-  }
+  const handleRemoteJobsFlagChanged = event => {
+    setShowRemoteJobs(event.target.checked);
+  };
 
   return (
     <Layout>
-      <h1>Jobs</h1>
-      <ul>
-        {jobs.map(job => {
-          return (
-            <li key={job.jobId}>
-              <h1>{job.title}</h1>
-              <p dangerouslySetInnerHTML={{ __html: job.description }} />
-            </li>
-          );
-        })}
-      </ul>
+      <form>
+        <input
+          checked={showRemoteJobs}
+          onChange={handleRemoteJobsFlagChanged}
+          type="checkbox"
+          label="Only show remote jobs"
+        />
+      </form>
+      <h2>Remote jobs</h2>
+      <JobList
+        options={{
+          limit: 10,
+          remoteOnly: showRemoteJobs,
+        }}
+      />
     </Layout>
   );
 };

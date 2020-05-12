@@ -1,9 +1,16 @@
 import axios from 'axios';
 import { useQuery } from 'react-query';
 
-export const fetchJobs = async (key, { cwids, limit, marketId, page }) => {
-  const remoteQuery =
-    '+(AquentJob.offsitePreference:2%20AquentJob.offsitePreference:3)';
+export const fetchJobs = async (
+  key,
+  { cwids, limit, marketId, page, remoteOnly }
+) => {
+  let remoteQuery = '';
+
+  if (remoteOnly) {
+    remoteQuery =
+      '+(AquentJob.offsitePreference:2%20AquentJob.offsitePreference:3)';
+  }
 
   let marketQuery = '';
   if (marketId) marketQuery = `%20+AquentJob.locationId:${marketId}`;
