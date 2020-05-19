@@ -15,7 +15,7 @@ const JobList = ({ options, title }) => {
     ...options,
     page,
   });
-  
+
   // eslint-disable-next-line no-console
   if (error) console.error('Error loading jobs:', error);
 
@@ -32,7 +32,7 @@ const JobList = ({ options, title }) => {
           </ul>
         )}
         <button
-          disabled={status === 'loading' || status === 'error' || page===0}
+          disabled={status === 'loading' || status === 'error' || page === 0}
           onClick={() => setPage(old => Math.max(old - 1, 0))}
           type="button"
         >
@@ -41,16 +41,16 @@ const JobList = ({ options, title }) => {
         <span>Page: {page}</span>
         <button
           disabled={status === 'loading' || status === 'error' || !latestData}
-          onClick={() =>
+          onClick={() => {
             // Here, we use `latestData` so the Next Page
             // button isn't relying on potentially old data
-            setPage(old => (!latestData ? old : old + 1))
-          }
+            setPage(old => (!latestData ? old : old + 1));
+          }}
           type="button"
         >
           Next
         </button>
-                {
+        {
           // Since the last page's data potentially sticks around between page requests,
           // we can use `isFetching` to show a background loading
           // indicator since our `status === 'loading'` state won't be triggered
@@ -62,7 +62,7 @@ const JobList = ({ options, title }) => {
 };
 
 JobList.propTypes = {
-  jobs: PropTypes.arrayOf(PropTypes.shape({})),
+  // jobs: PropTypes.arrayOf(PropTypes.shape({})),
   title: PropTypes.string,
 };
 
