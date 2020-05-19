@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { JobListItem } from '.';
+import JobListItem from './JobListItem';
 import { useJobs } from '../../utils/jobs';
 
 const JobList = ({ options, title }) => {
