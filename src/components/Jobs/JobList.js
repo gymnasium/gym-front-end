@@ -4,12 +4,14 @@ import PropTypes from 'prop-types';
 import JobListItem from './JobListItem';
 import { useJobs } from '../../utils/jobs';
 
-const JobList = ({ options, title }) => {
+const JobList = ({ options = {}, jobListItem }) => {
   const [page, setPage] = useState(0);
+
+  const { remoteOnly, marketId } = options;
 
   useEffect(() => {
     setPage(0);
-  }, [options.remoteOnly, setPage]);
+  }, [remoteOnly, marketId, setPage]);
 
   const { status, latestData, resolvedData, isFetching, error } = useJobs({
     ...options,
@@ -22,15 +24,18 @@ const JobList = ({ options, title }) => {
   return (
     <section>
       <header>
-        <h3>{title || 'Jobs'}</h3>
         {status === 'error' && <span>(something went wrong)</span>}
         {status === 'success' && (
           <ul>
-            {resolvedData.map(job => (
-              <JobListItem job={job} key={job.jobId} />
-            ))}
+            {
+              resolvedData.map(job => jobListItem ?
+                jobListItem(job) :
+                <JobListItem job={job} key={job.jobId} />
+              )
+            }
           </ul>
         )}
+        <div>{page}</div>
         <button
           disabled={status === 'loading' || status === 'error' || page === 0}
           onClick={() => setPage(old => Math.max(old - 1, 0))}
@@ -38,7 +43,6 @@ const JobList = ({ options, title }) => {
         >
           Previous
         </button>
-        <span>Page: {page}</span>
         <button
           disabled={status === 'loading' || status === 'error' || !latestData}
           onClick={() => {

@@ -22,7 +22,6 @@ const JobsPage = () => {
       <h2>Remote jobs</h2>
       <JobList
         options={{
-          limit: 10,
           remoteOnly: showRemoteJobs,
         }}
       />

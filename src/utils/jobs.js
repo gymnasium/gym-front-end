@@ -16,8 +16,8 @@ export const fetchJobs = async (
   let marketQuery = '';
   if (marketId) marketQuery = `%20+AquentJob.locationId:${marketId}`;
 
-  let limitQuery = '';
-  if (limit) limitQuery = `/limit/${limit}`;
+  const DEFAULT_PAGE_SIZE = 10;
+  const limitQuery = `/limit/${limit || DEFAULT_PAGE_SIZE}`;
 
   let pageQuery = '';
   if (page) pageQuery = `/offset/${page}`;

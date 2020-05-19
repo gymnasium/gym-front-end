@@ -11,6 +11,7 @@ export { HowItWorks } from './HowItWorks';
 export { Image } from './Image';
 export { JobList } from './Jobs';
 export { Layout } from './Layout';
+export { MarketDropdown } from './Jobs';
 export { Microcopy } from './Microcopy';
 export { SEO } from './Seo';
 export { UpcomingCoursesList } from './UpcomingCoursesList';
