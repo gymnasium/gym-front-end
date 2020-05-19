@@ -64,9 +64,12 @@ const CoursesPage = ({ data }) => {
             <Col xs={12} md={3} className={classes.rightHandColumn}>
               <H2>Jobs</H2>
               <hr />
-              <JobList options={{ limit: 5 }} jobListItem={job => {
-                return (<div>{job.title}</div>);
-              }} />
+              <JobList
+                options={{ limit: 5 }}
+                jobListItem={job => {
+                  return <div>{job.title}</div>;
+                }}
+              />
               <UpcomingCoursesList />
             </Col>
           </Row>

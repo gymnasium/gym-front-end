@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { H2 } from '@gymnasium/gym-ui';
 
-import { JobList, MarketDropdown } from '../';
+import { JobList, MarketDropdown } from '..';
 
 const FindWork = () => {
   const [market, setMarket] = useState(10);
@@ -17,6 +17,5 @@ const FindWork = () => {
       <JobList options={{ marketId: market }} />
     </>
   );
-
-}
+};
 export default FindWork;

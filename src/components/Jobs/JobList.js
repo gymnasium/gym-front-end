@@ -27,12 +27,13 @@ const JobList = ({ options = {}, jobListItem }) => {
         {status === 'error' && <span>(something went wrong)</span>}
         {status === 'success' && (
           <ul>
-            {
-              resolvedData.map(job => jobListItem ?
-                jobListItem(job) :
+            {resolvedData.map(job =>
+              jobListItem ? (
+                jobListItem(job)
+              ) : (
                 <JobListItem job={job} key={job.jobId} />
               )
-            }
+            )}
           </ul>
         )}
         <div>{page}</div>
@@ -67,7 +68,6 @@ const JobList = ({ options = {}, jobListItem }) => {
 
 JobList.propTypes = {
   // jobs: PropTypes.arrayOf(PropTypes.shape({})),
-  title: PropTypes.string,
 };
 
 export default JobList;
