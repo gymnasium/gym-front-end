@@ -65,7 +65,7 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
-    "devstack": "gatsby develop --host=0.0.0.0",
+    "devstack": "gatsby develop --host=0.0.0.0 --https",
     "format": "prettier --write src/**/*.{js,jsx}",
     "lint": "eslint src --ext .jsx,.js,.tsx,.ts",
     "prettier": "prettier --check src/**/*.{js,jsx,ts,tsx}",
