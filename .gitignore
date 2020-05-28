@@ -70,3 +70,7 @@ yarn-error.log
 
 # Storybook compiled assets
 storybook-static/
+
+.env
+.env.development
+.env.production
