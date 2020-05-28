@@ -7,6 +7,7 @@ import {
 import { getConfig } from '@edx/frontend-platform';
 // import { getLoggingService } from '@edx/frontend-platform/logging';
 
+const config = getConfig();
 const {
   BASE_URL,
   LMS_BASE_URL,
@@ -15,11 +16,13 @@ const {
   REFRESH_ACCESS_TOKEN_ENDPOINT,
   ACCESS_TOKEN_COOKIE_NAME,
   CSRF_TOKEN_API_PATH,
-} = getConfig();
+} = config;
+console.log('config is');
+console.log(config);
 
 configure({
   // loggingService: getLoggingService(),
-  appBaseUrl: BASE_URL,
+  appBaseUrl: 'http://edx.devstack.lms:18000/',
   lmsBaseUrl: LMS_BASE_URL,
   loginUrl: LOGIN_URL,
   logoutUrl: LOGOUT_URL,
