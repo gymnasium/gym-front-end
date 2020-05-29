@@ -1,15 +1,23 @@
+import { useEffect } from 'react';
 import axios from 'axios';
-import { useQuery } from 'react-query';
+import { queryCache, usePaginatedQuery } from 'react-query';
 
-export const fetchJobs = async (key, { cwids, limit, marketId, page }) => {
-  const remoteQuery =
-    '+(AquentJob.offsitePreference:2%20AquentJob.offsitePreference:3)';
+export const fetchJobs = async (
+  key,
+  { cwids, limit, marketId, page, remoteOnly }
+) => {
+  let remoteQuery = '';
+
+  if (remoteOnly) {
+    remoteQuery =
+      '+(AquentJob.offsitePreference:2%20AquentJob.offsitePreference:3)';
+  }
 
   let marketQuery = '';
   if (marketId) marketQuery = `%20+AquentJob.locationId:${marketId}`;
 
-  let limitQuery = '';
-  if (limit) limitQuery = `/limit/${limit}`;
+  const DEFAULT_PAGE_SIZE = 10;
+  const limitQuery = `/limit/${limit || DEFAULT_PAGE_SIZE}`;
 
   let pageQuery = '';
   if (page) pageQuery = `/offset/${page}`;
@@ -33,10 +41,27 @@ export const fetchJobs = async (key, { cwids, limit, marketId, page }) => {
   const apiUrl = `${urlBase}${marketQuery}${minorSegmentQuery}${urlPageLimitSuffix}`;
 
   const response = await axios.get(apiUrl);
+
   return response.data.contentlets;
 };
 
 export const useJobs = options => {
-  const { status, data, error } = useQuery(['jobs', options], fetchJobs);
-  return { status, jobs: data, error };
+  const {
+    status,
+    resolvedData,
+    latestData,
+    error,
+    isFetching,
+  } = usePaginatedQuery(['jobs', options], fetchJobs, {});
+
+  const { page } = options;
+
+  useEffect(() => {
+    queryCache.prefetchQuery(
+      ['jobs', { ...options, page: page + 1 }],
+      fetchJobs
+    );
+  }, [page, options]);
+
+  return { status, latestData, resolvedData, isFetching, error };
 };

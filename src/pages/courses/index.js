@@ -3,8 +3,12 @@ import { graphql } from 'gatsby';
 import { size } from 'lodash';
 
 import { Col, Row } from 'react-bootstrap';
+
+import { H2 } from '@gymnasium/gym-ui';
+
 import {
   CourseList,
+  JobList,
   Layout,
   Microcopy,
   UpcomingCoursesList,
@@ -58,6 +62,14 @@ const CoursesPage = ({ data }) => {
               )}
             </Col>
             <Col xs={12} md={3} className={classes.rightHandColumn}>
+              <H2>Jobs</H2>
+              <hr />
+              <JobList
+                options={{ limit: 5 }}
+                jobListItem={job => {
+                  return <div>{job.title}</div>;
+                }}
+              />
               <UpcomingCoursesList />
             </Col>
           </Row>

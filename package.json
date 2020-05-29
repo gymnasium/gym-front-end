@@ -8,6 +8,7 @@
     "@gymnasium/gym-ui": "0.0.25",
     "@mdx-js/mdx": "^1.6.1",
     "@mdx-js/react": "^1.6.1",
+    "@reach/listbox": "^0.10.2",
     "@reach/router": "^1.3.3",
     "@reduxjs/toolkit": "^1.3.6",
     "axios": "^0.19.2",
@@ -46,7 +47,7 @@
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
     "slugify": "^1.4.0",
-    "takeshape-routing": "^4.86.0"
+    "takeshape-routing": "^5.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
