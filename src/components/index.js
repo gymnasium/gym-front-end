@@ -1,4 +1,5 @@
 export { AsSeenIn } from './AsSeenIn';
+export { CodeBlock } from './CodeBlock';
 export { Container } from './Container';
 export { CourseList } from './CourseList';
 export { FeaturedCourse } from './FeaturedCourse';
