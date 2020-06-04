@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 
+import { Button } from '@gymnasium/gym-ui';
 import JobListItem from './JobListItem';
 import { useJobs } from '../../utils/jobs';
+
+import classes from './JobList.module.css';
 
 const JobList = ({ options = {}, jobListItem }) => {
   const [page, setPage] = useState(0);
@@ -36,31 +38,36 @@ const JobList = ({ options = {}, jobListItem }) => {
             )}
           </ul>
         )}
-        <div>{page}</div>
-        <button
-          disabled={status === 'loading' || status === 'error' || page === 0}
-          onClick={() => setPage(old => Math.max(old - 1, 0))}
-          type="button"
-        >
-          Previous
-        </button>
-        <button
-          disabled={status === 'loading' || status === 'error' || !latestData}
-          onClick={() => {
-            // Here, we use `latestData` so the Next Page
-            // button isn't relying on potentially old data
-            setPage(old => (!latestData ? old : old + 1));
-          }}
-          type="button"
-        >
-          Next
-        </button>
-        {
-          // Since the last page's data potentially sticks around between page requests,
-          // we can use `isFetching` to show a background loading
-          // indicator since our `status === 'loading'` state won't be triggered
-          isFetching ? <span> Loading...</span> : null
-        }
+        <div className={classes.controlRow}>
+          <Button
+            disabled={status === 'loading' || status === 'error' || page === 0}
+            onClick={() => setPage(old => Math.max(old - 1, 0))}
+            type="button"
+          >
+            Previous
+          </Button>
+
+          <div className={classes.pageNumber}>
+            {
+              // Since the last page's data potentially sticks around between page requests,
+              // we can use `isFetching` to show a background loading
+              // indicator since our `status === 'loading'` state won't be triggered
+              isFetching ? <span> Loading...</span> : `Page ${page + 1}`
+            }
+          </div>
+
+          <Button
+            disabled={status === 'loading' || status === 'error' || !latestData}
+            onClick={() => {
+              // Here, we use `latestData` so the Next Page
+              // button isn't relying on potentially old data
+              setPage(old => (!latestData ? old : old + 1));
+            }}
+            type="button"
+          >
+            Next
+          </Button>
+        </div>
       </header>
     </section>
   );

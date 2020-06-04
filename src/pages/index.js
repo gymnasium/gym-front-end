@@ -1,6 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
+import { Col, Row } from 'react-bootstrap';
+
 import {
   AsSeenIn,
   Container,
@@ -28,7 +30,11 @@ const IndexPage = ({ data }) => {
       <Container className={classes.container}>
         <HowItWorks />
         <FeaturedCourseSection courses={courses} />
-        <FindWork />
+        <Row>
+          <Col md={{ offset: 2, span: 8 }}>
+            <FindWork />
+          </Col>
+        </Row>
         <AsSeenIn items={asSeenIn.items} />
       </Container>
     </Layout>

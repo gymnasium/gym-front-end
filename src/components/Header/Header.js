@@ -2,9 +2,8 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 
-import { SecondaryNavigation } from '@gymnasium/gym-ui';
-
 import { UserBar } from './UserBar';
+import { SecondaryNavigation } from './SecondaryNavigation';
 
 const Header = () => {
   const authState = useSelector(state => state.auth);
