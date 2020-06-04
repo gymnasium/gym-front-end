@@ -8,6 +8,15 @@ import { Col, Row } from 'react-bootstrap';
 import { Container, Microcopy } from '..';
 import classes from './Footer.module.css';
 
+import GymnasiumLogo from '../../images/gymnasium-logo-white.svg';
+
+import TwitterIcon from '../../images/icon-twitter.svg';
+import InstagramIcon from '../../images/icon-instagram.svg';
+import YouTubeIcon from '../../images/icon-youtube.svg';
+import LinkedInIcon from '../../images/icon-linkedin.svg';
+import MediumIcon from '../../images/icon-medium.svg';
+import GitHubIcon from '../../images/icon-github.svg';
+
 const FooterLink = ({ children, rest, to }) => (
   // eslint-disable-next-line react/jsx-props-no-spreading
   <Link className={classes.footerLink} {...rest} to={to}>
@@ -26,8 +35,7 @@ const Footer = props => (
                 <img
                   className={classes.gymnasiumLogo}
                   alt="Aquent Gymnasium"
-                  srcSet="https://staging.thegymcms.com/img/brand/gymnasium-logo-white.svg"
-                  src="https://staging.thegymcms.com/img/brand/gymnasium-logo-white-4x.png"
+                  src={GymnasiumLogo}
                   width="200"
                   height="23"
                   role="heading"
@@ -124,8 +132,7 @@ const Footer = props => (
                     >
                       <img
                         alt="Twitter"
-                        srcSet="https://staging.thegymcms.com/img/social/icons/icon-twitter.svg"
-                        src="https://staging.thegymcms.com/img/social/icons/icon-twitter-4x.png"
+                        src={TwitterIcon}
                         width="24"
                         height="24"
                       />
@@ -140,8 +147,7 @@ const Footer = props => (
                     >
                       <img
                         alt="Instagram"
-                        srcSet="https://staging.thegymcms.com/img/social/icons/icon-instagram.svg"
-                        src="https://staging.thegymcms.com/img/social/icons/icon-instagram-4x.png"
+                        src={InstagramIcon}
                         width="24"
                         height="24"
                       />
@@ -156,8 +162,7 @@ const Footer = props => (
                     >
                       <img
                         alt="YouTube"
-                        srcSet="https://staging.thegymcms.com/img/social/icons/icon-youtube.svg"
-                        src="https://staging.thegymcms.com/img/social/icons/icon-youtube-4x.png"
+                        src={YouTubeIcon}
                         width="24"
                         height="24"
                       />
@@ -172,8 +177,7 @@ const Footer = props => (
                     >
                       <img
                         alt="LinkedIn"
-                        srcSet="https://staging.thegymcms.com/img/social/icons/icon-linkedin.svg"
-                        src="https://staging.thegymcms.com/img/social/icons/icon-linkedin-4x.png"
+                        src={LinkedInIcon}
                         width="24"
                         height="24"
                       />
@@ -188,8 +192,7 @@ const Footer = props => (
                     >
                       <img
                         alt="Medium"
-                        srcSet="https://staging.thegymcms.com/img/social/icons/icon-medium.svg"
-                        src="https://staging.thegymcms.com/img/social/icons/icon-medium-4x.png"
+                        src={MediumIcon}
                         width="24"
                         height="24"
                       />
@@ -204,8 +207,7 @@ const Footer = props => (
                     >
                       <img
                         alt="GitHub"
-                        srcSet="https://staging.thegymcms.com/img/social/icons/icon-github.svg"
-                        src="https://staging.thegymcms.com/img/social/icons/icon-github-4x.png"
+                        src={GitHubIcon}
                         width="24"
                         height="24"
                       />
