@@ -8,6 +8,8 @@ import { Col, Row } from 'react-bootstrap';
 import { Container, Microcopy } from '..';
 import classes from './Footer.module.css';
 
+import GymnasiumLogo from '../../images/gymnasium-logo-white.svg';
+
 import TwitterIcon from '../../images/icon-twitter.svg';
 import InstagramIcon from '../../images/icon-instagram.svg';
 import YouTubeIcon from '../../images/icon-youtube.svg';
@@ -33,8 +35,7 @@ const Footer = props => (
                 <img
                   className={classes.gymnasiumLogo}
                   alt="Aquent Gymnasium"
-                  srcSet="https://staging.thegymcms.com/img/brand/gymnasium-logo-white.svg"
-                  src="https://staging.thegymcms.com/img/brand/gymnasium-logo-white-4x.png"
+                  src={GymnasiumLogo}
                   width="200"
                   height="23"
                   role="heading"
