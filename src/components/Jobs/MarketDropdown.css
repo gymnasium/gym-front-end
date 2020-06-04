@@ -3,3 +3,7 @@
   overflow-y: scroll;
 }
 
+[data-reach-listbox-input],
+[data-reach-listbox-button] {
+  width: 100%;
+}

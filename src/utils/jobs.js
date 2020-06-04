@@ -65,3 +65,11 @@ export const useJobs = options => {
 
   return { status, latestData, resolvedData, isFetching, error };
 };
+
+export const getUrlForJob = ({ job, campaign }) => {
+  return `https://aquent.com/find-work/${
+    job.jobId
+  }#content?utm_source=thegymnasium.com&utm_medium=web&utm_campaign=${
+    campaign || 'job-module'
+  }`;
+};
