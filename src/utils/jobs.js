@@ -73,3 +73,7 @@ export const getUrlForJob = ({ job, campaign }) => {
     campaign || 'job-module'
   }`;
 };
+
+export const getUrlForMarket = ({ marketId }) => {
+  return `http://aquent.com/find-work/?l=${marketId}utm_source=gymnasium&utm_medium=web&utm_campaign=homepagejobs&utm_content=viewall`;
+};

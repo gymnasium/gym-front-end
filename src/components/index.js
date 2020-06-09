@@ -15,4 +15,5 @@ export { Layout } from './Layout';
 export { MarketDropdown } from './Jobs';
 export { Microcopy } from './Microcopy';
 export { SEO } from './Seo';
+export { SidebarJobModule } from './Jobs/SidebarJobModule';
 export { UpcomingCoursesList } from './UpcomingCoursesList';

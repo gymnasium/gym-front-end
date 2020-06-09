@@ -5,6 +5,8 @@
 .pageContentContainer {
   background-color: var(--gym-white);
   padding: 0 2rem;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .pageContentContainer h1,
