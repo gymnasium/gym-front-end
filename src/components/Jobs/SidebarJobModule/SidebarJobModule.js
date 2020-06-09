@@ -43,7 +43,7 @@ const SidebarJobModule = () => {
       <div className={classes.jobList}>
         <JobList options={{ limit: 5 }} jobListItem={JobListItem} />
       </div>
-      <div className={classes.viewAllJobs}>
+      <div>
         <a
           href={getUrlForMarket(market)}
           className="text-center view-all-jobs"

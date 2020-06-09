@@ -40,7 +40,11 @@ const FindWork = () => {
       <p className={classes.viewingJobsIn}>
         {marketName && `Viewing jobs in ${marketName}...`}
       </p>
-      <JobList options={{ marketId: market }} jobListItem={JobListItem} />
+      <JobList
+        showPagination
+        options={{ marketId: market }}
+        jobListItem={JobListItem}
+      />
     </>
   );
 };
