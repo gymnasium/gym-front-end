@@ -27,7 +27,7 @@ const JobList = ({ options = {}, jobListItem }) => {
       <header>
         {status === 'error' && <span>(something went wrong)</span>}
         {status === 'success' && (
-          <ul>
+          <dl>
             {resolvedData.map(job =>
               jobListItem ? (
                 jobListItem(job)
@@ -35,7 +35,7 @@ const JobList = ({ options = {}, jobListItem }) => {
                 <JobListItem job={job} key={job.jobId} />
               )
             )}
-          </ul>
+          </dl>
         )}
         <div className={classes.controlRow}>
           <button

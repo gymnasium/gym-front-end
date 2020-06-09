@@ -1,0 +1,59 @@
+.viewingJobsIn {
+  font: bold 0.8125em/1 'Helvetica Neue', Helvetica, sans-serif;
+  color: #222;
+  letter-spacing: 0.02em;
+  margin-top: 1rem;
+}
+
+.subtitle {
+  font: normal 1.2em/1.3 brandon-grotesque, 'Helvetica Neue', Helvetica,
+    sans-serif;
+  color: #222;
+  letter-spacing: 0.01em;
+  margin-top: 0;
+}
+
+.jobList dl div a {
+  display: block;
+  position: relative;
+  color: #f8971d;
+  padding: 0.5em 1.5em 0.5em 0.5em;
+  text-decoration: none;
+  transition: 0.3s padding-left ease-in-out;
+}
+
+.job-list dl div:first-child {
+  border-top: 1px solid #ccc;
+}
+
+.job-list dl div {
+  font: 1em/1.2 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  border-bottom: 1px solid #ccc;
+  padding-top: 0.5em;
+}
+
+.job-list dl dt {
+  color: var(--gym-orange);
+}
+
+.job-list dl dd {
+  font-style: normal;
+  font: bold 0.8125em/1 'Helvetica Neue', Helvetica, sans-serif;
+  color: var(--gym-dark-gray);
+  letter-spacing: 0.02em;
+  vertical-align: -2px;
+  margin-top: 0.2em;
+}
+
+.viewAllJobs {
+  border-top: 1px solid #ccc;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+.footer {
+  color: var(--gym-light-gray);
+  padding-top: 1em;
+  border-top: 1px dashed #ccc;
+  margin-top: 1em;
+}

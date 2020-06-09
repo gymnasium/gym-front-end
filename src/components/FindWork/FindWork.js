@@ -12,14 +12,14 @@ import classes from './FindWork.module.css';
 const JobListItem = job => {
   const jobUrl = getUrlForJob({ job });
   return (
-    <li className={classes.jobListing}>
+    <dl className={classes.jobListing}>
       <a href={jobUrl} target="_blank" rel="noopener noreferrer">
         <div className={`row ${classes.jobPost}`}>
           <b className={`col-8 ${classes.jobTitle}`}>{job.title}</b>
           <em className={`{col-2 ${classes.jobMarket}`}>{job.marketId}</em>
         </div>
       </a>
-    </li>
+    </dl>
   );
 };
 
