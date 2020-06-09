@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-import { Button } from '@gymnasium/gym-ui';
 import JobListItem from './JobListItem';
 import { useJobs } from '../../utils/jobs';
 
@@ -39,13 +38,14 @@ const JobList = ({ options = {}, jobListItem }) => {
           </ul>
         )}
         <div className={classes.controlRow}>
-          <Button
+          <button
             disabled={status === 'loading' || status === 'error' || page === 0}
             onClick={() => setPage(old => Math.max(old - 1, 0))}
             type="button"
+            className={classes.linkButton}
           >
             Previous
-          </Button>
+          </button>
 
           <div className={classes.pageNumber}>
             {
@@ -56,7 +56,7 @@ const JobList = ({ options = {}, jobListItem }) => {
             }
           </div>
 
-          <Button
+          <button
             disabled={status === 'loading' || status === 'error' || !latestData}
             onClick={() => {
               // Here, we use `latestData` so the Next Page
@@ -64,9 +64,10 @@ const JobList = ({ options = {}, jobListItem }) => {
               setPage(old => (!latestData ? old : old + 1));
             }}
             type="button"
+            className={classes.linkButton}
           >
             Next
-          </Button>
+          </button>
         </div>
       </header>
     </section>
