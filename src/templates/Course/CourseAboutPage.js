@@ -105,6 +105,7 @@ const CourseAboutPage = ({ pageContext }) => {
               className="img-fluid"
               alt={course.author.displayName}
               src={getImageUrl(course.author.photo.path)}
+              loading="lazy"
             />
           )}
           <h3 className={classes.authorName}>{course.author.displayName}</h3>
