@@ -84,6 +84,17 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: 'gatsby-plugin-preconnect',
+      options: {
+        domains: [
+          'https://thegymnasium.com',
+          'https://p.typekit.net',
+          'https://use.typekit.net',
+          'https://googleads.g.doubleclick.net',
+        ],
+      },
+    },
     `gatsby-plugin-mdx`,
     `gatsby-plugin-netlify`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
