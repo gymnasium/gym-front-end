@@ -41,7 +41,10 @@ const JobList = ({ options = {}, jobListItem, showPagination }) => {
           <div className={classes.controlRow}>
             <button
               disabled={
-                status === 'loading' || status === 'error' || page === 0
+                status === 'idle' ||
+                status === 'loading' ||
+                status === 'error' ||
+                page === 0
               }
               onClick={() => setPage(old => Math.max(old - 1, 0))}
               type="button"
@@ -61,7 +64,10 @@ const JobList = ({ options = {}, jobListItem, showPagination }) => {
 
             <button
               disabled={
-                status === 'loading' || status === 'error' || !latestData
+                status === 'idle' ||
+                status === 'loading' ||
+                status === 'error' ||
+                !latestData
               }
               onClick={() => {
                 // Here, we use `latestData` so the Next Page
