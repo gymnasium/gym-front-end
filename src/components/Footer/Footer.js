@@ -39,6 +39,7 @@ const Footer = props => (
                   width="200"
                   height="23"
                   role="heading"
+                  aria-level="3"
                 />
               </FooterLink>
               <Microcopy title="footer-slogan" />

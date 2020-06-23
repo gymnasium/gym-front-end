@@ -16,6 +16,7 @@ const SecondaryNavigation = ({ isLoggedIn = false }) => {
         width="200"
         height="23"
         role="heading"
+        aria-level="2"
       />
     </Link>
   );
