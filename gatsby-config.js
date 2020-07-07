@@ -8,6 +8,10 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-chakra-ui',
+      isResettingCSS: false,
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-684147-51',
