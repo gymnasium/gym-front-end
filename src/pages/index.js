@@ -16,7 +16,7 @@ import {
 
 import classes from './HomePage.module.css';
 
-const IndexPage = ({ data }) => {
+const HomePage = ({ data }) => {
   const {
     asSeenIn,
     courses,
@@ -87,4 +87,4 @@ export const query = graphql`
   }
 `;
 
-export default IndexPage;
+export default HomePage;
