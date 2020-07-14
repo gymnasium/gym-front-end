@@ -34,6 +34,7 @@
 
 .instructor {
   border-bottom: 1px dashed #777;
+  padding-bottom: 1rem;
 }
 
 .byline b {
@@ -46,4 +47,5 @@
 
 .cardCta {
   text-align: center;
+  margin-top: 1rem;
 }
