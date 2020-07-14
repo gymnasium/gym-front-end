@@ -1,27 +1,12 @@
 import React, { useState, useMemo } from 'react';
 
 import { H2 } from '@gymnasium/gym-ui';
+import { Text } from '@chakra-ui/core';
 
 import { findMarketById } from '../../utils/markets';
-import { getUrlForJob } from '../../utils/jobs';
-
 import { JobList, MarketDropdown } from '..';
 
-import classes from './FindWork.module.css';
-
-const JobListItem = job => {
-  const jobUrl = getUrlForJob({ job });
-  return (
-    <dl className={classes.jobListing} key={job.jobId}>
-      <a href={jobUrl} target="_blank" rel="noopener noreferrer">
-        <div className={`row ${classes.jobPost}`}>
-          <b className={`col-8 ${classes.jobTitle}`}>{job.title}</b>
-          <em className={`{col-2 ${classes.jobMarket}`}>{job.marketId}</em>
-        </div>
-      </a>
-    </dl>
-  );
-};
+import JobListItem from './FindWorkJobListItem';
 
 const FindWork = () => {
   const [market, setMarket] = useState(10);
@@ -37,9 +22,9 @@ const FindWork = () => {
       <p>Find work that best fits your skills, in your area.</p>
       <MarketDropdown onChange={setMarket} value={market} />
 
-      <p className={classes.viewingJobsIn}>
+      <Text as="p" margin="1rem 0" fontWeight="bold">
         {marketName && `Viewing jobs in ${marketName}...`}
-      </p>
+      </Text>
       <JobList
         showPagination
         options={{ marketId: market }}
