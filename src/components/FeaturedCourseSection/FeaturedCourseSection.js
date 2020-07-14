@@ -22,7 +22,7 @@ const FeaturedCourseSection = ({ courses }) => {
       <section id="featured-courses" className={classes.featuredCourses}>
         <SimpleGrid columns={[1, 2, 2, 4]} spacing={theme.space[3]}>
           {courses.items.map(course => (
-            <FeaturedCourse course={course} key={course._ud} />
+            <FeaturedCourse course={course} key={course._id} />
           ))}
         </SimpleGrid>
 
