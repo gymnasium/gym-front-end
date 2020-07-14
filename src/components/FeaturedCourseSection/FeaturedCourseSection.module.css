@@ -13,20 +13,6 @@
   top: -1rem;
 }
 
-.featuredCourses ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  grid-gap: 0.5rem;
-}
-
-.featuredCourses ul li {
-  display: inherit;
-  width: auto;
-  box-sizing: content-box;
-  padding-left: 0;
-  padding-right: 0;
-}
-
 .viewCoursesPrompt {
   font-family: var(--gym-font-stack);
   font-weight: bold;
