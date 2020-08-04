@@ -3,8 +3,6 @@ import React from 'react';
 import { SimpleGrid, useTheme } from '@chakra-ui/core';
 import { Container } from 'react-bootstrap';
 
-import { H1 } from '@gymnasium/gym-ui';
-
 import { Microcopy, TabbedContainer } from '..';
 
 import classes from './HowItWorks.module.css';
