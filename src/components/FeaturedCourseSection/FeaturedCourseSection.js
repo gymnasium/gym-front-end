@@ -16,7 +16,12 @@ const FeaturedCourseSection = ({ courses }) => {
   if (!courses) return null;
 
   return (
-    <Box marginTop="-4em" backgroundColor="var(--gym-light-page-background)">
+    <Box
+      marginTop={`-${theme.space[16]}`}
+      paddingTop={theme.space[4]}
+      paddingBottom={theme.space[8]}
+      backgroundColor="var(--gym-light-page-background)"
+    >
       <Container>
         <header className={classes.featuredCoursesTitleContainer}>
           <H2>Featured Courses</H2>
