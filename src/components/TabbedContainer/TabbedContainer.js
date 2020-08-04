@@ -9,13 +9,13 @@ const classes = {};
 const TabbedContainer = ({ backgroundColor, children, title, ...rest }) => {
   const theme = useTheme();
 
+  const containerColor =
+    backgroundColor || theme.colors.gymnasium.lightPageBackground;
   return (
     <PseudoBox
       as="header"
       textAlign="center"
-      backgroundColor={
-        backgroundColor || theme.colors.gymnasium.lightPageBackground
-      }
+      backgroundColor={containerColor}
       paddingBottom={theme.space[8]}
       _before={{
         display: 'table',
@@ -34,22 +34,20 @@ const TabbedContainer = ({ backgroundColor, children, title, ...rest }) => {
           height: '0',
           content: `' '`,
           lineHeight: 0,
-          paddingRight: '1rem',
-          paddingLeft: '1rem',
+          paddingRight: theme.space[4],
+          paddingLeft: theme.space[4],
 
           boxSizing: 'border-box',
           verticalAlign: 'top',
           position: 'relative',
           zIndex: 100,
-          color: backgroundColor || theme.colors.gymnasium.lightPageBackground,
-          borderBottom: `1.4em solid ${
-            backgroundColor || theme.colors.gymnasium.lightPageBackground
-          }`,
+          color: containerColor,
+          borderBottom: `1.4em solid ${containerColor}`,
           borderRight: '1.4em dashed transparent',
           borderLeft: '1.4em dashed transparent',
         }}
       >
-        <Text as="span" padding="0 1rem" display="inline-block">
+        <Text as="span" padding={`0 ${theme.space[4]}`} display="inline-block">
           <H2>{title}</H2>
         </Text>
       </PseudoBox>

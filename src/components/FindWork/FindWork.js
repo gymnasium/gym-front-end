@@ -25,7 +25,7 @@ const FindWork = () => {
       <p>Find work that best fits your skills, in your area.</p>
       <MarketDropdown onChange={setMarket} value={market} />
 
-      <Text as="p" margin="1rem 0" fontWeight="bold">
+      <Text as="p" margin={`${theme.space[4]} 0`} fontWeight="bold">
         {marketName && `Viewing jobs in ${marketName}...`}
       </Text>
       <JobList
