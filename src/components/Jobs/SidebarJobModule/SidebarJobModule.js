@@ -9,10 +9,10 @@ import { JobList, MarketDropdown } from '../..';
 
 import classes from './SidebarJobModule.module.css';
 
-const JobListItem = job => {
+const JobListItem = ({ job }) => {
   const jobUrl = getUrlForJob({ job });
   return (
-    <div>
+    <div key={job.jobId}>
       <a href={jobUrl} target="_blank" rel="noopener noreferrer">
         <dt>{job.title}</dt>
         <dd>{job.marketId}</dd>

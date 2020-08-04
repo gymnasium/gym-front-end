@@ -5,7 +5,11 @@ import { useJobs } from '../../utils/jobs';
 
 import classes from './JobList.module.css';
 
-const JobList = ({ options = {}, jobListItem, showPagination }) => {
+const JobList = ({
+  options = {},
+  jobListItem: JobListItemElement,
+  showPagination,
+}) => {
   const [page, setPage] = useState(0);
 
   const { remoteOnly, marketId } = options;
@@ -14,7 +18,14 @@ const JobList = ({ options = {}, jobListItem, showPagination }) => {
     setPage(0);
   }, [remoteOnly, marketId, setPage]);
 
-  const { status, latestData, resolvedData, isFetching, error } = useJobs({
+  const {
+    error,
+    isFetching,
+    latestData,
+    pageSize,
+    resolvedData,
+    status,
+  } = useJobs({
     ...options,
     page,
   });
@@ -29,8 +40,8 @@ const JobList = ({ options = {}, jobListItem, showPagination }) => {
         {status === 'success' && (
           <dl>
             {resolvedData.map(job =>
-              jobListItem ? (
-                jobListItem(job)
+              JobListItemElement ? (
+                <JobListItemElement job={job} key={job.jobId} />
               ) : (
                 <JobListItem job={job} key={job.jobId} />
               )
@@ -67,6 +78,7 @@ const JobList = ({ options = {}, jobListItem, showPagination }) => {
                 status === 'idle' ||
                 status === 'loading' ||
                 status === 'error' ||
+                resolvedData.length < pageSize ||
                 !latestData
               }
               onClick={() => {

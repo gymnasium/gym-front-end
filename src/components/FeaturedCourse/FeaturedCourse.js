@@ -23,6 +23,8 @@ const FeaturedCourse = ({ course }) => {
 
   const courseUrl = CourseUtils.getAboutPageUrl(course);
 
+  if (!course) return null;
+
   return (
     <div className={classes.featuredCourseListItem}>
       <header

@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import { queryCache, usePaginatedQuery } from 'react-query';
 
+const DEFAULT_PAGE_SIZE = 10;
+
 export const fetchJobs = async (
   key,
   { cwids, limit, marketId, page, remoteOnly }
@@ -16,8 +18,8 @@ export const fetchJobs = async (
   let marketQuery = '';
   if (marketId) marketQuery = `%20+AquentJob.locationId:${marketId}`;
 
-  const DEFAULT_PAGE_SIZE = 10;
-  const limitQuery = `/limit/${limit || DEFAULT_PAGE_SIZE}`;
+  const pageSize = limit || DEFAULT_PAGE_SIZE;
+  const limitQuery = `/limit/${pageSize}`;
 
   let pageQuery = '';
   if (page) pageQuery = `/offset/${page}`;
@@ -54,7 +56,8 @@ export const useJobs = options => {
     isFetching,
   } = usePaginatedQuery(['jobs', options], fetchJobs, {});
 
-  const { page } = options;
+  const { limit, page } = options;
+  const pageSize = limit || DEFAULT_PAGE_SIZE;
 
   useEffect(() => {
     queryCache.prefetchQuery(
@@ -63,7 +66,7 @@ export const useJobs = options => {
     );
   }, [page, options]);
 
-  return { status, latestData, resolvedData, isFetching, error };
+  return { status, latestData, resolvedData, isFetching, error, pageSize };
 };
 
 export const getUrlForJob = ({ job, campaign }) => {

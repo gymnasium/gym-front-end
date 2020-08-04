@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { Col, Row } from 'react-bootstrap';
+import { Box, useTheme } from '@chakra-ui/core';
 
 import {
   AsSeenIn,
@@ -14,27 +14,33 @@ import {
   SEO,
 } from '../components';
 
-import classes from './HomePage.module.css';
-
-const IndexPage = ({ data }) => {
+const HomePage = ({ data }) => {
   const {
     asSeenIn,
     courses,
     siteSettings: { isTwitchChannelActive },
   } = data.takeshape;
 
+  const theme = useTheme();
+
   return (
     <Layout isFullWidthLayout>
       <SEO title="Home" />
       <Hero isTwitchChannelActive={isTwitchChannelActive} />
-      <Container className={classes.container}>
-        <HowItWorks />
-        <FeaturedCourseSection courses={courses} />
-        <Row>
-          <Col md={{ offset: 2, span: 8 }}>
+      <HowItWorks />
+      <FeaturedCourseSection courses={courses} />
+
+      <Container
+        style={{ backgroundColor: theme.colors.gymnasium.darkGray }}
+        fluid
+      >
+        <Container>
+          <Box width={['100%', 10 / 12]} margin="auto">
             <FindWork />
-          </Col>
-        </Row>
+          </Box>
+        </Container>
+      </Container>
+      <Container>
         <AsSeenIn items={asSeenIn.items} />
       </Container>
     </Layout>
@@ -87,4 +93,4 @@ export const query = graphql`
   }
 `;
 
-export default IndexPage;
+export default HomePage;

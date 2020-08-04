@@ -7,24 +7,10 @@
 
 .featuredCoursesTitleContainer h2 {
   display: inline-block;
-  background: white;
+  background: var(--gym-light-page-background);
   padding: 0 3rem;
   position: relative;
   top: -1rem;
-}
-
-.featuredCourses ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  grid-gap: 0.5rem;
-}
-
-.featuredCourses ul li {
-  display: inherit;
-  width: auto;
-  box-sizing: content-box;
-  padding-left: 0;
-  padding-right: 0;
 }
 
 .viewCoursesPrompt {
