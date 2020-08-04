@@ -18,7 +18,14 @@ const JobList = ({
     setPage(0);
   }, [remoteOnly, marketId, setPage]);
 
-  const { status, latestData, resolvedData, isFetching, error } = useJobs({
+  const {
+    error,
+    isFetching,
+    latestData,
+    pageSize,
+    resolvedData,
+    status,
+  } = useJobs({
     ...options,
     page,
   });
@@ -71,6 +78,7 @@ const JobList = ({
                 status === 'idle' ||
                 status === 'loading' ||
                 status === 'error' ||
+                resolvedData.length < pageSize ||
                 !latestData
               }
               onClick={() => {
