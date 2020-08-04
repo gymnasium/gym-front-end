@@ -16,4 +16,5 @@ export { MarketDropdown } from './Jobs';
 export { Microcopy } from './Microcopy';
 export { SEO } from './Seo';
 export { SidebarJobModule } from './Jobs/SidebarJobModule';
+export { TabbedContainer } from './TabbedContainer';
 export { UpcomingCoursesList } from './UpcomingCoursesList';

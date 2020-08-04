@@ -1,10 +1,9 @@
 import React, { useState, useMemo } from 'react';
 
-import { H2 } from '@gymnasium/gym-ui';
-import { Text } from '@chakra-ui/core';
+import { Text, useTheme } from '@chakra-ui/core';
 
 import { findMarketById } from '../../utils/markets';
-import { JobList, MarketDropdown } from '..';
+import { JobList, MarketDropdown, TabbedContainer } from '..';
 
 import JobListItem from './FindWorkJobListItem';
 
@@ -15,10 +14,14 @@ const FindWork = () => {
     return findMarketById(market)?.name || '';
   }, [market]);
 
-  return (
-    <>
-      <H2>Find Work</H2>
+  const theme = useTheme();
 
+  return (
+    <TabbedContainer
+      title="Find Work"
+      backgroundColor={theme.colors.gymnasium.darkGray}
+      color={theme.colors.gymnasium.white}
+    >
       <p>Find work that best fits your skills, in your area.</p>
       <MarketDropdown onChange={setMarket} value={market} />
 
@@ -30,7 +33,7 @@ const FindWork = () => {
         options={{ marketId: market }}
         jobListItem={JobListItem}
       />
-    </>
+    </TabbedContainer>
   );
 };
 export default FindWork;

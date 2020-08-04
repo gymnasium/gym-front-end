@@ -19,7 +19,7 @@ const FeaturedCourseSection = ({ courses }) => {
     <Box
       marginTop={`-${theme.space[16]}`}
       paddingTop={theme.space[4]}
-      paddingBottom={theme.space[8]}
+      paddingBottom={theme.space[12]}
       backgroundColor="var(--gym-light-page-background)"
     >
       <Container>

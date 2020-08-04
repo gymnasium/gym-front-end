@@ -1,4 +1,6 @@
 /** This file should only contain css variables for use across gymnasium */
+
+/** reminder: any changes here need to go in theme.js as well! **/
 :root {
   /** colors **/
   --gym-blue: #0065de;

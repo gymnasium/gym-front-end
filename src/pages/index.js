@@ -1,8 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { Col, Row } from 'react-bootstrap';
-import { Box } from '@chakra-ui/core';
+import { Box, useTheme } from '@chakra-ui/core';
 
 import {
   AsSeenIn,
@@ -15,14 +14,14 @@ import {
   SEO,
 } from '../components';
 
-import classes from './HomePage.module.css';
-
 const HomePage = ({ data }) => {
   const {
     asSeenIn,
     courses,
     siteSettings: { isTwitchChannelActive },
   } = data.takeshape;
+
+  const theme = useTheme();
 
   return (
     <Layout isFullWidthLayout>
@@ -31,10 +30,17 @@ const HomePage = ({ data }) => {
       <HowItWorks />
       <FeaturedCourseSection courses={courses} />
 
-      <Container className={classes.container}>
-        <Box width={['100%', 10 / 12]} margin="auto">
-          <FindWork />
-        </Box>
+      <Container
+        style={{ backgroundColor: theme.colors.gymnasium.darkGray }}
+        fluid
+      >
+        <Container>
+          <Box width={['100%', 10 / 12]} margin="auto">
+            <FindWork />
+          </Box>
+        </Container>
+      </Container>
+      <Container>
         <AsSeenIn items={asSeenIn.items} />
       </Container>
     </Layout>
