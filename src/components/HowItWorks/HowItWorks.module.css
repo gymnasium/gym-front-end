@@ -1,4 +1,21 @@
-.headerTab h2::before {
+.headerTab {
+  text-align: center;
+  background-color: var(--gym-light-page-background);
+  padding-bottom: 2rem;
+}
+
+.headerTab:before {
+  display: table;
+  content: ' ';
+}
+
+.headerTab h1 {
+  margin-top: -1em;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+.headerTab h1:before {
   display: inline-block;
   width: 100%;
   height: 0;
@@ -6,14 +23,21 @@
   line-height: 0;
   padding-right: 1em;
   padding-left: 1em;
-  border-right: 1.4em dashed transparent;
-  border-left: 1.4em dashed transparent;
+
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   vertical-align: top;
   position: relative;
   z-index: 100;
+  color: var(--gym-light-page-background);
+  border-bottom: 1.4em solid var(--gym-light-page-background);
+  border-right: 1.4em dashed transparent;
+  border-left: 1.4em dashed transparent;
+}
+
+.howItWorks {
+  text-align: left;
 }
 
 .howItWorks h2 {
