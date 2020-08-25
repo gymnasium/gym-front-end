@@ -1,75 +1,53 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 
-const SEO = ({ description, lang, meta, keywords, title }) => {
+const SEO = ({ children, description, lang, keywords, title }) => {
+  const data = useStaticQuery(graphql`
+    query DefaultSEOQuery {
+      site {
+        siteMetadata {
+          title
+          description
+          author
+          site
+        }
+      }
+    }
+  `);
+
+  const { siteMetadata } = data.site;
+
+  const metaDescription = description || siteMetadata.description;
   return (
-    <StaticQuery
-      query={detailsQuery}
-      render={data => {
-        const metaDescription =
-          description || data.site.siteMetadata.description;
-        return (
-          <Helmet
-            htmlAttributes={{
-              lang,
-            }}
-            title={title}
-            titleTemplate={`%s | ${data.site.siteMetadata.title}`}
-            meta={[
-              {
-                name: `description`,
-                content: metaDescription,
-              },
-              {
-                property: `og:title`,
-                content: title,
-              },
-              {
-                property: `og:description`,
-                content: metaDescription,
-              },
-              {
-                property: `og:type`,
-                content: `website`,
-              },
-              {
-                name: `twitter:card`,
-                content: `summary`,
-              },
-              {
-                name: `twitter:creator`,
-                content: data.site.siteMetadata.author,
-              },
-              {
-                name: `twitter:title`,
-                content: title,
-              },
-              {
-                name: `twitter:description`,
-                content: metaDescription,
-              },
-            ]
-              .concat(
-                keywords.length > 0
-                  ? {
-                      name: `keywords`,
-                      content: keywords.join(`, `),
-                    }
-                  : []
-              )
-              .concat(meta)}
-          />
-        );
+    <Helmet
+      htmlAttributes={{
+        lang,
       }}
-    />
+      title={title}
+      titleTemplate={`%s | ${siteMetadata.title}`}
+    >
+      <meta name="description" content={metaDescription} />
+      <meta name="og:description" content={metaDescription} />
+      <meta name="title" content={title} />
+      <meta name="og:title" content={title} />
+      <meta name="og:type" content="website" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content={siteMetadata.author} />
+      <meta name="twitter:description" content={metaDescription} />
+      <meta type="twitter:site" content={siteMetadata.site} />
+      <meta name="twitter:title" content={title} />
+      {keywords.length > 0 && (
+        <meta name="keywords" content={keywords.join(', ')} />
+      )}
+      {children}
+    </Helmet>
   );
 };
 
 SEO.defaultProps = {
   lang: `en`,
-  meta: [],
   keywords: [],
 };
 
@@ -77,21 +55,8 @@ SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   // eslint-disable-next-line react/forbid-prop-types
-  meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
 };
 
 export default SEO;
-
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-      }
-    }
-  }
-`;
