@@ -3,8 +3,9 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: `Gymnasium`,
-    description: `Gymnasium front end`,
-    author: `@irreverentmike`,
+    description: `Gymnasium offers free online courses on web development, design, user experience, and content creation.`,
+    author: `@aquent_gymnasium`,
+    site: 'https://www.thegymnasium.com',
   },
   plugins: [
     {
