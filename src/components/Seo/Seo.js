@@ -20,6 +20,7 @@ const SEO = ({ children, description, lang, keywords, title }) => {
   const { siteMetadata } = data.site;
 
   const metaDescription = description || siteMetadata.description;
+
   return (
     <Helmet
       htmlAttributes={{
@@ -36,7 +37,7 @@ const SEO = ({ children, description, lang, keywords, title }) => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={siteMetadata.author} />
       <meta name="twitter:description" content={metaDescription} />
-      <meta type="twitter:site" content={siteMetadata.site} />
+      <meta type="twitter:site" content={siteMetadata.author} />
       <meta name="twitter:title" content={title} />
       {keywords.length > 0 && (
         <meta name="keywords" content={keywords.join(', ')} />
@@ -52,6 +53,7 @@ SEO.defaultProps = {
 };
 
 SEO.propTypes = {
+  children: PropTypes.node,
   description: PropTypes.string,
   lang: PropTypes.string,
   // eslint-disable-next-line react/forbid-prop-types
