@@ -1,32 +1,23 @@
 import React from 'react';
-import { Col, Row } from 'react-bootstrap';
 
-import { Container } from '..';
-import classes from './Hero.module.css';
+import { Flex, useTheme } from '@chakra-ui/core';
 import { TwitchHero } from './TwitchHero';
 
 const Hero = ({ isTwitchChannelActive }) => {
+  const theme = useTheme();
+
   if (isTwitchChannelActive) return <TwitchHero />;
 
   return (
-    <div className={classes.background}>
-      <Container>
-        <Row>
-          <Col className="d-none d-sm-none d-md-none" lg={1} />
-          <Col lg={4}>
-            <h1>Hero!</h1>
-          </Col>
-          <Col>
-            <h1>RESPONSIVE WEB DESIGN FUNDAMENTALS</h1>
-            <h2>with Jason Pamental</h2>
-            <p>
-              A code-intensive course on how to build responsive websites that
-              look great across devices.
-            </p>
-          </Col>
-        </Row>
-      </Container>
-    </div>
+    <Flex
+      backgroundColor="#d73158"
+      marginLeft="-15px"
+      minHeight="325px"
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+      color={theme.colors.white}
+    />
   );
 };
 
