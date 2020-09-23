@@ -1,3 +1,6 @@
+# add netlify state
+.netlify/state.json
+
 # Logs
 logs
 *.log
