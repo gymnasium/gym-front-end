@@ -1,46 +1,58 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import { Col, Row } from 'react-bootstrap';
-import { Button } from '@gymnasium/gym-ui';
 
-import { FeaturedCourse, Microcopy, Title } from '..';
+import { Box, SimpleGrid, Stack, useTheme } from '@chakra-ui/core';
+import { Container } from 'react-bootstrap';
+
+import { H2, Button } from '@gymnasium/gym-ui';
+import { FeaturedCourse, Microcopy } from '..';
 
 import classes from './FeaturedCourseSection.module.css';
 
 const FeaturedCourseSection = ({ courses }) => {
+  const theme = useTheme();
+
   if (!courses) return null;
 
   return (
-    <>
-      <header className={classes.featuredCoursesTitleContainer}>
-        <Title>Featured Courses</Title>
-      </header>
-      <section id="featured-courses" className={classes.featuredCourses}>
-        <Row>
-          {courses.items.map(course => (
-            <Col
-              className="p-0"
-              xs={6}
-              md={4}
-              lg={3}
-              key={`featured-course-${course._id}`}
-            >
-              <FeaturedCourse course={course} />
-            </Col>
-          ))}
-        </Row>
-        <Row>
-          <Col>
-            <Microcopy title="home-page-view-courses-prompt" />
+    <Box
+      marginTop={`-${theme.space[16]}`}
+      paddingTop={theme.space[4]}
+      paddingBottom={theme.space[12]}
+      backgroundColor="var(--gym-light-page-background)"
+    >
+      <Container>
+        <header className={classes.featuredCoursesTitleContainer}>
+          <H2>Featured Courses</H2>
+        </header>
+        <section id="featured-courses" className={classes.featuredCourses}>
+          <SimpleGrid columns={[1, 2, 2, 4]} spacing={theme.space[3]}>
+            {courses.items.map(course => (
+              <FeaturedCourse course={course} key={course._id} />
+            ))}
+          </SimpleGrid>
 
-            <Link to="/courses">
-              <Button>View all courses</Button>
-            </Link>
-          </Col>
-        </Row>
-      </section>
-    </>
+          <Stack
+            width={['100%', 10 / 12]}
+            spacing={theme.space[4]}
+            marginLeft="auto"
+            marginRight="auto"
+          >
+            <Microcopy
+              component="p"
+              className={classes.viewCoursesPrompt}
+              title="home-page-view-courses-prompt"
+            />
+            <Box margin="auto">
+              <Link to="/courses">
+                <Button>View all courses</Button>
+              </Link>
+            </Box>
+          </Stack>
+        </section>
+      </Container>
+    </Box>
   );
 };
 

@@ -1,9 +1,19 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--gym-font-stack);
+  font-weight: bold;
+}
+
 .all-caps {
   text-transform: uppercase;
 }
 
 a {
-  color: var(--gym-orange);
+  color: var(--gym-blue);
 }
 
 a:hover,
@@ -11,7 +21,7 @@ a:focus,
 .copyright a:hover,
 .copyright a:focus {
   text-decoration: underline;
-  color: var(--gym-orange);
+  color: var(--gym-blue);
   border-bottom: none;
 }
 

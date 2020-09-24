@@ -1,19 +1,5 @@
-.headerTab h1::before {
-  display: inline-block;
-  width: 100%;
-  height: 0;
-  content: ' ';
-  line-height: 0;
-  padding-right: 1em;
-  padding-left: 1em;
-  border-right: 1.4em dashed transparent;
-  border-left: 1.4em dashed transparent;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  vertical-align: top;
-  position: relative;
-  z-index: 100;
+.howItWorks {
+  text-align: left;
 }
 
 .howItWorks h2 {

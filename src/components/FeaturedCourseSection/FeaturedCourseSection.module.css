@@ -5,10 +5,16 @@
   display: block;
 }
 
-.featuredCoursesTitleContainer h1 {
+.featuredCoursesTitleContainer h2 {
   display: inline-block;
-  background: white;
+  background: var(--gym-light-page-background);
   padding: 0 3rem;
   position: relative;
   top: -1rem;
+}
+
+.viewCoursesPrompt {
+  font-family: var(--gym-font-stack);
+  font-weight: bold;
+  font-size: 1.7rem;
 }

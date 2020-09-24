@@ -1,9 +1,28 @@
 import React from 'react';
 
-import { Container, Col, Row } from 'react-bootstrap';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import { Link } from 'gatsby';
 
-import { Microcopy } from '..';
+import { Col, Row } from 'react-bootstrap';
+
+import { Container, Microcopy } from '..';
 import classes from './Footer.module.css';
+
+import GymnasiumLogo from '../../images/gymnasium-logo-white.svg';
+
+import TwitterIcon from '../../images/icon-twitter.svg';
+import InstagramIcon from '../../images/icon-instagram.svg';
+import YouTubeIcon from '../../images/icon-youtube.svg';
+import LinkedInIcon from '../../images/icon-linkedin.svg';
+import MediumIcon from '../../images/icon-medium.svg';
+import GitHubIcon from '../../images/icon-github.svg';
+
+const FooterLink = ({ children, rest, to }) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  <Link className={classes.footerLink} {...rest} to={to}>
+    {children}
+  </Link>
+);
 
 const Footer = props => (
   <footer className={`${classes.siteFooter} container-fluid`} id="contentinfo">
@@ -12,17 +31,17 @@ const Footer = props => (
         <Row>
           <Col xs={12} sm={10} md={3}>
             <div className={classes.gymBrand}>
-              <a href="/" title="Gymnasium Homepage">
+              <FooterLink to="/" title="Gymnasium Homepage">
                 <img
                   className={classes.gymnasiumLogo}
                   alt="Aquent Gymnasium"
-                  srcSet="https://staging.gymcms.xyz/img/brand/gymnasium-logo-white.svg"
-                  src="https://staging.gymcms.xyz/img/brand/gymnasium-logo-white-4x.png"
+                  src={GymnasiumLogo}
                   width="200"
                   height="23"
                   role="heading"
+                  aria-level="3"
                 />
-              </a>
+              </FooterLink>
               <Microcopy title="footer-slogan" />
             </div>
           </Col>
@@ -32,25 +51,26 @@ const Footer = props => (
                 <h2 className="all-caps">What We Do</h2>
                 <ul>
                   <li>
-                    <a href="/courses">Courses</a>
+                    <FooterLink to="/courses">Courses</FooterLink>
                   </li>
                   <li>
-                    <a href="/jobs">Jobs</a>
+                    <FooterLink to="/jobs">Jobs</FooterLink>
                   </li>
                   <li>
-                    <a href="/webinars">Webinars</a>
+                    <FooterLink to="/webinars">Webinars</FooterLink>
                   </li>
                   <li>
-                    <a
+                    <OutboundLink
                       href="https://medium.com/gymnasium"
                       target="_blank"
                       rel="noopener noreferrer"
+                      className={classes.footerLink}
                     >
                       Articles
-                    </a>
+                    </OutboundLink>
                   </li>
                   <li>
-                    <a href="/about">About</a>
+                    <FooterLink to="/about">About</FooterLink>
                   </li>
                 </ul>
               </section>
@@ -62,13 +82,15 @@ const Footer = props => (
                 <h2 className="all-caps">Opportunity Awaits</h2>
                 <ul>
                   <li>
-                    <a href="/ux-design">UX Design</a>
+                    <FooterLink to="/ux-design">UX Design</FooterLink>
                   </li>
                   <li>
-                    <a href="/prototyping">Prototyping</a>
+                    <FooterLink to="/prototyping">Prototyping</FooterLink>
                   </li>
                   <li>
-                    <a href="/front-end-development">Front-End Development</a>
+                    <FooterLink to="/front-end-development">
+                      Front-End Development
+                    </FooterLink>
                   </li>
                 </ul>
               </section>
@@ -80,16 +102,18 @@ const Footer = props => (
                 <h2 className="all-caps">Resources</h2>
                 <ul>
                   <li>
-                    <a href="/faq">FAQ</a>
+                    <FooterLink to="/faq">FAQ</FooterLink>
                   </li>
                   <li>
-                    <a href="/support">Support</a>
+                    <FooterLink to="/support">Support</FooterLink>
                   </li>
                   <li>
-                    <a href="/privacy">Privacy Policy</a>
+                    <FooterLink to="/privacy">Privacy Policy</FooterLink>
                   </li>
                   <li>
-                    <a href="/csr-policy">Corporate Social Responsibility</a>
+                    <FooterLink to="/csr-policy">
+                      Corporate Social Responsibility
+                    </FooterLink>
                   </li>
                 </ul>
               </section>
@@ -101,7 +125,7 @@ const Footer = props => (
                 <h2 className="all-caps">Social</h2>
                 <ul>
                   <li>
-                    <a
+                    <OutboundLink
                       title="Twitter"
                       href="https://twitter.com/AquentGymnasium"
                       target="_blank"
@@ -109,15 +133,14 @@ const Footer = props => (
                     >
                       <img
                         alt="Twitter"
-                        srcSet="https://staging.gymcms.xyz/img/social/icons/icon-twitter.svg"
-                        src="https://staging.gymcms.xyz/img/social/icons/icon-twitter-4x.png"
+                        src={TwitterIcon}
                         width="24"
                         height="24"
                       />
-                    </a>
+                    </OutboundLink>
                   </li>
                   <li>
-                    <a
+                    <OutboundLink
                       title="Instagram"
                       href="https://www.instagram.com/aquent_gymnasium/"
                       rel="noopener noreferrer"
@@ -125,15 +148,14 @@ const Footer = props => (
                     >
                       <img
                         alt="Instagram"
-                        srcSet="https://staging.gymcms.xyz/img/social/icons/icon-instagram.svg"
-                        src="https://staging.gymcms.xyz/img/social/icons/icon-instagram-4x.png"
+                        src={InstagramIcon}
                         width="24"
                         height="24"
                       />
-                    </a>
+                    </OutboundLink>
                   </li>
                   <li>
-                    <a
+                    <OutboundLink
                       title="YouTube"
                       href="https://www.youtube.com/channel/UCsAAa0dL-ZJpq4gN1zEcXYw"
                       target="_blank"
@@ -141,15 +163,14 @@ const Footer = props => (
                     >
                       <img
                         alt="YouTube"
-                        srcSet="https://staging.gymcms.xyz/img/social/icons/icon-youtube.svg"
-                        src="https://staging.gymcms.xyz/img/social/icons/icon-youtube-4x.png"
+                        src={YouTubeIcon}
                         width="24"
                         height="24"
                       />
-                    </a>
+                    </OutboundLink>
                   </li>
                   <li>
-                    <a
+                    <OutboundLink
                       title="LinkedIn"
                       href="https://www.linkedin.com/school/gymnasium/"
                       target="_blank"
@@ -157,15 +178,14 @@ const Footer = props => (
                     >
                       <img
                         alt="LinkedIn"
-                        srcSet="https://staging.gymcms.xyz/img/social/icons/icon-linkedin.svg"
-                        src="https://staging.gymcms.xyz/img/social/icons/icon-linkedin-4x.png"
+                        src={LinkedInIcon}
                         width="24"
                         height="24"
                       />
-                    </a>
+                    </OutboundLink>
                   </li>
                   <li>
-                    <a
+                    <OutboundLink
                       title="Medium"
                       href="https://medium.com/gymnasium"
                       target="_blank"
@@ -173,15 +193,14 @@ const Footer = props => (
                     >
                       <img
                         alt="Medium"
-                        srcSet="https://staging.gymcms.xyz/img/social/icons/icon-medium.svg"
-                        src="https://staging.gymcms.xyz/img/social/icons/icon-medium-4x.png"
+                        src={MediumIcon}
                         width="24"
                         height="24"
                       />
-                    </a>
+                    </OutboundLink>
                   </li>
                   <li>
-                    <a
+                    <OutboundLink
                       title="GitHub"
                       href="https://github.com/gymnasium"
                       target="_blank"
@@ -189,12 +208,11 @@ const Footer = props => (
                     >
                       <img
                         alt="GitHub"
-                        srcSet="https://staging.gymcms.xyz/img/social/icons/icon-github.svg"
-                        src="https://staging.gymcms.xyz/img/social/icons/icon-github-4x.png"
+                        src={GitHubIcon}
                         width="24"
                         height="24"
                       />
-                    </a>
+                    </OutboundLink>
                   </li>
                 </ul>
               </section>
@@ -205,7 +223,7 @@ const Footer = props => (
       <Row>
         <Col>
           <div>
-            <a
+            <OutboundLink
               title="Open edX"
               href="http://openedx.org"
               target="_blank"
@@ -218,20 +236,20 @@ const Footer = props => (
                 width="150"
                 height="50"
               />
-            </a>
+            </OutboundLink>
           </div>
           <div>
-            <a href="https://www.netlify.com">
+            <OutboundLink href="https://www.netlify.com">
               <img
                 alt="Deploys by Netlify"
                 src="https://www.netlify.com/img/global/badges/netlify-dark.svg"
               />
-            </a>
+            </OutboundLink>
           </div>
           <div className={classes.copyright}>
             <small>
               © 2019 &nbsp;
-              <a href="https://thegymnasium.com">Aquent Gymnasium</a>
+              <FooterLink to="/">Aquent Gymnasium</FooterLink>
             </small>
           </div>
         </Col>

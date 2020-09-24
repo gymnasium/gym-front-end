@@ -1,9 +1,11 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
-import { Container } from 'react-bootstrap';
+import { graphql } from 'gatsby';
+
+import { Box, useTheme } from '@chakra-ui/core';
 
 import {
   AsSeenIn,
+  Container,
   FeaturedCourseSection,
   FindWork,
   Hero,
@@ -12,24 +14,33 @@ import {
   SEO,
 } from '../components';
 
-import classes from './HomePage.module.css';
-
-const IndexPage = ({ data }) => {
+const HomePage = ({ data }) => {
   const {
     asSeenIn,
     courses,
     siteSettings: { isTwitchChannelActive },
   } = data.takeshape;
 
+  const theme = useTheme();
+
   return (
     <Layout isFullWidthLayout>
       <SEO title="Home" />
       <Hero isTwitchChannelActive={isTwitchChannelActive} />
-      <Container className={classes.container}>
-        <Link to="/logout">Log out via Gatsby Link Component</Link>
-        <HowItWorks />
-        <FeaturedCourseSection courses={courses} />
-        <FindWork />
+      <HowItWorks />
+      <FeaturedCourseSection courses={courses} />
+
+      <Container
+        style={{ backgroundColor: theme.colors.gymnasium.darkGray }}
+        fluid
+      >
+        <Container>
+          <Box width={['100%', 10 / 12]} margin="auto">
+            <FindWork />
+          </Box>
+        </Container>
+      </Container>
+      <Container>
         <AsSeenIn items={asSeenIn.items} />
       </Container>
     </Layout>
@@ -46,6 +57,7 @@ export const query = graphql`
         items {
           _id
           url
+          order
           publicationLogo {
             title
             path
@@ -81,4 +93,4 @@ export const query = graphql`
   }
 `;
 
-export default IndexPage;
+export default HomePage;

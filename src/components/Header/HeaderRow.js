@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
+import { Container } from '..';
 import baseClasses from './Header.module.css';
 
 const HeaderRow = ({ backgroundColor, classes: inputClasses, children }) => {

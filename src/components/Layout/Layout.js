@@ -1,14 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
+import { MDXProvider } from '@mdx-js/react';
 
-import { Container } from 'react-bootstrap';
-import { useMediaQuery } from 'react-responsive';
+import { CodeBlock, Container, Footer, Header } from '..';
 
-import { Footer, Header } from '..';
+import layoutClasses from './layout.module.css';
 
 const Layout = ({ children, classes, isFullWidthLayout = false }) => {
-  const isSmallViewport = useMediaQuery({ query: '(max-width: 992px)' });
+  const containerClass = isFullWidthLayout
+    ? layoutClasses.fullWidthContainer
+    : undefined;
+
+  const components = {
+    // eslint-disable-next-line react/display-name
+    pre: props => <div {...props} />,
+    code: CodeBlock,
+  };
 
   return (
     <StaticQuery
@@ -22,15 +30,15 @@ const Layout = ({ children, classes, isFullWidthLayout = false }) => {
         }
       `}
       render={data => (
-        <>
+        <MDXProvider components={components}>
           <Header siteTitle={data.site.siteMetadata.title} />
           <main className={classes && classes.contentWrapper}>
-            <Container fluid={isFullWidthLayout || isSmallViewport}>
+            <Container className={containerClass} fluid={isFullWidthLayout}>
               {children}
             </Container>
           </main>
           <Footer />
-        </>
+        </MDXProvider>
       )}
     />
   );

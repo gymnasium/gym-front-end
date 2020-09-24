@@ -1,0 +1,19 @@
+.pageSection {
+  padding: 1.75rem 0;
+  background-color: var(--gym-light-page-background);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+}
+
+.subtitle a {
+  font-weight: bold;
+  color: var(--gym-dark-gray);
+  text-decoration: none;
+  border-bottom: 2px solid var(--gym-orange);
+}
+
+.subtitle a:hover {
+  border-bottom: 2px solid var(--gym-dark-gray);
+}

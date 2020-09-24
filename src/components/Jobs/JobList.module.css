@@ -1,0 +1,29 @@
+.pageNumber {
+  text-transform: uppercase;
+  font-size: smaller;
+}
+
+.controlRow {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.linkButton {
+  border: none;
+  background: none;
+  color: var(--gym-orange);
+  cursor: pointer;
+}
+
+.linkButton:hover {
+  text-decoration: underline;
+}
+
+.linkButton[disabled],
+.linkButton[disabled]:hover {
+  color: #777;
+  text-decoration: none;
+}

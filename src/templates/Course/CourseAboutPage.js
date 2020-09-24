@@ -4,7 +4,9 @@ import { Col, Row } from 'react-bootstrap';
 import { getImageUrl } from 'takeshape-routing';
 import { map } from 'lodash';
 
-import { GymButton, Layout, SEO } from '../../components';
+import { Button } from '@gymnasium/gym-ui';
+
+import { Layout, SEO } from '../../components';
 
 import classes from './CourseAboutPage.module.css';
 
@@ -51,7 +53,7 @@ const CourseAboutPage = ({ pageContext }) => {
           <span className={classes.courseTypeLabel}>{courseTypeDisplay}</span>
         </Col>
         <Col className="text-center">
-          <GymButton>Get Started</GymButton>
+          <Button>Get Started</Button>
         </Col>
         <Col />
       </Row>
@@ -103,6 +105,7 @@ const CourseAboutPage = ({ pageContext }) => {
               className="img-fluid"
               alt={course.author.displayName}
               src={getImageUrl(course.author.photo.path)}
+              loading="lazy"
             />
           )}
           <h3 className={classes.authorName}>{course.author.displayName}</h3>

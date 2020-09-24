@@ -8,6 +8,10 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-chakra-ui',
+      isResettingCSS: false,
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-684147-51',
@@ -84,6 +88,19 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: 'gatsby-plugin-preconnect',
+      options: {
+        domains: [
+          'https://thegymnasium.com',
+          'https://p.typekit.net',
+          'https://use.typekit.net',
+          'https://googleads.g.doubleclick.net',
+        ],
+      },
+    },
+    `gatsby-plugin-mdx`,
+    `gatsby-plugin-netlify`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

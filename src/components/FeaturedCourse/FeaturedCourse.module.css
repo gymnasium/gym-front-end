@@ -16,10 +16,6 @@
   color: var(--gym-white);
 }
 
-.courseTitle {
-  color: var(--gym-white);
-}
-
 .courseType {
   font-family: var(--gym-font-stack);
   letter-spacing: 0.075em;
@@ -38,4 +34,18 @@
 
 .instructor {
   border-bottom: 1px dashed #777;
+  padding-bottom: 1rem;
+}
+
+.byline b {
+  font-weight: bold;
+}
+
+.featuredCourseHeaderContainer {
+  height: 500px;
+}
+
+.cardCta {
+  text-align: center;
+  margin-top: 1rem;
 }

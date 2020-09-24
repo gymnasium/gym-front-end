@@ -1,0 +1,10 @@
+[data-reach-listbox-popover] {
+  max-height: 60vh;
+  overflow-y: scroll;
+  z-index: 1000;
+}
+
+[data-reach-listbox-input],
+[data-reach-listbox-button] {
+  width: 100%;
+}
