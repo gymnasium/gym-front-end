@@ -2,21 +2,28 @@ import React, { useEffect, useState } from 'react';
 import {
   configure,
   fetchAuthenticatedUser,
-  getAuthenticatedHttpClient
+  getAuthenticatedHttpClient,
 } from '@edx/frontend-platform/auth';
 import { getConfig } from '@edx/frontend-platform';
 // import { getLoggingService } from '@edx/frontend-platform/logging';
 
 const config = getConfig();
+
+const BASE_URL = 'https://courses.gymnasium.dev';
+const LMS_BASE_URL = BASE_URL;
+const LOGIN_URL = `${BASE_URL}/login`;
+const LOGOUT_URL = `${BASE_URL}/logout`;
+
 const {
-  BASE_URL,
-  LMS_BASE_URL,
-  LOGIN_URL,
-  LOGOUT_URL,
+  // BASE_URL,
+  // LMS_BASE_URL,
+  // LOGIN_URL,
+  // LOGOUT_URL,
   REFRESH_ACCESS_TOKEN_ENDPOINT,
   ACCESS_TOKEN_COOKIE_NAME,
   CSRF_TOKEN_API_PATH,
 } = config;
+
 console.log('config is');
 console.log(config);
 
@@ -32,22 +39,31 @@ configure({
 });
 
 const AuthPage = () => {
-  const [authenticatedUser, setAuthenticatedUser] = useState(async () => await fetchAuthenticatedUser()); // validates and decodes JWT token
-  const [authenticatedHttpClient, setAuthenticatedHttpClient] = useState(() => getAuthenticatedHttpClient());
+  const [authenticatedUser /* , setAuthenticatedUser */] = useState(async () =>
+    fetchAuthenticatedUser()
+  ); // validates and decodes JWT token
+  const [
+    authenticatedHttpClient /* , setAuthenticatedHttpClient */,
+  ] = useState(() => getAuthenticatedHttpClient());
   const [currentUser, setCurrentUser] = useState();
 
-  const getAuthenticatedUser = async () => {
-    const response = await authenticatedHttpClient.get(`http://edx.devstack.lms:18000/api/user/data/${authenticatedUser.username}`); // fetching from an authenticated API using user data
-    setCurrentUser(response);
-  };
+  useEffect(() => {
+    const getAuthenticatedUser = async () => {
+      const response = await authenticatedHttpClient.get(
+        `http://edx.devstack.lms:18000/api/user/data/${authenticatedUser.username}`
+      ); // fetching from an authenticated API using user data
+      setCurrentUser(response);
+    };
 
-  useEffect(()=>{    
     getAuthenticatedUser();
-  },[setCurrentUser]);
+  }, [setCurrentUser, authenticatedHttpClient, authenticatedUser.username]);
+
   return (
     <>
       <h1>Auth page!</h1>
-      <h2>Current user is {currentUser ? currentUser.displayName : 'loading'}</h2>
+      <h2>
+        Current user is {currentUser ? currentUser.displayName : 'loading'}
+      </h2>
     </>
   );
 };
