@@ -9550,6 +9550,13 @@ gatsby-plugin-google-tagmanager@^2.3.15:
   dependencies:
     "@babel/runtime" "^7.11.2"
 
+gatsby-plugin-intercom-spa@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-intercom-spa/-/gatsby-plugin-intercom-spa-0.2.0.tgz#b7c26036bc12ff6c9f0a46db341f7134678fa2d6"
+  integrity sha512-jgPVLhnvJ6U67QQC9ZfPIjr0BGGZkUaQcChpkNor14AN0kZdemP3p6lHIPBEIES3f83CJOsB9k+CUar4RRScGQ==
+  dependencies:
+    babel-runtime "^6.26.0"
+
 gatsby-plugin-manifest@^2.4.34:
   version "2.4.34"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.4.34.tgz#3628df53ccf59e04e93eca397287484315fea715"
@@ -9669,6 +9676,11 @@ gatsby-plugin-robots-txt@^1.5.3:
   dependencies:
     "@babel/runtime" "^7.11.2"
     generate-robotstxt "^8.0.3"
+
+gatsby-plugin-segment-js@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-segment-js/-/gatsby-plugin-segment-js-3.6.0.tgz#740b2a5e6730119147e0dd1fb2c39acca83e353d"
+  integrity sha512-kdpXV5RUGR5dRcSJHsUxP2+FY8XDOAqi3disj0SHdR5mZDAg4QtpiCQZYRB6Ji1/aP87oypoJVyeu6s1+GpHSw==
 
 gatsby-plugin-sharp@^2.6.39:
   version "2.6.39"

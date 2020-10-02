@@ -12,9 +12,28 @@ module.exports = {
       isResettingCSS: false,
     },
     {
+      resolve: `gatsby-plugin-segment-js`,
+      options: {
+        // when process.env.NODE_ENV === 'production'
+        prodKey: process.env.SEGMENT_PRODUCTION_WRITE_KEY,
+
+        // when process.env.NODE_ENV === 'development'
+        devKey: process.env.SEGMENT_DEV_WRITE_KEY,
+        trackPage: true,
+        delayLoad: true, // important to make segment work with gatsby <Link /> routing
+      },
+    },
+    {
+      resolve: `gatsby-plugin-intercom-spa`,
+      options: {
+        app_id: process.env.INTERCOM_APP_ID,
+        include_in_development: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'UA-684147-51',
+        trackingId: process.env.GOOGLE_ANALYTICS_PROPERTY_ID,
         // Defines where to place the tracking script - `true` in the head and `false` in the body
         head: false,
         // Setting this parameter is optional
