@@ -6,6 +6,7 @@ export { FeaturedCourse } from './FeaturedCourse';
 export { FeaturedCourseSection } from './FeaturedCourseSection';
 export { FindWork } from './FindWork';
 export { Footer } from './Footer';
+export { FullBleed } from './FullBleed';
 export { Header } from './Header';
 export { Hero } from './Hero';
 export { HowItWorks } from './HowItWorks';
