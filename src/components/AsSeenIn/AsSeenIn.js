@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { getImageUrl } from 'takeshape-routing';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
-import { SimpleGrid } from '@chakra-ui/core';
+import { Box, SimpleGrid } from '@chakra-ui/core';
 
 import sortBy from 'lodash/sortBy';
 
@@ -12,7 +12,7 @@ import { H2 } from '@gymnasium/gym-ui';
 import classes from './AsSeenIn.module.css';
 
 const AsSeenIn = ({ items }) => (
-  <div className={classes.container}>
+  <Box marginBottom="2rem">
     <H2 className={classes.title} textAlign="center">
       As Seen In:
     </H2>
@@ -32,7 +32,7 @@ const AsSeenIn = ({ items }) => (
         </OutboundLink>
       ))}
     </SimpleGrid>
-  </div>
+  </Box>
 );
 
 AsSeenIn.propTypes = {
