@@ -7,18 +7,10 @@ import { Box } from '@chakra-ui/core';
 const Container = ({ children, fluid, ...rest }) => {
   const isSmallViewport = useMediaQuery({ query: '(max-width: 992px)' });
 
-  const containerWidth = isSmallViewport || fluid ? '100vw' : undefined;
-
-  const maxWidth = fluid ? '100vw' : '1170px';
+  const maxWidth = fluid || isSmallViewport ? '100vw' : '1170px';
 
   return (
-    <Box
-      maxWidth={maxWidth}
-      width={containerWidth}
-      {...rest}
-      ml="auto"
-      mr="auto"
-    >
+    <Box maxWidth={maxWidth} {...rest} ml="auto" mr="auto">
       {children}
     </Box>
   );
