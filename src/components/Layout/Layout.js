@@ -1,16 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 
-import { CodeBlock, Container, Footer, Header } from '..';
+import { Box } from '@chakra-ui/core';
 
-import layoutClasses from './layout.module.css';
+import { CodeBlock, Footer, Header } from '..';
+
+import './Layout.css';
+
+// a Layout that enables full-bleed components using this strategy: https://joshwcomeau.com/css/full-bleed/
 
 const Layout = ({ children, classes, isFullWidthLayout = false }) => {
-  const containerClass = isFullWidthLayout
-    ? layoutClasses.fullWidthContainer
-    : undefined;
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
 
   const components = {
     // eslint-disable-next-line react/display-name
@@ -19,28 +29,13 @@ const Layout = ({ children, classes, isFullWidthLayout = false }) => {
   };
 
   return (
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-            }
-          }
-        }
-      `}
-      render={data => (
-        <MDXProvider components={components}>
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <main className={classes && classes.contentWrapper}>
-            <Container className={containerClass} fluid={isFullWidthLayout}>
-              {children}
-            </Container>
-          </main>
-          <Footer />
-        </MDXProvider>
-      )}
-    />
+    <MDXProvider components={components}>
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <Box as="main" className="wrapper">
+        {children}
+      </Box>
+      <Footer />
+    </MDXProvider>
   );
 };
 
