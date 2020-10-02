@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link as GatsbyLink } from 'gatsby';
+
 import { Button, NavBar, Link } from '@gymnasium/gym-ui';
 
 import GymnasiumLogo from '../../../images/gymnasium-logo-white.svg';
@@ -8,7 +10,7 @@ import classes from './SecondaryNavigation.module.css';
 
 const SecondaryNavigation = ({ isLoggedIn = false }) => {
   const leftContent = (
-    <Link css={classes.logoLink} to="/">
+    <GatsbyLink className={classes.logoLink} to="/">
       <img
         className={classes.gymnasiumLogo}
         alt="Aquent Gymnasium"
@@ -18,10 +20,13 @@ const SecondaryNavigation = ({ isLoggedIn = false }) => {
         role="heading"
         aria-level="2"
       />
-    </Link>
+    </GatsbyLink>
   );
   const rightContent = (
     <>
+      <Link isLight to="/take5">
+        Take 5
+      </Link>
       <Link isLight to="/courses">
         Courses
       </Link>
