@@ -153,7 +153,7 @@ exports.createPages = ({ actions, graphql }) => {
     });
 
     take5s.items.forEach((take5, idx) => {
-      console.log(`5️⃣ found take5 ${take5.title} with id ${take5._id}`);
+      console.log(`5️⃣  found take5 ${take5.title} with id ${take5._id}`);
       const sanitizedTitle = getUrlFromTitle(take5.title);
 
       const take5Path = `${CONSTANTS.URLS.COURSES.TAKE_FIVE}${sanitizedTitle}`;
