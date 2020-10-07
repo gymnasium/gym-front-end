@@ -5,7 +5,7 @@ import { MDXProvider } from '@mdx-js/react';
 
 import { Box } from '@chakra-ui/core';
 
-import { CodeBlock, Footer, Header } from '..';
+import { CodeBlock, Container, Footer, Header, SEO } from '..';
 
 import './Layout.css';
 
@@ -30,6 +30,7 @@ const Layout = ({ children, classes, isFullWidthLayout = false }) => {
 
   return (
     <MDXProvider components={components}>
+      <SEO defer={false} />
       <Header siteTitle={data.site.siteMetadata.title} />
       <Box as="main" className="wrapper">
         {children}
