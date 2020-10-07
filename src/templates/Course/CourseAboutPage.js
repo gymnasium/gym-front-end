@@ -33,7 +33,20 @@ const CourseAboutPage = ({ pageContext }) => {
 
   return (
     <Layout classes={{ contentWrapper: classes.contentWrapper }}>
-      <SEO title={`About ${course.title}`} />
+      <SEO
+        title={`About ${course.title}`}
+        description={course.shortDescriptionHtml}
+      >
+        {/*
+          Display using twitter's Card (without large image) layout.
+          more here: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary
+        */}
+        <meta type="twitter:card" content="summary" />
+        <meta
+          type="twitter:image"
+          content={getImageUrl(course.coverImage.path)}
+        />
+      </SEO>
       <Row>
         <Col
           className={classes.pageHeaderContainer}
