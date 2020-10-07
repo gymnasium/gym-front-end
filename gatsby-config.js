@@ -10,7 +10,10 @@ module.exports = {
   plugins: [
     {
       resolve: 'gatsby-plugin-chakra-ui',
-      isResettingCSS: false,
+      options: {
+        isUsingColorMode: false,
+        isResettingCSS: true,
+      },
     },
     {
       resolve: `gatsby-plugin-segment-js`,

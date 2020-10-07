@@ -1,3 +1,7 @@
+.logoLink {
+  margin: 0 !important;
+}
+
 .logoLink:hover {
   text-decoration: none;
   border-bottom: none;

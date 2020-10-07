@@ -8,6 +8,7 @@ import {
   Container,
   FeaturedCourseSection,
   FindWork,
+  FullBleed,
   Hero,
   HowItWorks,
   Layout,
@@ -26,23 +27,25 @@ const HomePage = ({ data }) => {
   return (
     <Layout isFullWidthLayout>
       <SEO title="Home" />
-      <Hero isTwitchChannelActive={isTwitchChannelActive} />
-      <HowItWorks />
-      <FeaturedCourseSection courses={courses} />
+      <FullBleed>
+        <Hero isTwitchChannelActive={isTwitchChannelActive} />
+        <HowItWorks />
+        <FeaturedCourseSection courses={courses} />
 
-      <Container
-        style={{ backgroundColor: theme.colors.gymnasium.darkGray }}
-        fluid
-      >
-        <Container>
-          <Box width={['100%', 10 / 12]} margin="auto">
-            <FindWork />
-          </Box>
+        <Container
+          style={{ backgroundColor: theme.colors.gymnasium.darkGray }}
+          fluid
+        >
+          <Container>
+            <Box width={['100%', 10 / 12]} margin="auto">
+              <FindWork />
+            </Box>
+          </Container>
         </Container>
-      </Container>
-      <Container>
-        <AsSeenIn items={asSeenIn.items} />
-      </Container>
+        <Container>
+          <AsSeenIn items={asSeenIn.items} />
+        </Container>
+      </FullBleed>
     </Layout>
   );
 };
