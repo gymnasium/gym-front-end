@@ -8,6 +8,7 @@ import {
   CourseList,
   Layout,
   Microcopy,
+  SEO,
   SidebarJobModule,
   UpcomingCoursesList,
 } from '../../components';
@@ -22,6 +23,7 @@ const CoursesPage = ({ data }) => {
 
   return (
     <Layout classes={{ contentWrapper: classes.pageContainer }}>
+      <SEO title="Courses" />
       <nav className={classes.subnav}>
         <a href="#full-courses">Full Courses</a>
         <a href="#gym-shorts">Gym Shorts</a>
