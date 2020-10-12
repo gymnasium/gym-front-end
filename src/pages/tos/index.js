@@ -15,4 +15,4 @@ const ToSPage = () => {
   );
 };
 
-export default TosPage;
+export default ToSPage;
