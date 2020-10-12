@@ -5,20 +5,15 @@ import {
   getAuthenticatedHttpClient,
 } from '@edx/frontend-platform/auth';
 import { getConfig } from '@edx/frontend-platform';
-// import { getLoggingService } from '@edx/frontend-platform/logging';
+import { getLoggingService } from '@edx/frontend-platform/logging';
 
 const config = getConfig();
 
-const BASE_URL = 'https://courses.gymnasium.dev';
-const LMS_BASE_URL = BASE_URL;
-const LOGIN_URL = `${BASE_URL}/login`;
-const LOGOUT_URL = `${BASE_URL}/logout`;
-
 const {
-  // BASE_URL,
-  // LMS_BASE_URL,
-  // LOGIN_URL,
-  // LOGOUT_URL,
+  BASE_URL,
+  LMS_BASE_URL,
+  LOGIN_URL,
+  LOGOUT_URL,
   REFRESH_ACCESS_TOKEN_ENDPOINT,
   ACCESS_TOKEN_COOKIE_NAME,
   CSRF_TOKEN_API_PATH,
@@ -29,7 +24,7 @@ console.log(config);
 
 configure({
   // loggingService: getLoggingService(),
-  appBaseUrl: 'http://edx.devstack.lms:18000/',
+  appBaseUrl: BASE_URL,
   lmsBaseUrl: LMS_BASE_URL,
   loginUrl: LOGIN_URL,
   logoutUrl: LOGOUT_URL,
@@ -49,14 +44,21 @@ const AuthPage = () => {
 
   useEffect(() => {
     const getAuthenticatedUser = async () => {
-      const response = await authenticatedHttpClient.get(
-        `http://edx.devstack.lms:18000/api/user/data/${authenticatedUser.username}`
-      ); // fetching from an authenticated API using user data
-      setCurrentUser(response);
+      if (authenticatedUser) {
+        const response = await authenticatedHttpClient.get(
+          `${BASE_URL}/api/user/data/${authenticatedUser.username}`
+        ); // fetching from an authenticated API using user data
+        setCurrentUser(response);
+      }
     };
 
     getAuthenticatedUser();
-  }, [setCurrentUser, authenticatedHttpClient, authenticatedUser.username]);
+  }, [
+    setCurrentUser,
+    authenticatedHttpClient,
+    authenticatedUser,
+    authenticatedUser.username,
+  ]);
 
   return (
     <>
