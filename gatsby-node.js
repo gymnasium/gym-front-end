@@ -203,22 +203,17 @@ exports.onCreateNode = async ({
 
 /** required to support regeneratorRuntime for edx frontend-platform 👇🏻 */
 
-exports.modifyBabelrc = ({ babelrc }) => ({
-  ...babelrc,
-  ...(process.env.NODE_ENV !== 'development' && {
-    plugins: babelrc.plugins.concat([
-      'transform-regenerator',
-      'transform-runtime',
-    ]),
-  }),
-});
-
-exports.modifyWebpackConfig = ({ config, stage }) => {
-  if (stage === 'build-javascript') {
-    // eslint-disable-next-line no-param-reassign
-    config._config.entry.app = ['babel-polyfill', config._config.entry.app];
+exports.onCreateBabelConfig = ({ actions }) => {
+  if (process.env.NODE_ENV !== 'development') {
+    actions.setBabelPlugin({
+      name: '@babel/plugin-transform-regenerator',
+      options: {},
+    });
+    actions.setBabelPlugin({
+      name: '@babel/plugin-transform-runtime',
+      options: {},
+    });
   }
-  return config;
 };
 
 /** required to support regeneratorRuntime for edx frontend-platform 👆🏻 */
