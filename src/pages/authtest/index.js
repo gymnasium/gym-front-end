@@ -1,31 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import {
-  configure as configureAuth,
   fetchAuthenticatedUser,
   getAuthenticatedHttpClient,
-  AxiosJwtAuthService,
 } from '@edx/frontend-platform/auth';
 import { getConfig } from '@edx/frontend-platform';
 
-import {
-  configure as configureLogging,
-  getLoggingService,
-  NewRelicLoggingService,
-  // logError,
-} from '@edx/frontend-platform/logging';
-
-const config = getConfig();
-
-configureLogging(NewRelicLoggingService, {
-  config: getConfig(),
-});
-
-configureAuth(AxiosJwtAuthService, {
-  loggingService: getLoggingService(),
-  config,
-});
-
 const AuthPage = () => {
+  const config = getConfig();
   const [authenticatedUser /* , setAuthenticatedUser */] = useState(async () =>
     fetchAuthenticatedUser()
   ); // validates and decodes JWT token
@@ -46,6 +27,7 @@ const AuthPage = () => {
 
     getAuthenticatedUser();
   }, [
+    config.LMS_BASE_URL,
     setCurrentUser,
     authenticatedHttpClient,
     authenticatedUser,

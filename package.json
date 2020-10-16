@@ -6,7 +6,7 @@
   "author": "Mike Bifulco <mbifulco@aquent.com>",
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
-    "@edx/frontend-platform": "1.5.3",
+    "@edx/frontend-platform": "mbifulco/frontend-platform#patch-1",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
     "@gymnasium/gym-ui": "0.0.25",
