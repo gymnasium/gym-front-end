@@ -58,7 +58,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   // eslint-disable-next-line react/forbid-prop-types
   keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 };
 
 export default SEO;
