@@ -2344,9 +2344,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
-"@edx/frontend-platform@mbifulco/frontend-platform#patch-1":
-  version "1.0.0-semantically-released"
-  resolved "https://codeload.github.com/mbifulco/frontend-platform/tar.gz/13a628a112025d7aa3b8fc21a1b0b0bd2376f87b"
+"@edx/frontend-platform@^1.6.1":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@edx/frontend-platform/-/frontend-platform-1.6.1.tgz#f186bacf4eab0b3bc3935bdb78096ce4f5900d02"
+  integrity sha512-nha487E0ztnsV5bCMici+KcM+nub9NPB4l3GH+oefALzWH9PgfWLy/W4P/xdvG+0j7C0ILmilFgG2p5g4x917w==
   dependencies:
     "@cospired/i18n-iso-languages" "2.1.2"
     axios "0.18.1"

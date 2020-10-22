@@ -10,7 +10,6 @@ import {
   AxiosJwtAuthService,
 } from '@edx/frontend-platform/auth';
 import { getConfig } from '@edx/frontend-platform/config';
-
 import {
   configure as configureLogging,
   getLoggingService,
@@ -26,11 +25,13 @@ import wrapWithProvider from './wrap-with-provider';
 
 export const wrapRootElement = wrapWithProvider;
 
-configureLogging(NewRelicLoggingService, {
-  config: getConfig(),
-});
+export const onInitialClientRender = () => {
+  configureLogging(NewRelicLoggingService, {
+    config: getConfig(),
+  });
 
-configureAuth(AxiosJwtAuthService, {
-  loggingService: getLoggingService(),
-  config: getConfig(),
-});
+  configureAuth(AxiosJwtAuthService, {
+    loggingService: getLoggingService(),
+    config: getConfig(),
+  });
+};
