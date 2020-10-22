@@ -37,3 +37,7 @@ li {
   border-right: 0;
   margin-top: 0.4em;
 }
+
+html {
+  scroll-behavior: smooth;
+}
