@@ -16,7 +16,7 @@ const UserBar = () => {
   const leftContent = !isLoggedIn && <Button isSmall>Sign Up</Button>;
   const rightContent = (
     <>
-      {isLoggedIn && <UserLogoutMenu userId={user.id} logoutUrl="/logout" />}
+      {/* {isLoggedIn && <UserLogoutMenu userId={user.id} logoutUrl="/logout" />} */}
       <GymIcon
         name="Aquent Icon"
         src="https://thegymnasium.com/static/gymnasium/images/aquent-icon.56d05be37e9a.png"
